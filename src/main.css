@@ -1,0 +1,11 @@
+:root{
+    /* Colour Definitions */
+    --text: #f1ede3;
+    --background: #0A0C10;
+    --background-highlight: #002929;
+    --accent: #00A6A6;
+
+    /* Apply base colours */
+    color: var(--text);
+    background-color: var(--background);
+}
