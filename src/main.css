@@ -8,4 +8,7 @@
     /* Apply base colours */
     color: var(--text);
     background-color: var(--background);
+
+    /* Font */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
