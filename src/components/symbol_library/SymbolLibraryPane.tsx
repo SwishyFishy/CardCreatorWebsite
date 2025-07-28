@@ -1,22 +1,17 @@
 import { useState } from "react";
 
+import { type SymbolData } from "./Symbol";
+
 import SymbolLibrary from "./SymbolLibrary";
 import SymbolCreator from "./SymbolCreator";
 import SymbolCreatorButton from "./SymbolCreatorButton";
 
-type Symbol = {
-    shape: "circle" | "square" | "rhombus",
-    colour: string,
-    icon?: string,
-    iconColour?: string
-}
-
 export default function SymbolLibraryPane()
 {
-    const [symbols, setSymbols] = useState<Symbol[]>([]);
+    const [symbols, setSymbols] = useState<SymbolData[]>([]);
     const [showCreator, setShowCreator] = useState<boolean>(false);
 
-    const AddSymbol = (symbol: Symbol): void => {
+    const AddSymbol = (symbol: SymbolData): void => {
         setSymbols([...symbols, symbol]);
     }
 
@@ -30,9 +25,9 @@ export default function SymbolLibraryPane()
 
     return (
         <div className="component-symbollibrarypane">
-            <SymbolLibrary/>
+            <SymbolLibrary symbols={symbols}/>
             <SymbolCreatorButton Show={ShowCreator}/>
-            <SymbolCreator show={showCreator} Hide={HideCreator}/>
+            <SymbolCreator show={showCreator} Add={AddSymbol} Hide={HideCreator}/>
         </div>
     );
 }

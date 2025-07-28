@@ -1,6 +1,19 @@
-export default function SymbolLibrary()
+import Symbol, { type SymbolData } from "./Symbol";
+import BasicSymbols from "./BasicSymbols";
+
+interface props_SymbolLibrary {
+    symbols: SymbolData[]
+}
+
+export default function SymbolLibrary({symbols}: props_SymbolLibrary)
 {
+    const library: SymbolData[] = [...BasicSymbols, ...symbols]
+
     return (
-        <p>Hello World</p>
+        <div className="component-symbollibrary">
+            {library.map((symbol) => (
+                <Symbol symbol={symbol}/>
+            ))}
+        </div>
     );
 }
