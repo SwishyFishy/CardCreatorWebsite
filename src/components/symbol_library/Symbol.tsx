@@ -1,8 +1,8 @@
 import './styles/symbol.css';
 
 export type SymbolData = {
-    shape: "circle" | "square" | "rhombus",
     colour: string,
+    shape?: "circle" | "square",
     text?: string,
     textColour?: string,
     icon?: string,
@@ -15,7 +15,8 @@ type SymbolStyle = {
 }
 
 type IconStyle = {
-    color?: string
+    color?: string,
+    transform?: string
 }
 
 interface props_Symbol {
@@ -26,8 +27,7 @@ export default function Symbol({symbol}: props_Symbol)
 {
     const symbolStyle: SymbolStyle = {
         backgroundColor: symbol.colour,
-        borderRadius: symbol.shape == "circle" ? "50%" : undefined,
-        transform: symbol.shape == "rhombus" ? "rotateZ(45)" : undefined
+        borderRadius: symbol.shape == "circle" || symbol.shape == undefined ? "50%" : undefined
     };
 
     const iconStyle: IconStyle = {

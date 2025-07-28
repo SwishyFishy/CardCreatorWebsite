@@ -1,9 +1,23 @@
 .component-symbol{
     width: 1.5em;
     height: 1.5em;
+    font-size: 1.5rem;
 
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.component-symbol span{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.component-symbol span img{
+    width: 85%;
+    height: 85%;
 }
