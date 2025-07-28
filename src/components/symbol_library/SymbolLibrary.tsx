@@ -11,8 +11,8 @@ export default function SymbolLibrary({symbols}: props_SymbolLibrary)
 
     return (
         <div className="component-symbollibrary">
-            {library.map((symbol) => (
-                <Symbol symbol={symbol}/>
+            {library.map((symbol, index) => (
+                <Symbol symbol={symbol} key={index}/>
             ))}
         </div>
     );

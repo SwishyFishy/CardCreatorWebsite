@@ -6,8 +6,8 @@ export default function SymbolCreatorButton({Show}: props_SymbolCreatorButton)
 {
     return (
         <div className="component-symbolcreatorbutton">
-            <label htmlFor="button" className="hidden">Button: Create a symbol</label>
-            <input type="button" id="button" value="+" onClick={() => Show()}/>
+            <label htmlFor="symbolcreatoropen" className="hidden">Button: Create a symbol</label>
+            <input type="button" id="symbolcreatoropen" value="+" onClick={() => Show()}/>
         </div>
     );
 }
