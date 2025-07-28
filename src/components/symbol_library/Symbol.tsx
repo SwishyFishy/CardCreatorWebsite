@@ -1,8 +1,11 @@
+import './styles/symbol.css';
+
 export type SymbolData = {
     shape: "circle" | "square" | "rhombus",
     colour: string,
+    text?: string,
+    textColour?: string,
     icon?: string,
-    iconColour?: string
 }
 
 type SymbolStyle = {
@@ -28,12 +31,12 @@ export default function Symbol({symbol}: props_Symbol)
     };
 
     const iconStyle: IconStyle = {
-        color: symbol.iconColour
+        color: symbol.textColour ? symbol.textColour : "black"
     };
 
     return(
         <div className="component-symbol" style={symbolStyle}>
-            {symbol.icon ? <span style={iconStyle}>{symbol.icon}</span> : ""}
+            {<span style={iconStyle}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
         </div>
     );
 }

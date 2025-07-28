@@ -4,7 +4,7 @@ const BasicSymbols: SymbolData[] = [
     {
         shape: "circle",
         colour: "blue",
-        icon: "W"
+        text: "A"
     }
 ];
 
