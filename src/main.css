@@ -12,3 +12,8 @@
     /* Font */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+/*Universal Classes*/
+.hidden {
+    display: none;
+}
