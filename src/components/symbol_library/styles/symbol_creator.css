@@ -14,13 +14,16 @@
     margin: auto auto;
 }
 
-#component-symbolcreator div.display{
-    display: flex;
-    flex-direction: row;
+#component-symbolcreator .display{
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 20fr 80fr;
+    gap: .25em;
+    align-content: center;
 }
 
-#component-symbolcreator input#symbolcreatorsave{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+#component-symbolcreator .display #component-symbol {
+    justify-self: center;
+    transform: scale(2);
 }

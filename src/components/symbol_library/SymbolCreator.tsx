@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import CloseButton from '../common/CloseButton';
 import Symbol, {type SymbolData } from './Symbol';
+import SaveSymbolButton from './SaveSymbolButton';
 
 import './styles/symbol_creator.css';
 
@@ -30,7 +31,7 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
                     form content
                 </form>
             </div>
-            <input type="button" id="symbolcreatorsave" value="Save Symbol" onClick={() => {
+            <SaveSymbolButton Save={() => {
                 Add(newSymbol); 
                 Hide();
             }}/>
