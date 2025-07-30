@@ -2,10 +2,10 @@ import { type SymbolData } from "./Symbol"
 
 interface props_SymbolCreatorEditor {
     symbol: SymbolData,
-    Edit: Function
+    SetSymbol: Function
 }
 
-export default function SymbolCreatorEditor({symbol, Edit}: props_SymbolCreatorEditor)
+export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCreatorEditor)
 {
     return (
         <div id="component-symbolcreatoreditor">
