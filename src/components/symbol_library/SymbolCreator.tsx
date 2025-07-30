@@ -17,7 +17,7 @@ interface props_SymbolCreator {
 export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
 {
     const [newSymbol, setNewSymbol] = useState<SymbolData>({
-        colour: "white",
+        colour: "#ffffff",
         shape: "circle",
         text: "",
         textColour: "black",
