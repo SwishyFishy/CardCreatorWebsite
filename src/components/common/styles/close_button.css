@@ -2,4 +2,13 @@
     position: absolute;
     top: 0;
     right: 0;
+
+    color: var(--text);
+    background: transparent;
+
+    border: none;
+}
+
+.closebutton:hover{
+    cursor: pointer;
 }
