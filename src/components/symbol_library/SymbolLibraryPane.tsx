@@ -4,7 +4,7 @@ import { type SymbolData } from "./Symbol";
 
 import SymbolLibrary from "./SymbolLibrary";
 import SymbolCreator from "./SymbolCreator";
-import SymbolCreatorButton from "./SymbolCreatorButton";
+import SymbolCreatorButton from "./NewSymbolButton";
 
 export default function SymbolLibraryPane()
 {
