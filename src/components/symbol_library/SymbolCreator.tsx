@@ -26,7 +26,8 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
 
     return (
         <div id={show ? "component-symbolcreator": "hidden"}>
-            <PageMask>
+            <PageMask/>
+            <div className="symbolcreator">
                 <CloseButton Close={Hide}/>
                 <div className="display">
                     <Symbol symbol={newSymbol}/>
@@ -36,7 +37,7 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
                     Add(newSymbol);
                     Hide();
                 }}/>
-            </PageMask>
+            </div>
         </div>
     );
 }
