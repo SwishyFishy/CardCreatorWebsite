@@ -23,7 +23,7 @@
     align-content: center;
 }
 
-#component-symbolcreator .display #component-symbol {
+#component-symbolcreator .display #component-symbol{
     justify-self: center;
     transform: scale(2);
 }
