@@ -7,11 +7,10 @@ interface props_SymbolCreatorEditor {
 
 export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCreatorEditor)
 {
-    const thing: any = {symbol, SetSymbol};
     return (
         <div id="component-symbolcreatoreditor">
             <form>
-                <input type="color"/>
+                <input type="color" value={symbol.colour} onChange={(e) => SetSymbol({...symbol, colour: e.target.value})}/>
                 
             </form>
         </div>
