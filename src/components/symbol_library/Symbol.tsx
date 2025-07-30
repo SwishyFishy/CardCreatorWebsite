@@ -35,7 +35,7 @@ export default function Symbol({symbol}: props_Symbol)
     };
 
     return(
-        <div className="component-symbol" style={symbolStyle}>
+        <div id="component-symbol" style={symbolStyle}>
             {<span style={iconStyle}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
         </div>
     );

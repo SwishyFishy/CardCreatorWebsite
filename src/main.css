@@ -15,6 +15,6 @@
 }
 
 /*Universal Classes*/
-.hidden {
+.hidden, #hidden {
     display: none;
 }

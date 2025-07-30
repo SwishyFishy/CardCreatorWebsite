@@ -1,7 +1,7 @@
 export default function CardPane()
 {
     return(
-        <div className="component-cardpane">
+        <div id="component-cardpane">
             
         </div>
     );

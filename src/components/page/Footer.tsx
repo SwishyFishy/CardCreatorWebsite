@@ -3,7 +3,7 @@ import './styles/footer.css';
 export default function Footer()
 {
     return(
-        <div className="component-footer">
+        <div id="component-footer">
             <span>&copy; Jonah Galloway-Fenwick {new Date().getFullYear()}. All Rights Reserved.</span>
         </div>
     );

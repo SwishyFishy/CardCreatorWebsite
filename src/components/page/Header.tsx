@@ -1,7 +1,7 @@
 export default function Header()
 {
     return(
-        <div className="component-header">
+        <div id="component-header">
 
         </div>
     );

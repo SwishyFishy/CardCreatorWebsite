@@ -5,7 +5,7 @@ interface props_SymbolCreatorButton {
 export default function SymbolCreatorButton({Show}: props_SymbolCreatorButton)
 {
     return (
-        <div className="component-newsymbolbutton">
+        <div id="component-newsymbolbutton">
             <input type="button" value="+" onClick={() => Show()}/>
         </div>
     );

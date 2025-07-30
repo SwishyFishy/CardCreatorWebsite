@@ -6,7 +6,7 @@ import DesignPane from "./DesignPane";
 export default function Layout()
 {
     return(
-        <div className="component-layout">
+        <div id="component-layout">
             <Header/>
             <div>
                 <CardPane/>

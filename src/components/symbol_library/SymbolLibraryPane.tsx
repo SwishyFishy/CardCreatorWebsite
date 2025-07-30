@@ -24,7 +24,7 @@ export default function SymbolLibraryPane()
     }
 
     return (
-        <div className="component-symbollibrarypane">
+        <div id="component-symbollibrarypane">
             <SymbolLibrary symbols={symbols}/>
             <SymbolCreatorButton Show={ShowCreator}/>
             <SymbolCreator show={showCreator} Add={AddSymbol} Hide={HideCreator}/>

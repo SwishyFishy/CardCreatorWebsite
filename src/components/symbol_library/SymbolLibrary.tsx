@@ -10,7 +10,7 @@ export default function SymbolLibrary({symbols}: props_SymbolLibrary)
     const library: SymbolData[] = [...BasicSymbols, ...symbols]
 
     return (
-        <div className="component-symbollibrary">
+        <div id="component-symbollibrary">
             {library.map((symbol, index) => (
                 <Symbol symbol={symbol} key={index}/>
             ))}
