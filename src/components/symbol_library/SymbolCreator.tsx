@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
+import CloseButton from '../common/CloseButton';
 import Symbol, {type SymbolData } from './Symbol';
+
+import './styles/symbol_creator.css';
 
 interface props_SymbolCreator {
     show: boolean,
@@ -18,14 +21,14 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
 
     return (
         <div id={show ? "component-symbolcreator": "hidden"}>
-            <input type="button" id="symbolcreatorclose" value="X" onClick={() => Hide()}/>
+            <CloseButton Close={Hide}/>
             <div className="display">
                 <Symbol symbol={newSymbol}/>
                 <form className="editor">
-
+                    form content
                 </form>
             </div>
-            <input type="button" id="addnewsymbol" value="Save Symbol" onClick={() => Add(newSymbol)}/>
+            <input type="button" id="symbolcreatorsave" value="Save Symbol" onClick={() => Add(newSymbol)}/>
         </div>
     );
 }
