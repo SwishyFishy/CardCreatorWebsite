@@ -2,21 +2,10 @@ import './styles/symbol.css';
 
 export type SymbolData = {
     colour: string,
-    shape?: "circle" | "square",
+    shape: "circle" | "square",
     text?: string,
     textColour?: string,
     icon?: string,
-}
-
-type SymbolStyle = {
-    backgroundColor: string,
-    borderRadius?: string,
-    transform?: string
-}
-
-type IconStyle = {
-    color?: string,
-    transform?: string
 }
 
 interface props_Symbol {
@@ -25,18 +14,12 @@ interface props_Symbol {
 
 export default function Symbol({symbol}: props_Symbol)
 {
-    const symbolStyle: SymbolStyle = {
-        backgroundColor: symbol.colour,
-        borderRadius: symbol.shape == "circle" || symbol.shape == undefined ? "50%" : undefined
-    };
-
-    const iconStyle: IconStyle = {
-        color: symbol.textColour ? symbol.textColour : "black"
-    };
+    const symbolColour: string = symbol.colour;
+    const iconColour: string = symbol.textColour || "black";
 
     return(
-        <div id="component-symbol" style={symbolStyle}>
-            {<span style={iconStyle}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
+        <div id="component-symbol" className={`symbol-${symbol.shape}`} style={{backgroundColor: symbolColour}}>
+            {<span style={{color: iconColour}}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
         </div>
     );
 }

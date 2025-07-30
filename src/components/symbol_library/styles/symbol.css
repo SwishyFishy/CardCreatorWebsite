@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+#component-symbol.symbol-circle{
+    border-radius: 50%;
+}
+
 #component-symbol span{
     width: 100%;
     height: 100%;

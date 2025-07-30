@@ -14,6 +14,7 @@ const BasicSymbols: SymbolData[] = [
         icon: image
     },
     {
+        shape: "circle",
         colour: "yellow",
         text: "ر.ع."
     }
