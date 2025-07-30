@@ -15,7 +15,7 @@ const BasicSymbols: SymbolData[] = [
     },
     {
         colour: "yellow",
-        text: "Y"
+        text: "ر.ع."
     }
 ];
 
