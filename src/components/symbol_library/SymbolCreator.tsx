@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import CloseButton from '../common/CloseButton';
+import PageMask from '../common/PageMask';
 import Symbol, {type SymbolData } from './Symbol';
 import SymbolCreatorEditor from './SymbolCreatorEditor';
 import SaveSymbolButton from './SaveSymbolButton';
@@ -25,15 +26,17 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
 
     return (
         <div id={show ? "component-symbolcreator": "hidden"}>
-            <CloseButton Close={Hide}/>
-            <div className="display">
-                <Symbol symbol={newSymbol}/>
-                <SymbolCreatorEditor symbol={newSymbol}/>
-            </div>
-            <SaveSymbolButton Save={() => {
-                Add(newSymbol); 
-                Hide();
-            }}/>
+            <PageMask>
+                <CloseButton Close={Hide}/>
+                <div className="display">
+                    <Symbol symbol={newSymbol}/>
+                    <SymbolCreatorEditor symbol={newSymbol}/>
+                </div>
+                <SaveSymbolButton Save={() => {
+                    Add(newSymbol);
+                    Hide();
+                }}/>
+            </PageMask>
         </div>
     );
 }
