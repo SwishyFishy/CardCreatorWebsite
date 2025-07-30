@@ -16,7 +16,9 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
     const [newSymbol, setNewSymbol] = useState<SymbolData>({
         colour: "white",
         shape: "circle",
-        text: ""
+        text: "",
+        textColour: "black",
+        icon: ""
     });
 
     return (
@@ -28,7 +30,10 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
                     form content
                 </form>
             </div>
-            <input type="button" id="symbolcreatorsave" value="Save Symbol" onClick={() => Add(newSymbol)}/>
+            <input type="button" id="symbolcreatorsave" value="Save Symbol" onClick={() => {
+                Add(newSymbol); 
+                Hide();
+            }}/>
         </div>
     );
 }

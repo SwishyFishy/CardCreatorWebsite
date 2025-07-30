@@ -8,6 +8,9 @@
     width: 25vw;
     height: 25vh;
 
+    background-color: var(--background-highlight);
+    padding: .25em;
+    border: .25em solid var(--accent);
     margin: auto auto;
 }
 
