@@ -1,4 +1,4 @@
-.closebutton{
+.component-closebutton{
     position: absolute;
     top: 0;
     right: 0;
@@ -9,6 +9,6 @@
     border: none;
 }
 
-.closebutton:hover{
+.component-closebutton:hover{
     cursor: pointer;
 }

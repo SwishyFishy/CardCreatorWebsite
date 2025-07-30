@@ -7,6 +7,6 @@ interface props_CloseButton {
 export default function CloseButton({Close}: props_CloseButton)
 {
     return(
-        <input type="button" className="closebutton" value="X" onClick={() => Close()}/>
+        <input type="button" className="component-closebutton" value="X" onClick={() => Close()}/>
     );
 }
