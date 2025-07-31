@@ -1,0 +1,20 @@
+#component-symbolcreatoreditor form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#component-symbolcreatoreditor form div{
+    display: grid;
+    grid-template-columns: 20fr 80fr;
+    gap: .25em;
+    align-items: center;
+}
+
+#component-symbolcreatoreditor form div input, #component-symbolcreatoreditor form div select{
+    padding: 0em;
+    border: none;
+    margin: .25em 0em;
+
+    width: 60%;
+}

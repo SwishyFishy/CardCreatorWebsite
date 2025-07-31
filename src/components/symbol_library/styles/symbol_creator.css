@@ -25,5 +25,6 @@
 
 #component-symbolcreator .display #component-symbol{
     justify-self: center;
+    align-self: center;
     transform: scale(2);
 }
