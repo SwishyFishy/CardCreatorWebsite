@@ -2,4 +2,13 @@
     position: absolute;
     bottom: 0;
     right: 0;
+
+    border: none;
+    margin: .25em;
+    
+    background-color: var(--background-highlight);
+    color: var(--text);
+}
+#component-savesymbolbutton:hover{
+    cursor: pointer;
 }

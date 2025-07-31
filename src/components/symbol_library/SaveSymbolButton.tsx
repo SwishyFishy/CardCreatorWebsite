@@ -7,8 +7,6 @@ interface props_SaveSymbolButton {
 export default function SaveSymbolButton({Save}: props_SaveSymbolButton)
 {
     return (
-        <div id="component-savesymbolbutton">
-            <input type="button" value="Save Symbol" onClick={() => Save()}/>
-        </div>
+        <input type="button" id="component-savesymbolbutton" value="Save" onClick={() => Save()}/>
     );
 }
