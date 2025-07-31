@@ -24,8 +24,8 @@ export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCre
                     <input type="color" id="editor-colour" value={symbol.colour} onChange={(e) => SetSymbol({...symbol, colour: e.target.value})}/>
                 </div>
                 <div>
-                    <label htmlFor="editor-text">Icon:</label>
-                    <input type="text" id="editor-text" value={symbol.text} onChange={(e) => SetSymbol({...symbol, text: e.target.value})}/>
+                    <label htmlFor="editor-text">Text:</label>
+                    <input type="text" id="editor-text" value={symbol.text} onChange={(e) => {SetSymbol({...symbol, text: e.target.value.slice(-3)}); }}/>
                 </div>
                 <div>    
                     <label htmlFor="editor-text-colour">Colour:</label>
