@@ -14,6 +14,12 @@
     font-size: medium;
 }
 
+/*CSS Reset*/
+h1, h2, h3, h4, h5, h6{
+    padding: 0em;
+    margin: 0em;
+}
+
 /*Universal Classes*/
 .hidden, #hidden {
     display: none;
