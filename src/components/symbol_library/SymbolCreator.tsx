@@ -20,7 +20,7 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
         colour: "#ffffff",
         shape: "circle",
         text: "",
-        textColour: "black",
+        textColour: "#000000",
         icon: ""
     });
 
@@ -36,6 +36,13 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
                 <SaveSymbolButton Save={() => {
                     Add(newSymbol);
                     Hide();
+                    setNewSymbol({
+                        colour: "#ffffff",
+                        shape: "circle",
+                        text: "",
+                        textColour: "#000000",
+                        icon: ""
+                    })
                 }}/>
             </div>
         </div>
