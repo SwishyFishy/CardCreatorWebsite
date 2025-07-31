@@ -23,8 +23,19 @@
     align-content: center;
 }
 
+#component-symbolcreator .display .thumbnail{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#component-symbolcreator .display .thumbnail h1{
+    font-size: 1.5rem;
+    
+    margin-bottom: 1.5em;
+}
+
 #component-symbolcreator .display #component-symbol{
-    justify-self: center;
-    align-self: center;
     transform: scale(2);
 }

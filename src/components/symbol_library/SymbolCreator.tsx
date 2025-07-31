@@ -30,7 +30,10 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
             <div className="symbolcreator">
                 <CloseButton Close={Hide}/>
                 <div className="display">
-                    <Symbol symbol={newSymbol}/>
+                    <div className="thumbnail">
+                        <h1>Symbol</h1>
+                        <Symbol symbol={newSymbol}/>
+                    </div>
                     <SymbolCreatorEditor symbol={newSymbol} SetSymbol={setNewSymbol}/>
                 </div>
                 <SaveSymbolButton Save={() => {
