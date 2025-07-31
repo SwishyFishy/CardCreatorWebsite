@@ -25,7 +25,7 @@ export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCre
                 </div>
                 <div>
                     <label htmlFor="editor-text">Text:</label>
-                    <input type="text" id="editor-text" value={symbol.text} onChange={(e) => {SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()}); }}/>
+                    <input type="text" id="editor-text" value={symbol.text} onChange={(e) => {SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}}/>
                 </div>
                 <div>    
                     <label htmlFor="editor-text-colour">Colour:</label>
