@@ -12,25 +12,32 @@ export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCre
     return (
         <div id="component-symbolcreatoreditor">
             <form>
-                <div>
+                <div className="control">
                     <label htmlFor="editor-shape">Shape:</label>
                     <select id="editor-shape" value={symbol.shape} onChange={(e) => SetSymbol({...symbol, shape: e.target.value})}>
                         <option value="circle">Circle</option>
                         <option value="square">Square</option>
                     </select>
                 </div>
-                <div>
+                <div className="control">
                     <label htmlFor="editor-colour">Colour:</label>
                     <input type="color" id="editor-colour" value={symbol.colour} onChange={(e) => SetSymbol({...symbol, colour: e.target.value})}/>
                 </div>
-                <div>
+                <div className="control">
                     <label htmlFor="editor-text">Text:</label>
                     <input type="text" id="editor-text" value={symbol.text} onChange={(e) => {SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}}/>
                 </div>
-                <div>    
+                <div className="control">    
                     <label htmlFor="editor-text-colour">Colour:</label>
                     <input type="color" id="editor-text-colour" value={symbol.textColour} onChange={(e) => SetSymbol({...symbol, textColour: e.target.value})}/>
-                </div>       
+                </div>  
+                <div className="control">
+                    <label htmlFor="editor-icon">Icon:</label>
+                    <div className="multiinput">
+                        <input type="file" id="editor-icon" accept=".png" onChange={(e) => SetSymbol({...symbol, icon: URL.createObjectURL(e.target.files![0])})}/>
+                        <input type="button" id="editor-icon-reset" value="Remove" onClick={() => SetSymbol({...symbol, icon: ""})}/>
+                    </div>
+                </div>     
             </form>
         </div>
     )

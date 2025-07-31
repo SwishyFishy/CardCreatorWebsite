@@ -4,17 +4,26 @@
     flex-wrap: wrap;
 }
 
-#component-symbolcreatoreditor form div{
+#component-symbolcreatoreditor form .control{
     display: grid;
     grid-template-columns: 20fr 80fr;
     gap: .25em;
     align-items: center;
 }
 
-#component-symbolcreatoreditor form div input, #component-symbolcreatoreditor form div select{
+#component-symbolcreatoreditor form .control input, #component-symbolcreatoreditor form .control select{
     padding: 0em;
     border: none;
     margin: .25em 0em;
 
     width: 85%;
+}
+
+#component-symbolcreatoreditor form .control .multiinput{
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+}
+
+#component-symbolcreatoreditor form .control .multiinput input[type="button"]{
+    width: 70%;
 }
