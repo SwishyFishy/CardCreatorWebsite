@@ -33,7 +33,7 @@ export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCre
                 </div>  
                 <div className="control">
                     <label htmlFor="editor-icon">Icon:</label>
-                    <div className="multiinput">
+                    <div className="resettableinput">
                         <input type="file" id="editor-icon" accept=".png" onChange={(e) => SetSymbol({...symbol, icon: URL.createObjectURL(e.target.files![0])})}/>
                         <input type="button" id="editor-icon-reset" value="Remove" onClick={() => SetSymbol({...symbol, icon: ""})}/>
                     </div>

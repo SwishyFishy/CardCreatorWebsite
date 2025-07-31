@@ -19,11 +19,11 @@
     width: 85%;
 }
 
-#component-symbolcreatoreditor form .control .multiinput{
+#component-symbolcreatoreditor form .control .resettableinput{
     display: grid;
     grid-template-columns: 50fr 50fr;
 }
 
-#component-symbolcreatoreditor form .control .multiinput input[type="button"]{
+#component-symbolcreatoreditor form .control .resettableinput input[type="button"]{
     width: 70%;
 }
