@@ -5,11 +5,11 @@
     align-items: center;
 }
 
-#component-symboleditoricon form .control .resettableinput{
+#component-symboleditoricon form .control{
     display: grid;
     grid-template-columns: 50fr 50fr;
 }
 
-#component-symboleditoricon form .control .resettableinput input[type="button"]{
+#component-symboleditoricon form .control input[type="button"]{
     width: 70%;
 }
