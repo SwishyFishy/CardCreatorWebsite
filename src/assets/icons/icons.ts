@@ -7,5 +7,6 @@ import icon_nut from './icon_nut.png';
 import icon_sun from './icon_sun.png';
 import icon_tree from './icon_tree.png';
 
-export const images = {icon_up, icon_down, icon_left, icon_right, icon_badge, icon_nut, icon_sun, icon_tree}
-export const imageArray = [icon_up, icon_down, icon_left, icon_right, icon_badge, icon_nut, icon_sun, icon_tree];
+const symbols = {icon_up, icon_down, icon_left, icon_right, icon_badge, icon_nut, icon_sun, icon_tree}
+
+export default symbols;
