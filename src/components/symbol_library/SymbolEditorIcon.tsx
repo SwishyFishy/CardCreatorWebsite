@@ -1,7 +1,9 @@
 import { useState } from "react";
 
-import symbols from "../../assets/icons/icons.ts";
+import Control from "../common/Control.tsx";
 import { type SymbolData } from "./Symbol";
+
+import symbols from "../../assets/icons/icons.ts";
 
 import './styles/symbol_editor_icon.css';
 
@@ -24,10 +26,10 @@ export default function SymbolEditorIcon({symbol, SetSymbol}: props_SymbolEditor
                     ))}
                 </div>
 
-                <div className="control">
+                <Control>
                     <label htmlFor="editor-icon">Import:</label>
                     <input type="file" id="editor-icon" accept=".png" onChange={(e) => setSymbolLibrary([...symbolLibrary, URL.createObjectURL(e.target.files![0])])}/>
-                </div>
+                </Control>
                 
                 <input type="button" id="editor-icon-reset" value="Remove Icon" onClick={() => SetSymbol({...symbol, icon: ""})}/>
             </form>

@@ -1,0 +1,14 @@
+.control{
+    display: grid;
+    grid-template-columns: 20fr 80fr;
+    gap: .25em;
+    align-items: center;
+}
+
+.control input, .control select{
+    padding: 0em;
+    border: none;
+    margin: .25em 0em;
+
+    width: 100%;
+}
