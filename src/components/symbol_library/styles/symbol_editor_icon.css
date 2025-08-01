@@ -1,0 +1,23 @@
+#component-symboleditoricon form{
+    display: flex;
+    flex-direction: column;
+}
+
+#component-symboleditoricon form h1{
+    font-size: medium;
+    font-weight: normal;
+}
+
+#component-symboleditoricon form .collection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    max-height: 6em;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#component-symboleditoricon form .collection:hover{
+    scrollbar-width: initial;
+}
