@@ -6,7 +6,7 @@
     right: 0;
 
     width: 30em;
-    height: 10em;
+    height: 20em;
     
     background-color: var(--background-highlight);
     padding: .25em;
@@ -19,6 +19,7 @@
 
     display: grid;
     grid-template-columns: 25fr 75fr;
+    grid-template-rows: 9em 9em;
     gap: .25em;
     align-content: center;
 }
