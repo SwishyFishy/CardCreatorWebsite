@@ -1,0 +1,15 @@
+#component-symboleditoricon form .control{
+    display: grid;
+    grid-template-columns: 20fr 80fr;
+    gap: .25em;
+    align-items: center;
+}
+
+#component-symboleditoricon form .control .resettableinput{
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+}
+
+#component-symboleditoricon form .control .resettableinput input[type="button"]{
+    width: 70%;
+}

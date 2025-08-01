@@ -5,8 +5,8 @@
     left: 0;
     right: 0;
 
-    width: 30em;
-    height: 20em;
+    width: 60em;
+    height: 10em;
     
     background-color: var(--background-highlight);
     padding: .25em;
@@ -18,10 +18,11 @@
     height: 100%;
 
     display: grid;
-    grid-template-columns: 25fr 75fr;
-    grid-template-rows: 9em 9em;
-    gap: .25em;
+    grid-template-columns: 12fr 44fr 44fr;
+    gap: 1em;
     align-content: center;
+
+    padding: 0em 1em;
 }
 
 #component-symbolcreator .display .thumbnail{

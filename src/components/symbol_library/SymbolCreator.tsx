@@ -3,7 +3,8 @@ import { useState } from 'react';
 import CloseButton from '../common/CloseButton';
 import PageMask from '../common/PageMask';
 import Symbol, {type SymbolData } from './Symbol';
-import SymbolCreatorEditor from './SymbolCreatorEditor';
+import SymbolEditorBase from './SymbolEditorBase';
+import SymbolEditorIcon from "./SymbolEditorIcon"
 import SaveSymbolButton from './SaveSymbolButton';
 
 import './styles/symbol_creator.css';
@@ -34,7 +35,8 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
                         <h1>Symbol</h1>
                         <Symbol symbol={newSymbol}/>
                     </div>
-                    <SymbolCreatorEditor symbol={newSymbol} SetSymbol={setNewSymbol}/>
+                    <SymbolEditorBase symbol={newSymbol} SetSymbol={setNewSymbol}/>
+                    <SymbolEditorIcon symbol={newSymbol} SetSymbol={setNewSymbol}/>
                 </div>
                 <SaveSymbolButton Save={() => {
                     Add(newSymbol);

@@ -1,16 +1,16 @@
 import { type SymbolData } from "./Symbol"
 
-import './styles/symbol_creator_editor.css'
+import './styles/symbol_editor_base.css'
 
-interface props_SymbolCreatorEditor {
+interface props_SymbolEditorBase {
     symbol: SymbolData,
     SetSymbol: Function
 }
 
-export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCreatorEditor)
+export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditorBase)
 {
     return (
-        <div id="component-symbolcreatoreditor">
+        <div id="component-symboleditorbase">
             <form>
                 <div className="control">
                     <label htmlFor="editor-shape">Shape:</label>
@@ -30,14 +30,7 @@ export default function SymbolCreatorEditor({symbol, SetSymbol}: props_SymbolCre
                 <div className="control">    
                     <label htmlFor="editor-text-colour">Colour:</label>
                     <input type="color" id="editor-text-colour" value={symbol.textColour} onChange={(e) => SetSymbol({...symbol, textColour: e.target.value})}/>
-                </div>  
-                <div className="control">
-                    <label htmlFor="editor-icon">Icon:</label>
-                    <div className="resettableinput">
-                        <input type="file" id="editor-icon" accept=".png" onChange={(e) => SetSymbol({...symbol, icon: URL.createObjectURL(e.target.files![0])})}/>
-                        <input type="button" id="editor-icon-reset" value="Remove" onClick={() => SetSymbol({...symbol, icon: ""})}/>
-                    </div>
-                </div>     
+                </div>    
             </form>
         </div>
     )
