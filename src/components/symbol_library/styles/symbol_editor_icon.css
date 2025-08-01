@@ -21,3 +21,7 @@
 #component-symboleditoricon form .collection:hover{
     scrollbar-width: initial;
 }
+
+#component-symboleditoricon form input[type="file"]{
+    max-width: fit-content;
+}
