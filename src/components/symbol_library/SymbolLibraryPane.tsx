@@ -6,6 +6,8 @@ import SymbolLibrary from "./SymbolLibrary";
 import SymbolCreator from "./SymbolCreator";
 import SymbolCreatorButton from "./NewSymbolButton";
 
+import './styles/symbol_library_pane.css';
+
 export default function SymbolLibraryPane()
 {
     const [symbols, setSymbols] = useState<SymbolData[]>([]);
@@ -25,8 +27,10 @@ export default function SymbolLibraryPane()
 
     return (
         <div id="component-symbollibrarypane">
-            <SymbolLibrary symbols={symbols}/>
-            <SymbolCreatorButton Show={ShowCreator}/>
+            <div className="visible">
+                <SymbolLibrary symbols={symbols}/>
+                <SymbolCreatorButton Show={ShowCreator}/>
+            </div>
             <SymbolCreator show={showCreator} Add={AddSymbol} Hide={HideCreator}/>
         </div>
     );

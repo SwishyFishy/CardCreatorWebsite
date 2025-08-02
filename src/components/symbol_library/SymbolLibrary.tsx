@@ -1,6 +1,8 @@
 import Symbol, { type SymbolData } from "./Symbol";
 import BasicSymbols from "./BasicSymbols";
 
+import './styles/symbol_library.css';
+
 interface props_SymbolLibrary {
     symbols: SymbolData[]
 }
