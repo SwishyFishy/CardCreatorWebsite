@@ -1,0 +1,12 @@
+#component-symbollibrarypane .visible{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#component-symbollibrarypane #component-symbol{
+    font-size: 1.5rem;
+    width: 1.5em;
+    height: 1.5em;
+}
