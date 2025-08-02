@@ -19,11 +19,13 @@ export default function SymbolEditorIcon({symbol, SetSymbol}: props_SymbolEditor
     return (
         <div id="component-symboleditoricon">
             <form>
-                <h1>Icons:</h1>
-                <div className="collection">
-                    {symbolLibrary.map((image, index) => (
-                        <input type="image" key={index} src={image} onClick={(e) => { e.preventDefault(); SetSymbol({...symbol, icon: symbol.icon == image ? "" : image}); }}/>
-                    ))}
+                <div>
+                    <h1>Icons:</h1>
+                    <div className="collection">
+                        {symbolLibrary.map((image, index) => (
+                            <input type="image" key={index} src={image} onClick={(e) => { e.preventDefault(); SetSymbol({...symbol, icon: symbol.icon == image ? "" : image}); }}/>
+                        ))}
+                    </div>
                 </div>
                 <Control>
                     <label htmlFor="editor-icon">Import Icons:</label>

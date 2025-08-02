@@ -1,14 +1,17 @@
 #component-symboleditoricon form{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
 }
 
-#component-symboleditoricon form h1{
+#component-symboleditoricon form div h1{
     font-size: medium;
     font-weight: normal;
 }
 
-#component-symboleditoricon form .collection{
+#component-symboleditoricon form div .collection{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -18,7 +21,7 @@
     scrollbar-width: none;
 }
 
-#component-symboleditoricon form .collection:hover{
+#component-symboleditoricon form div .collection:hover{
     scrollbar-width: initial;
 }
 
