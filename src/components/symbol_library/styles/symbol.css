@@ -1,13 +1,14 @@
 #component-symbol{
-    width: 1.5em;
-    height: 1.5em;
-    font-size: 1.5rem;
+    width: 1em;
+    height: 1em;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     font-weight: bold;
+
+    margin: .2em;
 }
 
 #component-symbol.symbol-circle{
