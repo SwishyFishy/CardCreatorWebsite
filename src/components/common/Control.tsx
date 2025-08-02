@@ -5,7 +5,7 @@ import './styles/control.css';
 export default function Control({children}: PropsWithChildren)
 {
     return (
-        <div className="control">
+        <div className="component-control">
             {children}
         </div>
     );

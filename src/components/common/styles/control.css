@@ -1,17 +1,17 @@
-.control{
+.component-control{
     display: grid;
     grid-template-columns: 20fr 80fr;
     gap: .25em;
     align-items: center;
 }
 
-.control input, .control select{
+.component-control input, .component-control select{
     border: none;
     margin: .25em 0em;
 
     width: 100%;
 }
 
-.control input[type="text"]{
+.component-control input[type="text"]{
     padding: 0em;
 }
