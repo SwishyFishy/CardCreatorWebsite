@@ -1,0 +1,33 @@
+#component-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+
+    padding: .5em;
+    border-bottom: .5em solid var(--background-highlight);
+}
+
+#component-header .nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-top: .5em;
+}
+
+#component-header .nav a{
+    color: var(--accent);
+    text-decoration: none;
+
+    margin-right: 1em;
+
+    &:visited{
+        color: var(--accent);
+    }
+    
+    &:hover{
+        color: var(--text);
+    }
+}  
