@@ -1,3 +1,7 @@
+body{
+    margin: 0em;
+}
+
 :root{
     /* Colour Definitions */
     --text: #f1ede3;
@@ -12,6 +16,9 @@
     /* Font */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: medium;
+
+    /* Page */
+    border-left: .5em solid var(--background-highlight);
 }
 
 /*CSS Reset*/
