@@ -10,7 +10,7 @@ import CardStats from "./CardStats";
 import CardFooter from "./CardFooter";
 
 import { CONTEXT_cardData } from "../page/Layout";
-import { type CardData } from "../page/Layout";
+import { type CardData } from "./card_types";
 
 export default function Card()
 {
