@@ -1,5 +1,6 @@
 import { createContext, useState, useMemo } from "react";
 
+import BasicSymbols from "../symbol_library/BasicSymbols";
 import { type SymbolData } from "../symbol_library/Symbol";
 
 import Header from "./Header";
@@ -9,12 +10,24 @@ import DesignPane from "./DesignPane";
 
 import './styles/layout.css';
 
-type CardData = {
-    cost: SymbolData[]
+export type CardData = {
+    title: string,
+    cost?: SymbolData[],
+    art?: string,
+    typeline?: string,
+    body?: string,
+    statsline?: string[],
+    set?: SymbolData,
+    footer?: string[]
 }
 
 const init: CardData = {
-    cost: []
+    title: "My Card",
+    cost: [BasicSymbols[4]],
+    body: "Rules text",
+    typeline: "Card Type",
+    statsline: ["100", "200"],
+    footer: ["Designed with CardCreator"]
 };
 
 export const CONTEXT_cardData: React.Context<{cardData: CardData, setCardData: any}> = createContext({cardData: init, setCardData: undefined});
