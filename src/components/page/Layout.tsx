@@ -7,6 +7,8 @@ import Footer from "./Footer";
 import CardPane from "./CardPane";
 import DesignPane from "./DesignPane";
 
+import './styles/layout.css';
+
 type CardData = {
     cost: SymbolData[]
 }
@@ -24,7 +26,7 @@ export default function Layout()
     return(
         <div id="component-layout">
             <Header/>
-            <div>
+            <div className="main">
                 <CONTEXT_cardData.Provider value={useMemo(() => ({cardData, setCardData}), [cardData])}>
                     <CardPane/>
                     <DesignPane/>
