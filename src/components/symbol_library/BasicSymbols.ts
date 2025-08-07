@@ -25,6 +25,61 @@ const BasicSymbols: SymbolData[] = [
     },
     {
         shape: "circle",
+        colour: "grey",
+        text: "0"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "1"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "2"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "3"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "4"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "5"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "6"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "7"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "8"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "9"
+    },
+    {
+        shape: "circle",
+        colour: "grey",
+        text: "10"
+    },
+    {
+        shape: "circle",
         colour: "beige",
         icon: symbols.icon_badge
     },
