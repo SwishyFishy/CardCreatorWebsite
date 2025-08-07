@@ -11,6 +11,9 @@ import DesignPane from "./DesignPane";
 import './styles/layout.css';
 
 const init: CardData = {
+    border: {
+        colour: "black"
+    },
     title: "My Card",
     cost: [BasicSymbols[4]],
     body: ["Rules text"],
