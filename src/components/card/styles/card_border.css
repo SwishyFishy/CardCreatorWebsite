@@ -1,0 +1,11 @@
+#component-cardborder{
+    background-image: url("../../../assets/backdrop.png");
+    background-size: cover;
+
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+
+    border-width: 1em;
+    border-style: solid;
+    border-radius: 1em;
+}

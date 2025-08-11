@@ -12,6 +12,8 @@ import CardFooter from "./CardFooter";
 import { CONTEXT_cardData } from "../page/Layout";
 import type { CardData } from "./card_types";
 
+import './styles/card.css';
+
 export default function Card()
 {
     const cardData: CardData = useContext(CONTEXT_cardData).cardData;
