@@ -11,10 +11,10 @@ export type BorderData = {
 
 export default function CardBorder({children}: PropsWithChildren)
 {
-    const cardData = useContext(CONTEXT_cardData).cardData;
+    const borderData = useContext(CONTEXT_cardData).cardData.border;
 
     return(
-        <div id="component-cardborder" style={{borderColor: cardData.border.colour}}>
+        <div id="component-cardborder" style={{borderColor: borderData.colour}}>
             {children}
         </div>
     );
