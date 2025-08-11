@@ -20,5 +20,5 @@ export type CardData = {
     body?: CardBody,
     statsline?: CardStats,
     set?: CardSymbol,
-    footer?: CardFooter;
+    footer: CardFooter;
 }
