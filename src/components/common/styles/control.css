@@ -1,6 +1,6 @@
 .component-control{
     display: grid;
-    grid-template-columns: 20fr 80fr;
+    grid-template-columns: 25fr 75fr;
     gap: .25em;
     align-items: center;
 }

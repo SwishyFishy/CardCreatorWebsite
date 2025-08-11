@@ -25,6 +25,10 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                     <input type="color" id="editor-colour" value={symbol.colour} onChange={(e) => SetSymbol({...symbol, colour: e.target.value})}/>
                 </Control>
                 <Control>
+                    <label htmlFor="editor-gradient">Gradient:</label>
+                    <input type="color" id="editor-gradient" value={symbol.gradient} onChange={(e) => SetSymbol({...symbol, gradient: e.target.value})}/>
+                </Control>
+                <Control>
                     <label htmlFor="editor-text">Text:</label>
                     <input type="text" id="editor-text" value={symbol.text} onChange={(e) => {SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}}/>
                 </Control>
