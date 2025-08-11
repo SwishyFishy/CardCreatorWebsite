@@ -23,7 +23,7 @@ export default function Card()
         <div id="component-card">
             <CardBorder>
                 <div id="card">
-
+                    <CardFooter/>
                 </div>
             </CardBorder>
         </div>

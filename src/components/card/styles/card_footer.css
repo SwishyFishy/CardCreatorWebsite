@@ -1,0 +1,14 @@
+#component-cardfooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    text-align: center;
+
+    background-color: black;
+}
+
+#component-cardfooter span{
+    padding: 0em .25em;
+}
