@@ -19,7 +19,7 @@ export default function Symbol({symbol}: props_Symbol)
     const iconColour: string = symbol.textColour || "black";
 
     return(
-        <div id="component-symbol" className={`symbol-${symbol.shape}`} style={{backgroundImage: symbolColour}}>
+        <div id="component-symbol" className={`symbol-${symbol.shape}`} style={{backgroundImage: symbolColour, backgroundColor: symbol.colour}}>
             {<span style={{color: iconColour}}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
         </div>
     );
