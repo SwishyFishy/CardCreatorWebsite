@@ -2,8 +2,9 @@ import './styles/symbol.css';
 
 export type SymbolData = {
     colour: string,
+    gradient: string,
+    useGradient: boolean
     shape: "circle" | "square",
-    gradient?: string,
     text?: string,
     textColour?: string,
     icon?: string,
@@ -19,7 +20,7 @@ export default function Symbol({symbol}: props_Symbol)
     const iconColour: string = symbol.textColour || "black";
 
     return(
-        <div id="component-symbol" className={`symbol-${symbol.shape}`} style={{backgroundImage: symbolColour, backgroundColor: symbol.colour}}>
+        <div id="component-symbol" className={`symbol-${symbol.shape}`} style={symbol.useGradient ? {backgroundImage: symbolColour} : {backgroundColor: symbol.colour}}>
             {<span style={{color: iconColour}}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
         </div>
     );

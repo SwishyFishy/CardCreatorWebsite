@@ -19,8 +19,9 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
 {
     const [newSymbol, setNewSymbol] = useState<SymbolData>({
         colour: "#ffffff",
-        shape: "circle",
         gradient: "#ffffff",
+        useGradient: false,
+        shape: "circle",
         text: "",
         textColour: "#000000",
         icon: ""
@@ -44,6 +45,8 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
                     Hide();
                     setNewSymbol({
                         colour: "#ffffff",
+                        gradient: "#ffffff",
+                        useGradient: false,
                         shape: "circle",
                         text: "",
                         textColour: "#000000",
