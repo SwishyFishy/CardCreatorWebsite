@@ -8,6 +8,8 @@ import Footer from "./Footer";
 import CardPane from "./CardPane";
 import DesignPane from "./DesignPane";
 
+import testArt from '../../assets/test/Necrolemur.jpg';
+
 import './styles/layout.css';
 
 const init: CardData = {
@@ -16,6 +18,13 @@ const init: CardData = {
     },
     title: "My Card",
     cost: [BasicSymbols[4]],
+    art: {                          /*Remove from default in final product*/
+        src: testArt,
+        dominance: 50,
+        vShift: 0,
+        hShift: 0,
+        zoom: 100
+    },
     body: ["Rules text"],
     typeline: ["Card Type"],
     statsline: ["abc", "123"],

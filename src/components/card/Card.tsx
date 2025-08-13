@@ -23,6 +23,16 @@ export default function Card()
         <div id="component-card">
             <CardBorder>
                 <div id="card">
+                    <div id="card-main">
+                        <CardArt/>
+                        <CardBody/>
+                    </div>
+                    <div id="card-details">
+                        <CardTitle/>
+                        <CardCost/>
+                        <CardType/>
+                        <CardStats/>
+                    </div>
                     <CardFooter/>
                 </div>
             </CardBorder>

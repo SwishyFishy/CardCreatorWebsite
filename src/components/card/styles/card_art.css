@@ -1,0 +1,10 @@
+#component-cardart{
+    width: 100%;
+}
+
+#component-cardart img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
