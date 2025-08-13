@@ -1,8 +1,6 @@
 import { useContext } from 'react';
 import { CONTEXT_cardData } from '../page/Layout';
 
-import type { CardData } from './card_types';
-
 import './styles/card-body.css';
 
 export type BodyData = {
@@ -13,11 +11,10 @@ export type BodyData = {
 
 export default function CardBody()
 {
-    const cardData: CardData = useContext(CONTEXT_cardData).cardData;
-    const bodyData: BodyData = cardData.body;
+    const bodyData: BodyData = useContext(CONTEXT_cardData).cardData.body;
 
     return(
-        <div id="component-cardbody" style={{backgroundColor: bodyData.colour, opacity: bodyData.opacity, borderTop: cardData.art.dominance == "full" ? "none" : `1em solid ${cardData.border.colour}`}}>
+        <div id="component-cardbody" style={{backgroundColor: bodyData.colour, opacity: bodyData.opacity}}>
             {bodyData.content.map((ability, index) => (
                 <p key={`body${Object.keys(bodyData.content)[index]}`} className="ability-text">{ability}</p>
             ))}

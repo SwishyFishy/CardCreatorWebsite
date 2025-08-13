@@ -15,7 +15,6 @@ import './styles/card_footer.css';
 export default function CardFooter()
 {
     const footerData = useContext(CONTEXT_cardData).cardData.footer;
-    console.log(Object.entries(footerData));
 
     return(
         <div id="component-cardfooter">

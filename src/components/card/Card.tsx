@@ -17,14 +17,13 @@ import './styles/card.css';
 export default function Card()
 {
     const cardData: CardData = useContext(CONTEXT_cardData).cardData;
-    console.log(cardData);
 
     return(
         <div id="component-card">
             <CardBorder>
                 <div id="card">
-                    <div id="card-main" style={cardData.art.dominance == "full" ? {backgroundImage: `url(${cardData.art.src})`} : {gridTemplateRows: `${cardData.art.dominance - 2}fr ${98 - cardData.art.dominance}fr 4fr`}}>
-                        {typeof cardData.art.dominance == "number" ? <CardArt/> : ""}
+                    <div id="card-main" style={{backgroundImage: cardData.art.fullart ? `url(${cardData.art.src})` : 'none', gridTemplateRows: `${cardData.art.dominance - 2}fr ${98 - cardData.art.dominance}fr 4fr`}}>
+                        {!cardData.art.fullart ? <CardArt/> : <div></div>}
                         <CardBody/>
                         <CardFooter/>
                     </div>
