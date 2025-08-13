@@ -20,12 +20,16 @@ const init: CardData = {
     cost: [BasicSymbols[4]],
     art: {                          /*Remove from default in final product*/
         src: testArt,
-        dominance: 60,
+        dominance: "full",
         vShift: 0,
         hShift: 0,
         zoom: 100
     },
-    body: ["Rules text"],
+    body: {
+        content: ["Rules", "text"],
+        colour: "grey",
+        opacity: .25
+    },
     typeline: ["Card Type"],
     statsline: ["abc", "123"],
     footer: {
