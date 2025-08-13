@@ -6,8 +6,8 @@ import './styles/card_art.css';
 export type ArtData = {
     src: string,
     dominance: number | "full",
-    hShift: number,
     vShift: number,
+    hShift: number,
     zoom: number
 }
 
@@ -17,7 +17,7 @@ export default function CardArt()
 
     return(
         <div id="component-cardart">
-            <img src={artData.src}/>
+            <img src={artData.src} style={{transform: `translate(${artData.hShift}px, ${-artData.vShift}px) scale(${artData.zoom / 100})`}}/>
         </div>
     );
 }
