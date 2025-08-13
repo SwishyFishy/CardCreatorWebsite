@@ -13,18 +13,11 @@ export type ArtData = {
 
 export default function CardArt()
 {
-    const artData: ArtData | undefined = useContext(CONTEXT_cardData).cardData.art;
-    
-    if (typeof artData?.dominance == "number")
-    {
-        return(
-            <div id="component-cardart" style={{height: `${artData.dominance}%`}}>
-                <img src={artData?.src}/>
-            </div>
-        );
-    }
-    else
-    {
-        return(<></>);
-    }
+    const artData: ArtData = useContext(CONTEXT_cardData).cardData.art;
+
+    return(
+        <div id="component-cardart">
+            <img src={artData.src}/>
+        </div>
+    );
 }

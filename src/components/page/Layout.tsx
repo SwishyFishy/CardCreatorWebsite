@@ -20,7 +20,7 @@ const init: CardData = {
     cost: [BasicSymbols[4]],
     art: {                          /*Remove from default in final product*/
         src: testArt,
-        dominance: 50,
+        dominance: 60,
         vShift: 0,
         hShift: 0,
         zoom: 100

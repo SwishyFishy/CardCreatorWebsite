@@ -16,7 +16,7 @@ export type CardData = {
     border: CardBorder,
     title: CardTitle,
     cost?: CardSymbol[],
-    art?: CardArt,
+    art: CardArt,
     typeline?: CardType,
     body?: CardBody,
     statsline?: CardStats,

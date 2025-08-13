@@ -12,4 +12,9 @@
 
 #component-card #card #card-main{
     height: 100%;
+
+    display: grid;
+    grid-template-rows: 96fr 4fr;
+
+    background-size: cover;
 }

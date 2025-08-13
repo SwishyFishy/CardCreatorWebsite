@@ -23,9 +23,10 @@ export default function Card()
         <div id="component-card">
             <CardBorder>
                 <div id="card">
-                    <div id="card-main">
-                        <CardArt/>
+                    <div id="card-main" style={cardData.art.dominance == "full" ? {backgroundImage: `url(${cardData.art.src})`} : {gridTemplateRows: `${cardData.art.dominance - 2}fr ${98 - cardData.art.dominance}fr 4fr`}}>
+                        {typeof cardData.art.dominance == "number" ? <CardArt/> : ""}
                         <CardBody/>
+                        <CardFooter/>
                     </div>
                     <div id="card-details">
                         <CardTitle/>
@@ -33,7 +34,6 @@ export default function Card()
                         <CardType/>
                         <CardStats/>
                     </div>
-                    <CardFooter/>
                 </div>
             </CardBorder>
         </div>
