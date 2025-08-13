@@ -19,7 +19,7 @@ export default function CardBody()
     return(
         <div id="component-cardbody" style={{backgroundColor: bodyData.colour, opacity: bodyData.opacity, borderTop: cardData.art.dominance == "full" ? "none" : `1em solid ${cardData.border.colour}`}}>
             {bodyData.content.map((ability, index) => (
-                <p key={`body${Object.keys(bodyData.content)[index]}`} className="rules-text">{ability}</p>
+                <p key={`body${Object.keys(bodyData.content)[index]}`} className="ability-text">{ability}</p>
             ))}
         </div>
     );
