@@ -6,8 +6,9 @@ body{
     --accent: #00A6A6;
 
     /*Card Variables*/
-    --card-width: 126mm;
-    --card-height: 176mm;
+    --card-width: 63mm;
+    --card-height: 88mm;
+    --card-view-scale: 2;
 
     --card-art-dominance: 50%;
     --card-art-fullart: none;

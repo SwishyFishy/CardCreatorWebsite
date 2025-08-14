@@ -2,7 +2,12 @@
     width: var(--card-width);
     height: var(--card-height);
 
-    margin: .25em;
+    font-size: x-small;
+
+    margin: .25rem;
+    
+    transform-origin: top;
+    transform: scale(var(--card-view-scale));
 }
 
 #component-card #card{

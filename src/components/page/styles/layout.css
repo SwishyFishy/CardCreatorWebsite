@@ -1,4 +1,4 @@
 #component-layout .main{
     display: grid;
-    grid-template-columns: 25fr 75fr;
+    grid-template-columns: 26fr 74fr;
 }
