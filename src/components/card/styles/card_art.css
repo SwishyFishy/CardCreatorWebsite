@@ -1,8 +1,11 @@
 #component-cardart{
     width: 100%;
-    height: calc(100% - 1em);
+    height: calc(100% - var(--card-border-thickness));
 
     overflow: hidden;
+
+    border-width: 0em 0em var(--card-border-thickness) 0em;
+    border-style: solid;
 }
 
 #component-cardart img{

@@ -19,6 +19,11 @@ body{
 
     /* Page */
     border-left: .5em solid var(--background-highlight);
+
+    /*Card Variables*/
+    --card-width: 126mm;
+    --card-height: 176mm;
+    --card-border-thickness: 1em;
 }
 
 /*CSS Reset*/

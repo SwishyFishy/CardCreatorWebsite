@@ -1,11 +1,13 @@
 #component-card{
-    width: 126mm;
-    height: 176mm;
+    width: var(--card-width);
+    height: var(--card-height);
 
     margin: .25em;
 }
 
 #component-card #card{
+    position: relative;
+
     width: 100%;
     height: 100%;
 }
@@ -14,7 +16,16 @@
     height: 100%;
 
     display: grid;
-    grid-template-rows: 96fr 4fr;
 
     background-size: cover;
+}
+
+#component-card #card #card-details{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /*background-color: pink;*/
+    width: calc(var(--card-width) - 2 * var(--card-border-thickness));
+    height: calc(var(--card-height) - 2 * var(--card-border-thickness));
 }

@@ -20,7 +20,7 @@ export default function CardArt()
     const artData: ArtData = cardData.art;
 
     return(
-        <div id="component-cardart" style={{borderBottom: `1em solid ${cardData.border.colour}`}}>
+        <div id="component-cardart" style={{borderColor: cardData.border.colour}}>
             <img src={artData.src} style={{transform: `translate(${artData.hShift}px, ${-artData.vShift}px) scale(${artData.zoom / 100})`}}/>
         </div>
     );

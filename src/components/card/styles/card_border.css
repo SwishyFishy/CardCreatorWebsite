@@ -2,10 +2,10 @@
     background-image: url("../../../assets/backdrop.png");
     background-size: cover;
 
-    width: calc(100% - 2em);
-    height: calc(100% - 2em);
+    width: calc(100% - 2 * var(--card-border-thickness));
+    height: calc(100% - 2 * var(--card-border-thickness));
 
-    border-width: 1em;
+    border-width: var(--card-border-thickness);
     border-style: solid;
     border-radius: 1em;
 }

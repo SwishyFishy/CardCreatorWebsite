@@ -21,7 +21,7 @@ const init: CardData = {
     art: {                          /*Remove from default in final product*/
         src: testArt,
         dominance: 50,
-        fullart: true,
+        fullart: false,
         vShift: 0,
         hShift: 0,
         zoom: 100
