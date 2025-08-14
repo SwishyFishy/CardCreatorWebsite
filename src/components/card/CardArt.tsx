@@ -19,9 +19,14 @@ export default function CardArt()
     const cardData: CardData = useContext(CONTEXT_cardData).cardData;
     const artData: ArtData = cardData.art;
 
+    // Set CSS variables from card data
+    document.body.style.setProperty("--card-art-horizontal-shift", `${artData.hShift}px`);
+    document.body.style.setProperty("--card-art-vertical-shift", `${-artData.vShift}px`);
+    document.body.style.setProperty("--card-art-zoom", `${artData.zoom / 100}`);
+
     return(
-        <div id="component-cardart" style={{borderColor: cardData.border.colour}}>
-            <img src={artData.src} style={{transform: `translate(${artData.hShift}px, ${-artData.vShift}px) scale(${artData.zoom / 100})`}}/>
+        <div id="component-cardart">
+            <img src={artData.src}/>
         </div>
     );
 }

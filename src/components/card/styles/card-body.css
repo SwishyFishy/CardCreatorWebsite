@@ -1,4 +1,7 @@
 #component-cardbody{
+    background-color: var(--card-body-colour);
+    opacity: var(--card-body-opacity);
+
     padding: 0em .5em;
 }
 

@@ -5,7 +5,6 @@
     width: calc(100% - 2 * var(--card-border-thickness));
     height: calc(100% - 2 * var(--card-border-thickness));
 
-    border-width: var(--card-border-thickness);
-    border-style: solid;
+    border: var(--card-border-thickness) solid var(--card-border-colour);
     border-radius: 1em;
 }
