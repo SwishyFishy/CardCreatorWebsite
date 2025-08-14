@@ -17,6 +17,7 @@ body{
     --card-art-zoom: 1;
 
     --card-body-colour: #666666;
+    --card-body-gradient: #666666;
     --card-body-dominance: calc(100% - (var(--card-art-dominance) + var(--card-footer-dominance)));
     --card-body-opacity: 1;
 

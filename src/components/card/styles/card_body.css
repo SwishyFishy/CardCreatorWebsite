@@ -1,5 +1,5 @@
 #component-cardbody{
-    background-color: var(--card-body-colour);
+    background-image: linear-gradient(135deg, var(--card-body-colour), var(--card-body-gradient));
     opacity: var(--card-body-opacity);
 
     padding: 0em .5em;

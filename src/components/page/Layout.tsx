@@ -28,7 +28,9 @@ const init: CardData = {
     },
     body: {
         content: ["Rules", "text"],
-        colour: "#666666",
+        colour: "#120fb6ff",
+        gradient: "#d31414ff",
+        useGradient: true,
         opacity: .75
     },
     typeline: ["Card Type"],

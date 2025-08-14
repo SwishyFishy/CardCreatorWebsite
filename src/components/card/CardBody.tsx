@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import { CONTEXT_cardData } from '../page/Layout';
 
-import './styles/card-body.css';
+import './styles/card_body.css';
 
 export type BodyData = {
     content: string[],
     colour: string,
+    gradient: string,
+    useGradient: boolean,
     opacity: number
 }
 
@@ -15,6 +17,7 @@ export default function CardBody()
 
     // Set CSS variables from card data
     document.body.style.setProperty("--card-body-colour", bodyData.colour);
+    document.body.style.setProperty("--card-body-gradient", bodyData.useGradient ? bodyData.gradient : bodyData.colour);
     document.body.style.setProperty("--card-body-opacity", `${bodyData.opacity}`);
 
     return(
