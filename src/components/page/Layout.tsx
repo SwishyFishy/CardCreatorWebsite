@@ -40,9 +40,9 @@ const init: CardData = {
         licence: "CC/BY-SA 4.0"
     },
     details: [              /*Remove from default in final product*/
-        {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[4]], id: "cost"}],     position: "top"},
-        {elements: [{types: ["Card", "Type"], id: "type"}],                                         position: "middle"},
-        {elements: [{stats: ["Card", "Stats"], id: "stats"}],                                       position: "bottom"}
+        {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[4], BasicSymbols[14], BasicSymbols[16]], id: "cost"}],     position: "top"},
+        {elements: [{types: ["Card", "Type"], id: "type"}],                                                                             position: "middle"},
+        {elements: [{stats: ["Card", "Stats"], id: "stats"}],                                                                           position: "bottom"}
     ]
 };
 

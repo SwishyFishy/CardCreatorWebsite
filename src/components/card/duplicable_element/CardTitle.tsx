@@ -1,3 +1,5 @@
+import {v4 as uuid} from 'uuid';
+
 export type TitleData = {
     title: string,
     readonly id?: "title"
@@ -5,9 +7,11 @@ export type TitleData = {
 
 export default function CardTitle({title}: TitleData)
 {
+    const baseId: string = uuid();
+
     return(
-        <div className="component-cardtitle">
-            
+        <div key={baseId} className="component-cardtitle">
+            <h2 key={`${baseId}title`}>{title}</h2>
         </div>
     );
 }

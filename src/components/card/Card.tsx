@@ -30,7 +30,7 @@ export default function Card()
                     </div>
                     <div id="card-details">
                         {cardData.details.map((detail, index) => (
-                            <div key={`detail${index}`}>
+                            <div key={`detail${index}`} className='detail-block'>
                                 {detail.elements.map((element, eindex) => (
                                     <span key={`detail${index}element${eindex}`}><CardDetail elementProps={element}/></span>
                                 ))}
