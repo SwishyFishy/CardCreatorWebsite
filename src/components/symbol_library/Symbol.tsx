@@ -21,7 +21,7 @@ export default function Symbol({symbol}: props_Symbol)
 
     return(
         <div id="component-symbol" className={`symbol-${symbol.shape}`} style={symbol.useGradient ? {backgroundImage: symbolColour} : {backgroundColor: symbol.colour}}>
-            {<span style={{color: iconColour}}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
+            {<span style={{color: iconColour, fontSize: symbol.text && symbol.text.length < 2 ? '.8rem' : '.5rem'}}>{symbol.icon ? <img src={symbol.icon}/> : symbol.text}</span>}
         </div>
     );
 }
