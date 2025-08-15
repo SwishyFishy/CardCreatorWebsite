@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { CONTEXT_cardData } from '../../page/Layout';
 
-import '../styles/card_body.css';
+import './styles/card_body.css';
 
 export type BodyData = {
     content: string[],

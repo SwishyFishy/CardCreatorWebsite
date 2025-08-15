@@ -3,7 +3,7 @@ import type { PropsWithChildren } from "react";
 import { useContext } from "react";
 import { CONTEXT_cardData } from "../../page/Layout";
 
-import '../styles/card_border.css';
+import './styles/card_border.css';
 
 export type BorderData = {
     colour: string

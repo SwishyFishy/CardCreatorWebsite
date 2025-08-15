@@ -3,7 +3,7 @@ import { CONTEXT_cardData } from "../../page/Layout";
 
 import type { CardData } from "../card_types";
 
-import '../styles/card_art.css';
+import './styles/card_art.css';
 
 export type ArtData = {
     src: string,

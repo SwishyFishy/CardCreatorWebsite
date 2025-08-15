@@ -10,7 +10,7 @@ export type FooterData = {
     readonly licence: "CC/BY-SA 4.0"
 }
 
-import '../styles/card_footer.css';
+import './styles/card_footer.css';
 
 export default function CardFooter()
 {
