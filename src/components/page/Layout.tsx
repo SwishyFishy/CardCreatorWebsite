@@ -16,10 +16,8 @@ const init: CardData = {
     border: {
         colour: "black"
     },
-    title: "My Card",
-    cost: [BasicSymbols[4]],
-    art: {                          /*Remove from default in final product*/
-        src: testArt,
+    art: {
+        src: testArt,           /*Remove from default in final product*/
         dominance: 50,
         fullart: false,
         vShift: 0,
@@ -33,8 +31,6 @@ const init: CardData = {
         useGradient: true,
         opacity: 1
     },
-    typeline: ["Card Type"],
-    statsline: ["abc", "123"],
     footer: {
         year: new Date().getFullYear(),
         set: "set",
@@ -42,7 +38,12 @@ const init: CardData = {
         artistCredit: "credit the artist",
         siteCredit: "Designed with CardCreator",
         licence: "CC/BY-SA 4.0"
-    }
+    },
+    details: [              /*Remove from default in final product*/
+        {elements: ["Card Title", [BasicSymbols[4]]],   position: "top"},
+        {elements: [["Card", "Type"]],                  position: "middle"},
+        {elements: [["Card", "Stats"]],                 position: "bottom"}
+    ]
 };
 
 export const CONTEXT_cardData: React.Context<{cardData: CardData, setCardData: any}> = createContext({cardData: init, setCardData: undefined});
