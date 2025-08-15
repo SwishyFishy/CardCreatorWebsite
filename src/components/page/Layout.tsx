@@ -31,7 +31,7 @@ const init: CardData = {
         colour: "#120fb6ff",
         gradient: "#d31414ff",
         useGradient: true,
-        opacity: .75
+        opacity: 1
     },
     typeline: ["Card Type"],
     statsline: ["abc", "123"],

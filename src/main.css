@@ -10,6 +10,7 @@ body{
     --card-height: 88mm;
     --card-view-scale: 2;
 
+    --card-art-border-colour: var(--card-border-colour);
     --card-art-dominance: 50%;
     --card-art-fullart: none;
     --card-art-horizontal-shift: 0px;

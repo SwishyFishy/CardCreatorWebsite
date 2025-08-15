@@ -4,7 +4,7 @@
 
     overflow: hidden;
 
-    border-bottom: var(--card-border-thickness) solid var(--card-border-colour);
+    border-bottom: var(--card-border-thickness) solid var(--card-art-border-colour);
 }
 
 #component-cardart img{

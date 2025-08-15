@@ -24,7 +24,9 @@
     grid-template-rows: var(--card-art-dominance) var(--card-body-dominance) var(--card-footer-dominance);
 
     background-image: var(--card-art-fullart);
+    background-position: var(--card-art-horizontal-shift) var(--card-art-vertical-shift);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #component-card #card #card-details{

@@ -27,7 +27,7 @@ export default function Card()
             <CardBorder>
                 <div id="card">
                     <div id="card-main">
-                        {!cardData.art.fullart ? <CardArt/> : <div></div>}
+                        <CardArt/>
                         <CardBody/>
                         <CardFooter/>
                     </div>
