@@ -34,7 +34,6 @@
     top: 0;
     left: 0;
 
-    background-color: pink;
     width: calc(var(--card-width) - 2 * var(--card-border-thickness));
     height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
 }
