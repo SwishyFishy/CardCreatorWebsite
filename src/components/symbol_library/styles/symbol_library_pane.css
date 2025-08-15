@@ -6,7 +6,8 @@
 }
 
 #component-symbollibrarypane #component-symbol{
-    font-size: 1.2em;
-    width: 2.25rem;
-    height: 2.25rem;
+    transform-origin: center;
+    transform: scale(2);
+
+    margin: .75em;
 }
