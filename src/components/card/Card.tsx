@@ -1,13 +1,10 @@
 import { useContext } from "react";
 
-import CardBorder from "./CardBorder";
-import CardTitle from "./CardTitle";
-import CardCost from "./CardCost";
-import CardArt from "./CardArt";
-import CardType from "./CardType";
-import CardBody from "./CardBody";
-import CardStats from "./CardStats";
-import CardFooter from "./CardFooter";
+import CardBorder from "./unique_element/CardBorder";
+import CardArt from "./unique_element/CardArt";
+import CardBody from "./unique_element/CardBody";
+import CardFooter from "./unique_element/CardFooter";
+import CardDetail from "./duplicable_element/CardDetail";
 
 import { CONTEXT_cardData } from "../page/Layout";
 import type { CardData } from "./card_types";
@@ -32,10 +29,13 @@ export default function Card()
                         <CardFooter/>
                     </div>
                     <div id="card-details">
-                        <CardTitle/>
-                        <CardCost/>
-                        <CardType/>
-                        <CardStats/>
+                        {cardData.details.map((detail, index) => (
+                            <div key={`detail${index}`}>
+                                {detail.elements.map((element, eindex) => (
+                                    <span key={`detail${index}element${eindex}`}><CardDetail elementProps={element}/></span>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </CardBorder>
