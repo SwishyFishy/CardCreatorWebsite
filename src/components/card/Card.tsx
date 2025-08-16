@@ -4,12 +4,12 @@ import CardBorder from "./unique_element/CardBorder";
 import CardArt from "./unique_element/CardArt";
 import CardBody from "./unique_element/CardBody";
 import CardFooter from "./unique_element/CardFooter";
-import CardDetail from "./duplicable_element/CardDetail";
 
 import { CONTEXT_cardData } from "../page/Layout";
 import type { CardData } from "./card_types";
 
 import './styles/card.css';
+import CardDetailBlock from "./duplicable_element/CardDetailBlock";
 
 export default function Card()
 {
@@ -31,9 +31,7 @@ export default function Card()
                     <div id="card-details">
                         {cardData.details.map((detail, index) => (
                             <div key={`detail${index}`} className='detail-block'>
-                                {detail.elements.map((element, eindex) => (
-                                    <span key={`detail${index}element${eindex}`}><CardDetail elementProps={element}/></span>
-                                ))}
+                                <CardDetailBlock elementSet={detail}/>
                             </div>
                         ))}
                     </div>
