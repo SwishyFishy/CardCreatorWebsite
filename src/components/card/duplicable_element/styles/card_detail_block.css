@@ -17,7 +17,8 @@
         flex-direction: column;
         justify-content: space-around;
 
-        max-width: .5em;
+        max-width: 1em;
+        letter-spacing: 1em;
         overflow-wrap: break-word;
         line-height: .75em;
         text-align: center;
@@ -29,10 +30,13 @@
         flex-direction: column;
         justify-content: space-around;
 
-        max-width: .5em;
+        max-width: 1em;
+        letter-spacing: 1em;
         overflow-wrap: break-word;
         line-height: .75em;
         text-align: center;
+        direction: rtl;
+        margin-right: -1em;
 
         right: 0;
     }
