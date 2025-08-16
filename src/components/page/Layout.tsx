@@ -40,9 +40,15 @@ const init: CardData = {
         licence: "CC/BY-SA 4.0"
     },
     details: [              /*Remove from default in final product*/
-        {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[4], BasicSymbols[14], BasicSymbols[16]], id: "cost"}],     position: "top"},
-        {elements: [{types: ["Card", "Type"], id: "type"}],                                                                             position: "middle"},
-        {elements: [{stats: ["Card", "Stats"], id: "stats"}],                                                                           position: "bottom"}
+        {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[4], BasicSymbols[14], BasicSymbols[16]], id: "cost"}],     align: "horizontal",    justify: "first"},
+        {elements: [{types: ["Card", "Type"], id: "type"}],                                                                             align: "horizontal",    justify: "middle"},
+        {elements: [{stats: ["Card", "Stats"], id: "stats"}],                                                                           align: "horizontal",    justify: "last"},
+        {elements: [{types: ["vLeft", "first"], id: "type"}], align: "vertical-left", justify:"first"},
+        {elements: [{types: ["vLeft", "last"], id: "type"}], align: "vertical-left", justify:"last"},
+        {elements: [{types: ["vLeft", "middle"], id: "type"}], align: "vertical-left", justify:"middle"},
+        {elements: [{types: ["vRight", "first"], id: "type"}], align: "vertical-right", justify:"first"},
+        {elements: [{types: ["vRight", "last"], id: "type"}], align: "vertical-right", justify:"last"},
+        {elements: [{types: ["vRight", "middle"], id: "type"}], align: "vertical-right", justify:"middle"},
     ]
 };
 

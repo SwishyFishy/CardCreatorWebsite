@@ -1,0 +1,65 @@
+.component-carddetailblock{
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+
+    /* Position along an edge */
+    &.horizontal{
+        flex-direction: row;
+
+        width: 100%;
+
+        left: 0;
+    }
+
+    &.vertical-left{
+        flex-direction: column;
+        justify-content: space-around;
+
+        max-width: .5em;
+        overflow-wrap: break-word;
+        line-height: .75em;
+        text-align: center;
+
+        left: 0;
+    }
+
+    &.vertical-right{
+        flex-direction: column;
+        justify-content: space-around;
+
+        max-width: .5em;
+        overflow-wrap: break-word;
+        line-height: .75em;
+        text-align: center;
+
+        right: 0;
+    }
+
+    &.first{
+        top: 0;
+
+        &[class*="vertical-"]{
+            height: var(--card-art-dominance);
+        }
+    }
+
+    &.middle{
+        top: var(--card-art-dominance);
+
+        &[class*="vertical-"]{
+            top: 0;
+
+            height: 100%;
+        }
+    }
+
+    &.last{
+        bottom: 0;
+
+        &[class*="vertical-"]{
+            height: var(--card-body-dominance);
+        }
+    }
+}

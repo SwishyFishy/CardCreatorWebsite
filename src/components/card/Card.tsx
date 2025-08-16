@@ -29,10 +29,8 @@ export default function Card()
                         <CardFooter/>
                     </div>
                     <div id="card-details">
-                        {cardData.details.map((detail, index) => (
-                            <div key={`detail${index}`} className='detail-block'>
-                                <CardDetailBlock elementSet={detail}/>
-                            </div>
+                        {cardData.details.map((detail) => (
+                            <CardDetailBlock elementSet={detail}/>
                         ))}
                     </div>
                 </div>

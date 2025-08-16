@@ -18,7 +18,8 @@ export type CardStats = StatsData
 
 export type CardDetailGroup = {
     elements: (CardTitle | CardCost | CardType | CardStats)[],
-    position: "top" | "middle" | "bottom"
+    align: "horizontal" | "vertical-left" | "vertical-right",
+    justify: "first" | "middle" | "last"
 }
 
 export type CardData = {
