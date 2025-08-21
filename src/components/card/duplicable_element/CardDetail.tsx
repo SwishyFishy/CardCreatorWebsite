@@ -16,7 +16,7 @@ export default function CardDetail({elementProps}: props_CardDetail)
         case "title":
             return(<CardTitle title={elementProps.title}/>);
         case "cost":
-            return(<CardCost cost={elementProps.cost}/>);
+            return(<CardCost cost={elementProps.cost} direction={elementProps.direction}/>);
         case "type":
             return(<CardType types={elementProps.types}/>);
         case "stats":

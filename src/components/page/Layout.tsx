@@ -40,7 +40,7 @@ const init: CardData = {
         licence: "CC/BY-SA 4.0"
     },
     details: [              /*Remove from default in final product*/
-        {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[4], BasicSymbols[14], BasicSymbols[16]], id: "cost"}],     align: "horizontal",    justify: "first"},
+        {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[4], BasicSymbols[14], BasicSymbols[16]], direction: "row", id: "cost"}],     align: "horizontal",    justify: "first"},
         {elements: [{types: ["Card", "Type"], id: "type"}],                                                                             align: "horizontal",    justify: "middle"},
         {elements: [{stats: ["Card", "Stats"], id: "stats"}],                                                                           align: "horizontal",    justify: "last"},
         {elements: [{types: ["vLeft", "first"], id: "type"}], align: "vertical-left", justify:"first"},

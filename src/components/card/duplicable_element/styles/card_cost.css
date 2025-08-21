@@ -1,0 +1,14 @@
+.component-cardcost{
+    display: flex;
+    align-items: center;
+
+    &.row{
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    &.column{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}

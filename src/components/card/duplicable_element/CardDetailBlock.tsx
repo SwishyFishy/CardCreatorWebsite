@@ -5,11 +5,11 @@ import type { CardDetailGroup } from "../card_types";
 
 import './styles/card_detail_block.css';
 
-interface props_CardDetailBanner {
+interface props_CardDetailBlock {
     elementSet: CardDetailGroup
 }
 
-export default function CardDetailBlock({elementSet}: props_CardDetailBanner)
+export default function CardDetailBlock({elementSet}: props_CardDetailBlock)
 {
     const baseId: string = uuid();
 
