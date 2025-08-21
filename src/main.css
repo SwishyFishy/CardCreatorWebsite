@@ -19,11 +19,14 @@ body{
 
     --card-body-colour: #666666;
     --card-body-gradient: #666666;
-    --card-body-dominance: calc(100% - (var(--card-art-dominance) + var(--card-footer-dominance)));
+    --card-body-dominance: calc(100% - (var(--card-art-dominance)));
     --card-body-opacity: 1;
 
     --card-border-colour: black;
     --card-border-thickness: 1em;
+
+    --card-content-width: calc(var(--card-width) - 2 * var(--card-border-thickness));
+    --card-content-height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
     
     --card-footer-dominance: 6%;
 

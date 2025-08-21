@@ -18,10 +18,11 @@
 }
 
 #component-card #card #card-main{
-    height: 100%;
+    width: var(--card-content-width);
+    height: var(--card-content-height);
 
     display: grid;
-    grid-template-rows: var(--card-art-dominance) var(--card-body-dominance) var(--card-footer-dominance);
+    grid-template-rows: var(--card-art-dominance) var(--card-body-dominance);
 
     background-image: var(--card-art-fullart);
     background-position: var(--card-art-horizontal-shift) var(--card-art-vertical-shift);
@@ -34,6 +35,6 @@
     top: 0;
     left: 0;
 
-    width: calc(var(--card-width) - 2 * var(--card-border-thickness));
-    height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
+    width: var(--card-content-width);
+    height: var(--card-content-height);
 }

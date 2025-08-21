@@ -26,13 +26,13 @@ export default function Card()
                     <div id="card-main">
                         <CardArt/>
                         <CardBody/>
-                        <CardFooter/>
                     </div>
                     <div id="card-details">
                         {cardData.details.map((detail) => (
                             <CardDetailBlock elementSet={detail}/>
                         ))}
                     </div>
+                    <CardFooter/>
                 </div>
             </CardBorder>
         </div>

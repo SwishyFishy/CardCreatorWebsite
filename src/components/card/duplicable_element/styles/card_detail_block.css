@@ -51,7 +51,7 @@
     }
 
     &.middle{
-        top: var(--card-art-dominance);
+        bottom: var(--card-body-dominance);
 
         &[class*="vertical-"]{
             top: 0;
