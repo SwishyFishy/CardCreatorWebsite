@@ -1,5 +1,7 @@
 import {v4 as uuid} from 'uuid';
 
+import './styles/card_title.css';
+
 export type TitleData = {
     title: string,
     readonly id?: "title"
