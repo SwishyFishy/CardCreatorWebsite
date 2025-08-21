@@ -79,7 +79,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         <div key={baseId} className={`component-carddetailblock ${details.elementSet.align} ${details.elementSet.justify}`} style={style}>
             {details.elementSet.elements.map((element, index) => (
                 <span key={`${baseId}element${index}`}>
-                    <CardDetail elementProps={element} elementStyle={details.elementStyles.group ? {} : Array.isArray(uStyle) ? {
+                    <CardDetail vertical={!(details.elementSet.align == "horizontal")} elementProps={element} elementStyle={details.elementStyles.group ? {} : Array.isArray(uStyle) ? {
                         backgroundImage: `linear-gradient(135deg, ${uStyle[index].colour}, ${uStyle[index].useGradient ? uStyle[index].gradient : uStyle[index].colour})`,
                         color: uStyle[index].textColour,
                         boxShadow: `inset ${uStyle[index].inset}em ${uStyle[index].inset}em ${uStyle[index].inset}em black, inset ${-uStyle[index].inset}em ${-uStyle[index].inset}em ${uStyle[index].inset}em black`,

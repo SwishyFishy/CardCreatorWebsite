@@ -14,15 +14,16 @@ export type CostData = {
 }
 
 interface props_CardCost {
+    vertical: boolean,
     costData: CostData,
     style?: DetailStyleCSS
 }
 
-export default function CardCost({costData, style}: props_CardCost)
+export default function CardCost({vertical, costData, style}: props_CardCost)
 {
     const baseId: string = uuid();
     return(
-        <div key={baseId} className={`component-cardcost component-carddetail ${costData.direction}`} style={style}>
+        <div key={baseId} className={`component-cardcost component-carddetail ${costData.direction} ${vertical ? 'vertical' : ""}`} style={style}>
             {costData.cost.map((symbol, index) => (
                 <span key={`${baseId}${index}`}><Symbol symbol={symbol}/></span>
             ))}

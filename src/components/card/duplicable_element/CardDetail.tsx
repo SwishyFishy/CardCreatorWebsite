@@ -9,22 +9,23 @@ import type { DetailStyleCSS } from "./CardDetailBlock";
 import './styles/card_detail.css';
 
 interface props_CardDetail {
+    vertical: boolean,
     elementProps: Title | Cost | Type | Stats,
     elementStyle: DetailStyleCSS
 }
 
-export default function CardDetail({elementProps, elementStyle}: props_CardDetail)
+export default function CardDetail({vertical, elementProps, elementStyle}: props_CardDetail)
 {
     switch (elementProps.id)
     {
         case "title":
-            return(<CardTitle titleData={elementProps} style={elementStyle}/>);
+            return(<CardTitle vertical={vertical} titleData={elementProps} style={elementStyle}/>);
         case "cost":
-            return(<CardCost costData={elementProps} style={elementStyle}/>);
+            return(<CardCost vertical={vertical} costData={elementProps} style={elementStyle}/>);
         case "type":
-            return(<CardType typeData={elementProps} style={elementStyle}/>);
+            return(<CardType vertical={vertical} typeData={elementProps} style={elementStyle}/>);
         case "stats":
-            return(<CardStats statsData={elementProps} style={elementStyle}/>);
+            return(<CardStats vertical={vertical} statsData={elementProps} style={elementStyle}/>);
         case undefined:
             console.error(`Undefined elementProp id - dump: ${elementProps}`);
     }

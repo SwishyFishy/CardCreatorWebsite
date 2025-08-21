@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    &.vertical{
+        flex-direction: column;
+    }
 }
 
 .component-cardstats .separator{
@@ -9,4 +13,7 @@
     overflow: hidden;
 
     padding: 0em .2em;
+}
+.component-cardstats.vertical .separator{
+    padding: .2em 0em;
 }

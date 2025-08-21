@@ -8,16 +8,19 @@ export type TypeData = {
 }
 
 interface props_CardType {
+    vertical: boolean,
     typeData: TypeData,
     style: DetailStyleCSS
 }
 
-export default function CardType({typeData, style}: props_CardType)
+import './styles/card_type.css';
+
+export default function CardType({vertical, typeData, style}: props_CardType)
 {
     const baseId: string = uuid();
 
     return(
-        <div key={baseId} className="component-cardtype component-carddetail" style={style}>
+        <div key={baseId} className={`component-cardtype component-carddetail ${vertical ? 'vertical' : ""}`} style={style}>
             {typeData.types.map((type, index) => (
                 <span key={`${baseId}${index}`}>{type}</span>
             ))}

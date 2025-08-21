@@ -10,16 +10,17 @@ export type TitleData = {
 }
 
 interface props_CardTitle {
+    vertical: boolean,
     titleData: TitleData,
     style: DetailStyleCSS
 }
 
-export default function CardTitle({titleData, style}: props_CardTitle)
+export default function CardTitle({vertical, titleData, style}: props_CardTitle)
 {
     const baseId: string = uuid();
 
     return(
-        <div key={baseId} className="component-cardtitle component-carddetail" style={style}>
+        <div key={baseId} className={`component-cardtitle component-carddetail ${vertical ? 'vertical' : ""}`} style={style}>
             <h2 key={`${baseId}title`}>{titleData.title}</h2>
         </div>
     );

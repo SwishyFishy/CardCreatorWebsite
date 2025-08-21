@@ -61,7 +61,7 @@ const init: CardData = {
                 textColour: "black"
             }
         ]}},
-        {elementSet: {elements: [{types: ["Card", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  
+        {elementSet: {elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  
         elementStyles: {group: true, style: {
             colour: "grey",
             gradient: "lightgrey",
