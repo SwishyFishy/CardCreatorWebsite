@@ -3,5 +3,12 @@
     flex-direction: column;
     align-items: center;
 
-    background-color: aqua;
+    padding: .5em;
+
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+#component-cardpane #footer-controls{
+    margin-top: calc(var(--card-height));
 }
