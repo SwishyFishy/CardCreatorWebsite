@@ -19,7 +19,7 @@ export default function CardTitle({titleData, style}: props_CardTitle)
     const baseId: string = uuid();
 
     return(
-        <div key={baseId} className="component-cardtitle" style={style}>
+        <div key={baseId} className="component-cardtitle component-carddetail" style={style}>
             <h2 key={`${baseId}title`}>{titleData.title}</h2>
         </div>
     );

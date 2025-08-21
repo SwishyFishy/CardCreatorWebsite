@@ -40,20 +40,22 @@ const init: CardData = {
         licence: "CC/BY-SA 4.0"
     },
     details: [              /*Remove from default in final product*/
-        {elementSet: {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[15]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
+        {elementSet: {elements: [{title: "Suuuuuper Long Card Title", id: "title"}, {cost: [BasicSymbols[15]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
         elementStyles: {group: false, style: [
             {
                 colour: "black",
-                gradient: "transparent",
+                gradient: "red",
                 useGradient: true,
-                border: "black",
-                borderRounding: 50,
-                textColour: "black"
+                inset: 0,
+                border: "transparent",
+                borderRounding: 0,
+                textColour: "blue"
             },
             {
                 colour: "grey",
                 gradient: "lightgrey",
                 useGradient: true,
+                inset: 0,
                 border: "black",
                 borderRounding: 50,
                 textColour: "black"
@@ -64,15 +66,17 @@ const init: CardData = {
             colour: "grey",
             gradient: "lightgrey",
             useGradient: true,
+            inset: .1,
             border: "black",
             borderRounding: 25,
             textColour: "black"
         }}},
-        {elementSet: {elements: [{stats: ["Card", "Stats"], id: "stats"}], align: "horizontal", justify: "last"},  
+        {elementSet: {elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last"},  
         elementStyles: {group: false, style: [{
             colour: "grey",
             gradient: "lightgrey",
             useGradient: true,
+            inset: .05,
             border: "black",
             borderRounding: 0,
             textColour: "black"

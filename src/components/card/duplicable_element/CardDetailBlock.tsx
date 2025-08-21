@@ -14,6 +14,7 @@ export type DetailStyleData = {
     useGradient: boolean,
     border: string,
     borderRounding: number,
+    inset: number,
     textColour: string
 }
 
@@ -32,6 +33,7 @@ export type DetailGroupData = {
 export type DetailStyleCSS = {
     backgroundImage?: string, 
     color?: string,
+    boxShadow?: string,
     outline?: string,
     borderRadius?: string
 }
@@ -59,6 +61,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
             style = {
                 backgroundImage: `linear-gradient(135deg, ${uStyle.colour}, ${uStyle.useGradient ? uStyle.gradient : uStyle.colour})`,
                 color: uStyle.textColour,
+                boxShadow: `inset ${uStyle.inset}em ${uStyle.inset}em ${uStyle.inset}em black, inset ${-uStyle.inset}em ${-uStyle.inset}em ${uStyle.inset}em black`,
                 outline: `.1em solid ${uStyle.border}`,
                 borderRadius: `${uStyle.borderRounding}%`
             }
@@ -79,6 +82,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
                     <CardDetail elementProps={element} elementStyle={details.elementStyles.group ? {} : Array.isArray(uStyle) ? {
                         backgroundImage: `linear-gradient(135deg, ${uStyle[index].colour}, ${uStyle[index].useGradient ? uStyle[index].gradient : uStyle[index].colour})`,
                         color: uStyle[index].textColour,
+                        boxShadow: `inset ${uStyle[index].inset}em ${uStyle[index].inset}em ${uStyle[index].inset}em black, inset ${-uStyle[index].inset}em ${-uStyle[index].inset}em ${uStyle[index].inset}em black`,
                         outline: `.1em solid ${uStyle[index].border}`,
                         borderRadius: `${uStyle[index].borderRounding}%`
                     } : {}}/>

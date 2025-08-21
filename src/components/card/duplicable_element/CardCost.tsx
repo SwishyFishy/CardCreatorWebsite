@@ -22,7 +22,7 @@ export default function CardCost({costData, style}: props_CardCost)
 {
     const baseId: string = uuid();
     return(
-        <div key={baseId} className={`component-cardcost ${costData.direction}`} style={style}>
+        <div key={baseId} className={`component-cardcost component-carddetail ${costData.direction}`} style={style}>
             {costData.cost.map((symbol, index) => (
                 <span key={`${baseId}${index}`}><Symbol symbol={symbol}/></span>
             ))}

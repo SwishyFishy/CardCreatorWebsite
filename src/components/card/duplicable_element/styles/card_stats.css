@@ -1,0 +1,12 @@
+.component-cardstats{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.component-cardstats .separator{
+    height: 1em;
+    overflow: hidden;
+
+    padding: 0em .2em;
+}

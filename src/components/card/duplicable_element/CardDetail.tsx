@@ -6,6 +6,8 @@ import CardStats from "./CardStats";
 import type { CardTitle as Title, CardCost as Cost, CardType as Type, CardStats as Stats } from "../card_types";
 import type { DetailStyleCSS } from "./CardDetailBlock";
 
+import './styles/card_detail.css';
+
 interface props_CardDetail {
     elementProps: Title | Cost | Type | Stats,
     elementStyle: DetailStyleCSS

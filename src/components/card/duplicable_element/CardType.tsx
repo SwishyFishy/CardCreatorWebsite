@@ -17,7 +17,7 @@ export default function CardType({typeData, style}: props_CardType)
     const baseId: string = uuid();
 
     return(
-        <div key={baseId} className="component-cardtype" style={style}>
+        <div key={baseId} className="component-cardtype component-carddetail" style={style}>
             {typeData.types.map((type, index) => (
                 <span key={`${baseId}${index}`}>{type}</span>
             ))}
