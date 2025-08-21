@@ -4,23 +4,25 @@ import CardType from "./CardType";
 import CardStats from "./CardStats";
 
 import type { CardTitle as Title, CardCost as Cost, CardType as Type, CardStats as Stats } from "../card_types";
+import type { DetailStyleCSS } from "./CardDetailBlock";
 
 interface props_CardDetail {
-    elementProps: Title | Cost | Type | Stats
+    elementProps: Title | Cost | Type | Stats,
+    elementStyle: DetailStyleCSS
 }
 
-export default function CardDetail({elementProps}: props_CardDetail)
+export default function CardDetail({elementProps, elementStyle}: props_CardDetail)
 {
     switch (elementProps.id)
     {
         case "title":
-            return(<CardTitle title={elementProps.title}/>);
+            return(<CardTitle titleData={elementProps} style={elementStyle}/>);
         case "cost":
-            return(<CardCost cost={elementProps.cost} direction={elementProps.direction}/>);
+            return(<CardCost costData={elementProps} style={elementStyle}/>);
         case "type":
-            return(<CardType types={elementProps.types}/>);
+            return(<CardType typeData={elementProps} style={elementStyle}/>);
         case "stats":
-            return(<CardStats stats={elementProps.stats}/>);
+            return(<CardStats statsData={elementProps} style={elementStyle}/>);
         case undefined:
             console.error(`Undefined elementProp id - dump: ${elementProps}`);
     }

@@ -29,7 +29,7 @@ export default function Card()
                     </div>
                     <div id="card-details">
                         {cardData.details.map((detail) => (
-                            <CardDetailBlock elementSet={detail}/>
+                            <CardDetailBlock details={detail}/>
                         ))}
                     </div>
                     <CardFooter/>

@@ -18,7 +18,7 @@ const init: CardData = {
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
-        dominance: 100,
+        dominance: 50,
         fullart: false,
         vShift: 0,
         hShift: 0,
@@ -40,15 +40,45 @@ const init: CardData = {
         licence: "CC/BY-SA 4.0"
     },
     details: [              /*Remove from default in final product*/
-        {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[4], BasicSymbols[14], BasicSymbols[16]], direction: "row", id: "cost"}],     align: "horizontal",    justify: "first"},
-        {elements: [{types: ["Card", "Type"], id: "type"}],                                                                             align: "horizontal",    justify: "middle"},
-        {elements: [{stats: ["Card", "Stats"], id: "stats"}],                                                                           align: "horizontal",    justify: "last"},
+        {elementSet: {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[15]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
+        elementStyles: {group: false, style: [
+            {
+                colour: "grey",
+                gradient: "lightgrey",
+                useGradient: true,
+                border: "black",
+                textColour: "black"
+            },
+            {
+                colour: "grey",
+                gradient: "lightgrey",
+                useGradient: true,
+                border: "black",
+                textColour: "black"
+            }
+        ]}},
+        {elementSet: {elements: [{types: ["Card", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  
+        elementStyles: {group: true, style: {
+            colour: "grey",
+            gradient: "lightgrey",
+            useGradient: true,
+            border: "black",
+            textColour: "black"
+        }}},
+        {elementSet: {elements: [{stats: ["Card", "Stats"], id: "stats"}], align: "horizontal", justify: "last"},  
+        elementStyles: {group: false, style: [{
+            colour: "grey",
+            gradient: "lightgrey",
+            useGradient: true,
+            border: "black",
+            textColour: "black"
+        }]}}/*,
         {elements: [{types: ["vLeft", "first"], id: "type"}], align: "vertical-left", justify:"first"},
         {elements: [{types: ["vLeft", "last"], id: "type"}], align: "vertical-left", justify:"last"},
         {elements: [{types: ["vLeft", "middle"], id: "type"}], align: "vertical-left", justify:"middle"},
         {elements: [{types: ["vRight", "first"], id: "type"}], align: "vertical-right", justify:"first"},
         {elements: [{types: ["vRight", "last"], id: "type"}], align: "vertical-right", justify:"last"},
-        {elements: [{types: ["vRight", "middle"], id: "type"}], align: "vertical-right", justify:"middle"},
+        {elements: [{types: ["vRight", "middle"], id: "type"}], align: "vertical-right", justify:"middle"},*/
     ]
 };
 

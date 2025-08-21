@@ -1,5 +1,7 @@
 import {v4 as uuid} from 'uuid';
 
+import type { DetailStyleCSS } from './CardDetailBlock';
+
 import './styles/card_title.css';
 
 export type TitleData = {
@@ -7,13 +9,18 @@ export type TitleData = {
     readonly id?: "title"
 }
 
-export default function CardTitle({title}: TitleData)
+interface props_CardTitle {
+    titleData: TitleData,
+    style: DetailStyleCSS
+}
+
+export default function CardTitle({titleData, style}: props_CardTitle)
 {
     const baseId: string = uuid();
 
     return(
-        <div key={baseId} className="component-cardtitle">
-            <h2 key={`${baseId}title`}>{title}</h2>
+        <div key={baseId} className="component-cardtitle" style={style}>
+            <h2 key={`${baseId}title`}>{titleData.title}</h2>
         </div>
     );
 }

@@ -6,6 +6,7 @@ import type { TitleData } from "./duplicable_element/CardTitle";
 import type { CostData } from "./duplicable_element/CardCost";
 import type { TypeData } from "./duplicable_element/CardType";
 import type { StatsData } from "./duplicable_element/CardStats";
+import type { DetailGroupData } from "./duplicable_element/CardDetailBlock";
 
 export type CardBorder = BorderData;
 export type CardArt = ArtData;
@@ -15,12 +16,8 @@ export type CardTitle = TitleData;
 export type CardCost = CostData;
 export type CardType = TypeData;
 export type CardStats = StatsData
+export type CardDetailGroup = DetailGroupData
 
-export type CardDetailGroup = {
-    elements: (CardTitle | CardCost | CardType | CardStats)[],
-    align: "horizontal" | "vertical-left" | "vertical-right",
-    justify: "first" | "middle" | "last"
-}
 
 export type CardData = {
     border: CardBorder,
