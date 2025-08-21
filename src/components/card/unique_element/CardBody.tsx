@@ -22,9 +22,12 @@ export default function CardBody()
 
     return(
         <div id="component-cardbody">
-            {bodyData.content.map((ability, index) => (
-                <p key={`body${Object.keys(bodyData.content)[index]}`} className="ability-text">{ability}</p>
-            ))}
+            <div id="cardbody-background"></div>
+            <div id="cardbody-content">
+                {bodyData.content.map((ability, index) => (
+                    <p key={`body${Object.keys(bodyData.content)[index]}`} className="ability-text">{ability}</p>
+                ))}
+            </div>
         </div>
     );
 }

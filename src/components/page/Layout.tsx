@@ -18,8 +18,8 @@ const init: CardData = {
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
-        dominance: 50,
-        fullart: false,
+        dominance: 80,
+        fullart: true,
         vShift: 0,
         hShift: 0,
         zoom: 100
@@ -27,9 +27,9 @@ const init: CardData = {
     body: {
         content: ["Rules", "text"],
         colour: "#120fb6ff",
-        gradient: "#d31414ff",
+        gradient: "#f108ebff",
         useGradient: true,
-        opacity: 1
+        opacity: .75
     },
     footer: {
         year: new Date().getFullYear(),
@@ -40,7 +40,7 @@ const init: CardData = {
         licence: "CC/BY-SA 4.0"
     },
     details: [              /*Remove from default in final product*/
-        {elementSet: {elements: [{title: "Suuuuuper Long Card Title", id: "title"}, {cost: [BasicSymbols[15]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
+        {elementSet: {elements: [{title: "Suuuuuper Long Card Title", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
         elementStyles: {group: false, style: [
             {
                 colour: "black",
@@ -52,13 +52,13 @@ const init: CardData = {
                 textColour: "blue"
             },
             {
-                colour: "grey",
+                colour: "transparent",
                 gradient: "lightgrey",
-                useGradient: true,
+                useGradient: false,
                 inset: 0,
-                border: "black",
+                border: "transparent",
                 borderRounding: 50,
-                textColour: "black"
+                textColour: "blue"
             }
         ]}},
         {elementSet: {elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  

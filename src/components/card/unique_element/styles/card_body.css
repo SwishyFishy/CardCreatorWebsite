@@ -1,6 +1,19 @@
 #component-cardbody{
+    position: relative;
+}
+
+#component-cardbody #cardbody-background{
     background-image: linear-gradient(135deg, var(--card-body-colour), var(--card-body-gradient));
     opacity: var(--card-body-opacity);
+
+    width: 100%;
+    height: 100%;
+}
+
+#component-cardbody #cardbody-content{
+    position: absolute;
+    top: 0;
+    left: 0;
 
     padding: 0em .5em;
 }
