@@ -28,7 +28,7 @@ export default function Card()
                         <CardBody/>
                     </div>
                     <div id="card-details">
-                        {cardData.details.map((detail) => (
+                        {Object.values(cardData.details).map((detail) => (
                             <CardDetailBlock details={detail}/>
                         ))}
                     </div>
