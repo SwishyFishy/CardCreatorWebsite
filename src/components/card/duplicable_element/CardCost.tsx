@@ -25,7 +25,7 @@ export default function CardCost({vertical, costData, style}: props_CardCost)
     return(
         <div key={baseId} className={`component-cardcost component-carddetail ${costData.direction} ${vertical ? 'vertical' : ""}`} style={style}>
             {costData.cost.map((symbol, index) => (
-                <span key={`${baseId}${index}`}><Symbol symbol={symbol}/></span>
+                <span key={`${baseId}symbol${index}`}><Symbol symbol={symbol}/></span>
             ))}
         </div>
     );
