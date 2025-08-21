@@ -46,7 +46,7 @@
         top: 0;
 
         &[class*="vertical-"]{
-            height: var(--card-art-dominance);
+            height: calc(var(--card-art-dominance) - var(--card-border-thickness));
         }
     }
 
