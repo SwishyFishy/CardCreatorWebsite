@@ -12,7 +12,8 @@ export type DetailStyleData = {
     colour: string,
     gradient: string,
     useGradient: boolean,
-    border: string
+    border: string,
+    borderRounding: number,
     textColour: string
 }
 
@@ -30,8 +31,9 @@ export type DetailGroupData = {
 
 export type DetailStyleCSS = {
     backgroundImage?: string, 
-    color?: string, 
-    border?: string
+    color?: string,
+    outline?: string,
+    borderRadius?: string
 }
 
 interface props_CardDetailBlock {
@@ -44,26 +46,29 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
 
     // Style conversion and error checking
     let style: DetailStyleCSS | DetailStyleCSS[] = {};
+    let uStyle: DetailStyleData | DetailStyleData[] = details.elementStyles.style;
+
     if (details.elementStyles.group)
     {
-        if (Array.isArray(details.elementStyles.style))
+        if (Array.isArray(uStyle))
         {
-            console.error(`Grouped card details have conflicting styles - dump ${details}`);
+            console.error(`Grouped card details have conflicting styles`);
         }
         else
         {
             style = {
-                backgroundImage: `linear-gradient(135deg, ${details.elementStyles.style.colour}, ${details.elementStyles.style.useGradient ? details.elementStyles.style.gradient : details.elementStyles.style.colour})`,
-                color: details.elementStyles.style.textColour,
-                border: `.1em solid ${details.elementStyles.style.border}`
+                backgroundImage: `linear-gradient(135deg, ${uStyle.colour}, ${uStyle.useGradient ? uStyle.gradient : uStyle.colour})`,
+                color: uStyle.textColour,
+                outline: `.1em solid ${uStyle.border}`,
+                borderRadius: `${uStyle.borderRounding}%`
             }
         }
     }
     else
     {
-        if (!Array.isArray(details.elementStyles.style) || details.elementStyles.style.length != details.elementSet.elements.length)
+        if (!Array.isArray(uStyle) || uStyle.length != details.elementSet.elements.length)
         {
-            console.error(`Incompatible card details and card detail styles - dump ${details}`);
+            console.error(`Incompatible card details and card detail styles`);
         }
     }
 
@@ -71,11 +76,12 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         <div key={baseId} className={`component-carddetailblock ${details.elementSet.align} ${details.elementSet.justify}`} style={style}>
             {details.elementSet.elements.map((element, index) => (
                 <span key={`${baseId}element${index}`}>
-                    <CardDetail elementProps={element} elementStyle={details.elementStyles.group ? {} : {
-                        backgroundImage: `linear-gradient(135deg, ${(details.elementStyles.style as DetailStyleData[])[index].colour}, ${(details.elementStyles.style as DetailStyleData[])[index].useGradient ? (details.elementStyles.style as DetailStyleData[])[index].gradient : (details.elementStyles.style as DetailStyleData[])[index].colour})`,
-                        color: (details.elementStyles.style as DetailStyleData[])[index].textColour,
-                        border: `.1em solid ${(details.elementStyles.style as DetailStyleData[])[index].border}`
-                    }}/>
+                    <CardDetail elementProps={element} elementStyle={details.elementStyles.group ? {} : Array.isArray(uStyle) ? {
+                        backgroundImage: `linear-gradient(135deg, ${uStyle[index].colour}, ${uStyle[index].useGradient ? uStyle[index].gradient : uStyle[index].colour})`,
+                        color: uStyle[index].textColour,
+                        outline: `.1em solid ${uStyle[index].border}`,
+                        borderRadius: `${uStyle[index].borderRounding}%`
+                    } : {}}/>
                 </span>
             ))}
         </div>

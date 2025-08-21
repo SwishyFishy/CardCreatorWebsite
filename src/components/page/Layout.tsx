@@ -43,10 +43,11 @@ const init: CardData = {
         {elementSet: {elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[15]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
         elementStyles: {group: false, style: [
             {
-                colour: "grey",
-                gradient: "lightgrey",
+                colour: "black",
+                gradient: "transparent",
                 useGradient: true,
                 border: "black",
+                borderRounding: 50,
                 textColour: "black"
             },
             {
@@ -54,6 +55,7 @@ const init: CardData = {
                 gradient: "lightgrey",
                 useGradient: true,
                 border: "black",
+                borderRounding: 50,
                 textColour: "black"
             }
         ]}},
@@ -63,6 +65,7 @@ const init: CardData = {
             gradient: "lightgrey",
             useGradient: true,
             border: "black",
+            borderRounding: 25,
             textColour: "black"
         }}},
         {elementSet: {elements: [{stats: ["Card", "Stats"], id: "stats"}], align: "horizontal", justify: "last"},  
@@ -71,6 +74,7 @@ const init: CardData = {
             gradient: "lightgrey",
             useGradient: true,
             border: "black",
+            borderRounding: 0,
             textColour: "black"
         }]}}/*,
         {elements: [{types: ["vLeft", "first"], id: "type"}], align: "vertical-left", justify:"first"},
