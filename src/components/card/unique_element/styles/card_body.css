@@ -1,23 +1,7 @@
-#component-cardbody{
-    position: relative;
-}
-
-#component-cardbody #cardbody-background{
-    background-image: linear-gradient(135deg, var(--card-body-colour), var(--card-body-gradient));
-    opacity: var(--card-body-opacity);
-
-    width: 100%;
-    height: 100%;
-}
-
-#component-cardbody #cardbody-content{
-    position: absolute;
-    top: 0;
-    left: 0;
-
+#component-cardbody #card-body-content{
     padding: 0em .5em;
 }
 
-#component-cardbody .ability-text{
+#component-cardbody #card-body-content .ability-text{
     color: black;
 }

@@ -1,0 +1,17 @@
+.component-uninheritablyopaquebackground{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.component-uninheritablyopaquebackground .uob-background{
+    width: 100%;
+    height: 100%;
+}
+
+.component-uninheritablyopaquebackground .uob-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
