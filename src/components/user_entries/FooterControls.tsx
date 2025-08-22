@@ -23,7 +23,7 @@ export default function FooterControls()
                 <input type="text" id="footer-set" value={footerData.set} onChange={(e) => setFooterData({...footerData, set: e.target.value.substring(0, 4)})}/>
             </Control>
             <Control>
-                <label htmlFor="footer-collector-num">Collector Number:</label>
+                <label htmlFor="footer-collector-num">Collector #:</label>
                 <input type="number" id="footer-collector-num" value={footerData.collectorNum} onChange={(e) => setFooterData({...footerData, collectorNum: e.target.value})}/>
             </Control>
             <Control>
