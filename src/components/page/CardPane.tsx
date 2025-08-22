@@ -1,5 +1,5 @@
 import Card from "../card/Card";
-import FooterControls from "../controls/FooterControls";
+import FooterControls from "../user_entries/FooterControls";
 
 import './styles/cardpane.css';
 

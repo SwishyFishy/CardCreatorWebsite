@@ -4,6 +4,8 @@
     justify-content: space-around;
     flex-wrap: wrap;
 
+    height: var(--card-footer-dominance);
+
     font-size: .8em;
     text-align: center;
 
@@ -12,5 +14,5 @@
 }
 
 #component-cardfooter span{
-    padding: 0em .25em;
+    padding: 0em .5em;
 }

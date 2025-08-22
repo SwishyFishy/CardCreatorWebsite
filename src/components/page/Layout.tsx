@@ -33,11 +33,10 @@ const init: CardData = {
     },
     footer: {
         year: new Date().getFullYear(),
-        set: "set",
-        collector: "000/000",
-        artistCredit: "credit the artist",
-        siteCredit: "Designed with CardCreator",
-        licence: "CC/BY-SA 4.0"
+        set: "SET",
+        collectorNum: 0,
+        collectorMax: 0,
+        artist: "credit the artist"
     },
     details: {              /*Remove from default in final product*/
         ht: 
