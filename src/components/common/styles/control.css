@@ -12,6 +12,6 @@
     width: 100%;
 }
 
-.component-control input[type="text"]{
+.component-control input[type="text"], .component-control input[type="number"]{
     padding: 0em;
 }
