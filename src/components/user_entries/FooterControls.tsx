@@ -32,7 +32,7 @@ export default function FooterControls()
             </Control>
             <Control>
                 <label htmlFor="footer-artist">Artist:</label>
-                <input type="text" id="footer-artist" value={footerData.artist} onChange={(e) => setFooterData({...footerData, artistCredit: e.target.value})}/>
+                <input type="text" id="footer-artist" value={footerData.artist} onChange={(e) => setFooterData({...footerData, artist: e.target.value})}/>
             </Control>
         </div>
     );
