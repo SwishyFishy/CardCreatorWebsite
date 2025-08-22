@@ -15,3 +15,7 @@
 .component-control input[type="text"], .component-control input[type="number"]{
     padding: 0em;
 }
+
+.component-control input:invalid{
+    outline: .2em solid red;
+}
