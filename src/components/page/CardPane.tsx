@@ -1,7 +1,7 @@
 import Card from "../card/Card";
 import FooterControls from "../user_entries/FooterControls";
 
-import './styles/cardpane.css';
+import './styles/card_pane.css';
 
 export default function CardPane()
 {
