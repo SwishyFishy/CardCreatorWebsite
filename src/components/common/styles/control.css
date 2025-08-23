@@ -13,7 +13,8 @@
 }
 
 .component-control input[type="text"], .component-control input[type="number"]{
-    padding: 0em;
+    box-sizing: border-box;
+    padding: 0em .25em;
 }
 
 .component-control input:invalid{
