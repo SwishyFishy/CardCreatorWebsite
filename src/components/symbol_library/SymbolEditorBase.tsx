@@ -1,5 +1,6 @@
-import Control from "../common/Control"
-import { type SymbolData } from "./Symbol"
+import Control from "../common/Control";
+import ColourPickerDisplay from "../common/ColourPickerDisplay";
+import { type SymbolData } from "./Symbol";
 
 import './styles/symbol_editor_base.css'
 
@@ -22,13 +23,13 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                 </Control>
                 <Control>
                     <label htmlFor="editor-colour">Colour:</label>
-                    <input type="color" id="editor-colour" value={symbol.colour} onChange={(e) => SetSymbol({...symbol, colour: e.target.value})}/>
+                    <ColourPickerDisplay id="editor-colour" value={symbol.colour} SetColour={(e: any) => SetSymbol({...symbol, colour: e.target.value})}/>
                 </Control>
                 <Control>
                     <label htmlFor="editor-gradient">Gradient:</label>
                     <Control>
                         <input type="checkbox" id="editor-gradient-enable" checked={symbol.useGradient} onChange={() => SetSymbol({...symbol, useGradient: !symbol.useGradient})}/>
-                        <input type="color" id="editor-gradient" value={symbol.gradient} onChange={(e) => SetSymbol({...symbol, gradient: e.target.value})}/>
+                        <ColourPickerDisplay id="editor-gradient" value={symbol.gradient} SetColour={(e: any) => SetSymbol({...symbol, gradient: e.target.value})}/>
                     </Control>
                 </Control>
                 <Control>
@@ -37,7 +38,7 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                 </Control>
                 <Control>
                     <label htmlFor="editor-text-colour">Colour:</label>
-                    <input type="color" id="editor-text-colour" value={symbol.textColour} onChange={(e) => SetSymbol({...symbol, textColour: e.target.value})}/>
+                    <ColourPickerDisplay id="editor-text-colour" value={symbol.textColour} SetColour={(e: any) => SetSymbol({...symbol, textColour: e.target.value})}/>
                 </Control>
             </form>
         </div>
