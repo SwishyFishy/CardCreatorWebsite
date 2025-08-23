@@ -1,4 +1,6 @@
 #component-footer{ 
+    background-color: var(--background-highlight);
+
     text-align: center;
 
     padding: 2em 0em 6em 0em;

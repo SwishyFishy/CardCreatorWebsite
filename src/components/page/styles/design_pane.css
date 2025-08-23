@@ -5,3 +5,19 @@
 
     width: 100%;
 }
+
+#component-designpane #selector button{
+    background-color: var(--background-highlight);
+    color: var(--text);
+
+    padding: 1em 0em;
+    border: none;
+
+    font-size: xx-large;
+}
+
+#component-designpane #selector button:hover, #component-designpane #selector button.selected{
+    background-color: var(--accent);
+
+    cursor: pointer;
+}

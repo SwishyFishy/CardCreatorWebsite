@@ -13,26 +13,26 @@ export default function DesignPane()
 {
     type Tab = "layout" | "border" | "art" | "body";
     const tabs: Tab[] = ["layout", "border", "art", "body"];
-    const [tab, setTab] = useState<Tab>("layout");
+    const [selectedTab, setSelectedTab] = useState<Tab>("layout");
 
     return(
         <div id="component-designpane">
             <div id="selector">
                 {tabs.map((tab, index) => (
-                    <button key={`button${index}`} type="button" onClick={() => setTab(tab)}>{tab.toUpperCase()}</button>
+                    <button key={`button${index}`} className={tab == selectedTab ? 'selected' : ""} type="button" onClick={() => setSelectedTab(tab)}>{tab.toUpperCase()}</button>
                 ))}
             </div>
             <div id="editor-panes">
-                <HideableElement visible={tab == "layout"}>
+                <HideableElement visible={selectedTab == "layout"}>
                     <LayoutControls/>
                 </HideableElement>
-                <HideableElement visible={tab == "border"}>
-                    <BorderControls />
+                <HideableElement visible={selectedTab == "border"}>
+                    <BorderControls/>
                 </HideableElement>
-                <HideableElement visible={tab == "art"}>
+                <HideableElement visible={selectedTab == "art"}>
                     <ArtControls/>
                 </HideableElement>
-                <HideableElement  visible={tab == "body"}>
+                <HideableElement  visible={selectedTab == "body"}>
                     <BodyControls/>
                 </HideableElement>
             </div>
