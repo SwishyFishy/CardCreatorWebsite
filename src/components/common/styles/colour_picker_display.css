@@ -1,4 +1,11 @@
 .component-colourpickerdisplay{
     display: grid;
-    grid-template-columns: 50fr 50fr;
+    grid-template-columns: 25fr 75fr;
+}
+
+.component-colourpickerdisplay input{
+    border: none;
+    margin: .25em 0em;
+
+    width: 100%;
 }
