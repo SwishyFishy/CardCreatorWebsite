@@ -21,3 +21,8 @@
 
     cursor: pointer;
 }
+
+#component-designpane #editor-panes{
+    width: 100%;
+    height: 100%;
+}

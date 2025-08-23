@@ -1,5 +1,7 @@
 import type { PropsWithChildren } from "react"
 
+import './styles/hideable_element.css';
+
 interface props_HideableElement {
     visible: boolean
 }
