@@ -1,3 +1,5 @@
+import Control from "./Control";
+
 import type { PropsWithChildren } from "react";
 
 import './styles/toggleable_control.css';
@@ -11,7 +13,9 @@ export default function ToggleableControl({toggle, SetToggle, children}: PropsWi
 {
     return (
         <div className="component-toggleablecontrol">
-            {children}
+            <Control>
+                {children}
+            </Control>
             <input type="checkbox" checked={toggle} onChange={() => SetToggle()}/>
         </div>
     );

@@ -1,6 +1,6 @@
 .component-toggleablecontrol{
     display: grid;
-    grid-template-columns: 25fr 70fr 5fr;
+    grid-template-columns: 95fr 5fr;
     gap: .25em;
     align-items: center;
 
