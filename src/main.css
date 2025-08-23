@@ -40,7 +40,6 @@ body{
 
     /* Page */
     margin: 0em;
-    border-left: .5em solid var(--background-highlight);
 }
 
 /*CSS Reset*/
