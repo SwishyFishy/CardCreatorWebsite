@@ -9,8 +9,8 @@
     font-size: .8em;
     text-align: center;
 
-    background-color: black;
-    color: white;
+    background-color: var(--card-border-colour);
+    color: var(--card-footer-text-colour);
 }
 
 #component-cardfooter span{
