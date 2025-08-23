@@ -1,11 +1,7 @@
-interface props_LayoutControls {
-    visible: boolean
-}
-
-export default function  LayoutControls({visible}: props_LayoutControls)
+export default function  LayoutControls()
 {
     return(
-        <div id="component-layoutcontrols" className={visible ? "visible" : "hidden"}>
+        <div id="component-layoutcontrols">
             <p>Hello Layout</p>
         </div>
     );

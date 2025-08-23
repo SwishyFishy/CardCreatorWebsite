@@ -5,6 +5,8 @@ import ArtControls from "../user_entries/ArtControls";
 import BorderControls from "../user_entries/BorderControls";
 import BodyControls from "../user_entries/BodyControls";
 
+import HideableElement from "../common/HideableElement";
+
 import './styles/design_pane.css';
 
 export default function DesignPane()
@@ -21,10 +23,18 @@ export default function DesignPane()
                 ))}
             </div>
             <div id="editor-panes">
-                <LayoutControls visible={tab == "layout"}/>
-                <BorderControls visible={tab == "border"}/>
-                <ArtControls visible={tab == "art"}/>
-                <BodyControls visible={tab == "body"}/>
+                <HideableElement visible={tab == "layout"}>
+                    <LayoutControls/>
+                </HideableElement>
+                <HideableElement visible={tab == "border"}>
+                    <BorderControls />
+                </HideableElement>
+                <HideableElement visible={tab == "art"}>
+                    <ArtControls/>
+                </HideableElement>
+                <HideableElement  visible={tab == "body"}>
+                    <BodyControls/>
+                </HideableElement>
             </div>
         </div>
     );

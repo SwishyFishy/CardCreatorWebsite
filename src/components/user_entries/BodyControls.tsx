@@ -1,11 +1,7 @@
-interface props_BodyControls {
-    visible: boolean
-}
-
-export default function BodyControls({visible}: props_BodyControls)
+export default function BodyControls()
 {
     return(
-        <div id="component-bodycontrols" className={visible ? "visible" : "hidden"}>
+        <div id="component-bodycontrols">
             <p>Hello Body</p>
         </div>
     );

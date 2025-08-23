@@ -1,11 +1,7 @@
-interface props_ArtControls {
-    visible: boolean
-}
-
-export default function ArtControls({visible}: props_ArtControls)
+export default function ArtControls()
 {
     return(
-        <div id="component-artcontrols" className={visible ? "visible" : "hidden"}>
+        <div id="component-artcontrols">
             <p>Hello Art</p>
         </div>
     );
