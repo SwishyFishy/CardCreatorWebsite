@@ -6,7 +6,9 @@ import { CONTEXT_cardData } from "../../page/Layout";
 import './styles/card_border.css';
 
 export type BorderData = {
-    colour: string
+    colour: string,
+    gradient: string,
+    useGradient: boolean
 }
 
 export default function CardBorder({children}: PropsWithChildren)
@@ -15,6 +17,7 @@ export default function CardBorder({children}: PropsWithChildren)
 
     // Set CSS variables from card data
     document.body.style.setProperty("--card-border-colour", borderData.colour);
+    document.body.style.setProperty("--card-border-gradient", borderData.useGradient ? borderData.gradient : borderData.colour);
 
     return(
         <div id="component-cardborder">

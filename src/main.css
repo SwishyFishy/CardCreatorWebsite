@@ -23,6 +23,7 @@ body{
     --card-body-opacity: 1;
 
     --card-border-colour: #000000;
+    --card-border-gradient: #000000;
     --card-border-thickness: 1em;
 
     --card-content-width: calc(var(--card-width) - 2 * var(--card-border-thickness));

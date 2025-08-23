@@ -13,8 +13,8 @@
 #component-card #card{
     position: relative;
 
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 2 * var(--card-border-thickness));
+    height: calc(100% - 2 * var(--card-border-thickness));
 }
 
 #component-card #card #card-main{

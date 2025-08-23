@@ -9,7 +9,7 @@
     font-size: .8em;
     text-align: center;
 
-    background-color: var(--card-border-colour);
+    background-color: transparent;
     color: var(--card-footer-text-colour);
 }
 

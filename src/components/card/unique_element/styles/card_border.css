@@ -1,10 +1,14 @@
 #component-cardborder{
-    background-image: url("../../../assets/backdrop.png");
-    background-size: cover;
+    width: 100%;
+    height: 100%;
 
-    width: calc(100% - 2 * var(--card-border-thickness));
-    height: calc(100% - 2 * var(--card-border-thickness));
-
-    border: var(--card-border-thickness) solid var(--card-border-colour);
+    /*border-style: solid;*/
+    /*border-width: var(--card-border-thickness);*/
+    background-image: linear-gradient(135deg, var(--card-border-colour), var(--card-border-gradient));
     border-radius: 1em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

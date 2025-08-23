@@ -34,13 +34,12 @@ export default function CardFooter()
     }
 
     // Determine brightness of card border and set footer text colour for best contrast
-    const borderColour = document.body.style.getPropertyValue("--card-border-colour");
+    const borderData = useContext(CONTEXT_cardData).cardData.border;
+    const background = borderData.useGradient ? borderData.gradient : borderData.colour;
     document.body.style.setProperty("--card-footer-text-colour", 
-        0.2126 * parseInt(borderColour.substring(1, 3)) + 0.7152 * parseInt(borderColour.substring(3, 5)) + 0.0722 * parseInt(borderColour.substring(5)) < 75 ? 
+        0.2126 * parseInt(background.substring(1, 3)) + 0.7152 * parseInt(background.substring(3, 5)) + 0.0722 * parseInt(background.substring(5)) < 75 ? 
         "white" : "black"
     );
-    console.log(borderColour);
-    console.log(0.2126 * parseInt(borderColour.substring(1, 3), 16) + 0.7152 * parseInt(borderColour.substring(3, 5), 16) + 0.0722 * parseInt(borderColour.substring(5), 16));
 
     return(
         <div id="component-cardfooter">

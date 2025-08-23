@@ -14,12 +14,14 @@ import './styles/layout.css';
 
 const init: CardData = {
     border: {
-        colour: "#000000"
+        colour: "#000000",
+        gradient: "#ffffff",
+        useGradient: true
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
         dominance: 80,
-        fullart: true,
+        fullart: false,
         vShift: 0,
         hShift: 0,
         zoom: 100
