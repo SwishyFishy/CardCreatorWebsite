@@ -3,6 +3,8 @@
     grid-template-columns: 25fr 75fr;
     gap: .25em;
     align-items: center;
+
+    height: fit-content;
 }
 
 .component-control input, .component-control select{
