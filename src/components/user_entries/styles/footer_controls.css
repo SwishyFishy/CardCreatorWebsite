@@ -1,6 +1,5 @@
 #component-footercontrols{
-    align-self: flex-start;
     margin-top: calc(var(--card-height));
 
-    width: 100%;
+    width: calc(var(--card-width) * var(--card-view-scale));
 }
