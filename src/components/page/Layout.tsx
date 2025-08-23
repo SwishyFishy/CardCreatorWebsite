@@ -14,7 +14,7 @@ import './styles/layout.css';
 
 const init: CardData = {
     border: {
-        colour: "black"
+        colour: "#000000"
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
@@ -41,7 +41,7 @@ const init: CardData = {
     details: {              /*Remove from default in final product*/
         ht: 
         {
-            elementSet: {elements: [{title: "Suuuuuper Long Card Title", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
+            elementSet: {elements: [{title: "Suuuuuper Long Card Title. Like really long. Mega long. So long, in fact, that its going to test what happens to overflow.", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
             elementStyles: {group: false, style: [
                 {
                     colour: "black",

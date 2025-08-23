@@ -22,14 +22,14 @@ body{
     --card-body-dominance: calc(100% - (var(--card-art-dominance)));
     --card-body-opacity: 1;
 
-    --card-border-colour: black;
+    --card-border-colour: #000000;
     --card-border-thickness: 1em;
 
     --card-content-width: calc(var(--card-width) - 2 * var(--card-border-thickness));
     --card-content-height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
     
     --card-footer-dominance: 6%;
-    --card-footer-text-colour: "white";
+    --card-footer-text-colour: #ffffff;
 
     /* Apply base colours */
     color: var(--text);
