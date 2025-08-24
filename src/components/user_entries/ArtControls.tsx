@@ -6,6 +6,7 @@ import type { ArtData } from "../card/unique_element/CardArt";
 import Control from '../common/Control';
 import RangeInput from '../common/RangeInput';
 
+import './styles/_controls.css';
 import './styles/art_controls.css';
 
 export default function ArtControls()
@@ -14,7 +15,7 @@ export default function ArtControls()
     const setArtData: Function = useContext(CONTEXT_cardData).functions.setArt;
 
     return(
-        <div id="component-artcontrols">
+        <div id="component-artcontrols" className="component-controls">
             <div className="column">
                 <Control>
                     <label htmlFor="art-dominance">Artbox Size:</label>

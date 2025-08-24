@@ -30,8 +30,8 @@ const init: CardData = {
     },
     body: {
         content: ["Rules", "text"],
-        colour: "#120fb6ff",
-        gradient: "#f108ebff",
+        colour: "#120fb6",
+        gradient: "#f108eb",
         useGradient: true,
         opacity: .75
     },

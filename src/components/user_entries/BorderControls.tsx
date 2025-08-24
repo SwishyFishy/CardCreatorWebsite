@@ -8,6 +8,7 @@ import ToggleableControl from '../common/ToggleableControl';
 import ColourInput from '../common/ColourInput';
 import RangeInput from '../common/RangeInput';
 
+import './styles/_controls.css';
 import './styles/border_controls.css';
 
 export default function BorderControls()
@@ -16,7 +17,7 @@ export default function BorderControls()
     const setBorderData: Function = useContext(CONTEXT_cardData).functions.setBorder;
 
     return(
-        <div id="component-bordercontrols">
+        <div id="component-bordercontrols" className="component-controls">
             <Control>
                 <label htmlFor="border-colour">Colour:</label>
                 <ColourInput id="border-colour" value={borderData.colour} SetColour={(e: any) => setBorderData({...borderData, colour: e.target.value})}/>    
