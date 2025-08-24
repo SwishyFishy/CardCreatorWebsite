@@ -26,7 +26,7 @@
 
     background-image: var(--card-art-fullart);
     background-position: var(--card-art-horizontal-shift) var(--card-art-vertical-shift);
-    background-size: cover;
+    background-size: var(--card-art-zoom);
     background-repeat: no-repeat;
 }
 

@@ -22,7 +22,7 @@ export default function CardArt()
     document.body.style.setProperty("--card-art-fullart", artData.fullart ? `url(${artData.src})` : 'none');
     document.body.style.setProperty("--card-art-horizontal-shift", `${artData.hShift}px`);
     document.body.style.setProperty("--card-art-vertical-shift", `${-artData.vShift}px`);
-    document.body.style.setProperty("--card-art-zoom", `${artData.zoom / 100}`);
+    document.body.style.setProperty("--card-art-zoom", `${artData.zoom}%`);
     document.body.style.setProperty("--card-art-border-thickness", artData.fullart ? '0' : `${artData.border}mm`);
 
     return(
