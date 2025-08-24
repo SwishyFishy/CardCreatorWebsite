@@ -17,7 +17,7 @@ const init: CardData = {
         colour: "#000000",
         gradient: "#ffffff",
         useGradient: true,
-        thickness: 10
+        thickness: 2.5
     },
     art: {
         src: testArt,           /*Remove from default in final product*/

@@ -1,0 +1,20 @@
+.component-rangeinput{
+    display: grid;
+    grid-template-columns: 5fr 90fr 5fr;
+    grid-template-rows: 50fr 50fr;
+    gap: .25em;
+
+    justify-items: center;
+    align-content: center;
+}
+
+.component-rangeinput input{
+    border: none;
+    margin: .25em 0em;
+
+    width: 100%;
+}
+
+.component-rangeinput input:first-child{
+    grid-column: 1 / span 3;
+}

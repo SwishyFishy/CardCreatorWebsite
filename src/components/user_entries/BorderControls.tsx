@@ -6,6 +6,7 @@ import type { BorderData } from '../card/unique_element/CardBorder';
 import Control from '../common/Control';
 import ToggleableControl from '../common/ToggleableControl';
 import ColourInput from '../common/ColourInput';
+import RangeInput from '../common/RangeInput';
 
 import './styles/border_controls.css';
 
@@ -26,7 +27,7 @@ export default function BorderControls()
             </ToggleableControl>
             <Control>
                 <label htmlFor="border-thickness">Thickness:</label>
-                <input type="range" id="border-thickness" min="1" max="30" value={borderData.thickness} onChange={(e) => setBorderData({...borderData, thickness: e.target.value})}/>
+                <RangeInput id="border-thickness" min={.1} max={5} step={.1} value={borderData.thickness} SetRange={(e: any) => setBorderData({...borderData, thickness: e.target.value})}/>
             </Control>
         </div>
     );

@@ -24,7 +24,7 @@ body{
 
     --card-border-colour: #000000;
     --card-border-gradient: #000000;
-    --card-border-thickness: 1em;
+    --card-border-thickness: 3mm;
 
     --card-content-width: calc(var(--card-width) - 2 * var(--card-border-thickness));
     --card-content-height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
