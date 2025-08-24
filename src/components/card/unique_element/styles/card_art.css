@@ -1,10 +1,10 @@
 #component-cardart{
     width: 100%;
-    height: calc(100% - var(--card-border-thickness));
+    height: calc(100% - var(--card-art-border-thickness));
 
     overflow: hidden;
 
-    border-bottom: var(--card-border-thickness) solid var(--card-art-border-colour);
+    border-bottom: var(--card-art-border-thickness) solid transparent;
 }
 
 #component-cardart img{

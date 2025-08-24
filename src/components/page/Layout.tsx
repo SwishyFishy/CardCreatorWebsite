@@ -21,8 +21,9 @@ const init: CardData = {
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
-        dominance: 80,
+        dominance: 60,
         fullart: false,
+        border: 2.5,
         vShift: 0,
         hShift: 0,
         zoom: 100

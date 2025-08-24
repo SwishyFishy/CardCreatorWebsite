@@ -10,8 +10,8 @@ body{
     --card-height: 88mm;
     --card-view-scale: 2;
 
-    --card-art-border-colour: var(--card-border-colour);
-    --card-art-dominance: 50%;
+    --card-art-border-thickness: var(--card-border-thickness);
+    --card-art-dominance: calc(50% + var(--card-art-border-thickness));
     --card-art-fullart: none;
     --card-art-horizontal-shift: 0px;
     --card-art-vertical-shift: 0px;
