@@ -1,9 +1,9 @@
-.component-colourpickerdisplay{
+.component-colourinput{
     display: grid;
     grid-template-columns: 25fr 75fr;
 }
 
-.component-colourpickerdisplay input{
+.component-colourinput input{
     border: none;
     margin: .25em 0em;
 

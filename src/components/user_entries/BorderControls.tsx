@@ -5,7 +5,7 @@ import type { BorderData } from '../card/unique_element/CardBorder';
 
 import Control from '../common/Control';
 import ToggleableControl from '../common/ToggleableControl';
-import ColourPickerDisplay from '../common/ColourPickerDisplay';
+import ColourInput from '../common/ColourInput';
 
 import './styles/border_controls.css';
 
@@ -18,12 +18,16 @@ export default function BorderControls()
         <div id="component-bordercontrols">
             <Control>
                 <label htmlFor="border-colour">Colour:</label>
-                <ColourPickerDisplay id="border-colour" value={borderData.colour} SetColour={(e: any) => setBorderData({...borderData, colour: e.target.value})}/>    
+                <ColourInput id="border-colour" value={borderData.colour} SetColour={(e: any) => setBorderData({...borderData, colour: e.target.value})}/>    
             </Control>
             <ToggleableControl toggle={borderData.useGradient} SetToggle={() => setBorderData({...borderData, useGradient: !borderData.useGradient})}>
                 <label htmlFor="border-gradient">Gradient:</label>
-                <ColourPickerDisplay id="border-gradient" value={borderData.gradient} SetColour={(e: any) => setBorderData({...borderData, gradient: e.target.value})}/>
+                <ColourInput id="border-gradient" value={borderData.gradient} SetColour={(e: any) => setBorderData({...borderData, gradient: e.target.value})}/>
             </ToggleableControl>
+            <Control>
+                <label htmlFor="border-thickness">Thickness:</label>
+                <input type="range" id="border-thickness" min="1" max="30" value={borderData.thickness} onChange={(e) => setBorderData({...borderData, thickness: e.target.value})}/>
+            </Control>
         </div>
     );
 }

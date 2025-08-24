@@ -1,6 +1,6 @@
 import Control from "../common/Control";
 import ToggleableControl from "../common/ToggleableControl";
-import ColourPickerDisplay from "../common/ColourPickerDisplay";
+import ColourInput from "../common/ColourInput";
 import { type SymbolData } from "./Symbol";
 
 import './styles/symbol_editor_base.css'
@@ -24,11 +24,11 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                 </Control>
                 <Control>
                     <label htmlFor="editor-colour">Colour:</label>
-                    <ColourPickerDisplay id="editor-colour" value={symbol.colour} SetColour={(e: any) => SetSymbol({...symbol, colour: e.target.value})}/>
+                    <ColourInput id="editor-colour" value={symbol.colour} SetColour={(e: any) => SetSymbol({...symbol, colour: e.target.value})}/>
                 </Control>
                 <ToggleableControl toggle={symbol.useGradient} SetToggle={() => SetSymbol({...symbol, useGradient: !symbol.useGradient})}>
                     <label htmlFor="editor-gradient">Gradient:</label>
-                    <ColourPickerDisplay id="editor-gradient" value={symbol.gradient} SetColour={(e: any) => SetSymbol({...symbol, gradient: e.target.value})}/>
+                    <ColourInput id="editor-gradient" value={symbol.gradient} SetColour={(e: any) => SetSymbol({...symbol, gradient: e.target.value})}/>
                 </ToggleableControl>
                 <Control>
                     <label htmlFor="editor-text">Text:</label>
@@ -36,7 +36,7 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                 </Control>
                 <Control>
                     <label htmlFor="editor-text-colour">Colour:</label>
-                    <ColourPickerDisplay id="editor-text-colour" value={symbol.textColour} SetColour={(e: any) => SetSymbol({...symbol, textColour: e.target.value})}/>
+                    <ColourInput id="editor-text-colour" value={symbol.textColour} SetColour={(e: any) => SetSymbol({...symbol, textColour: e.target.value})}/>
                 </Control>
             </form>
         </div>

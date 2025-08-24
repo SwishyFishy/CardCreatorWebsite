@@ -16,7 +16,8 @@ const init: CardData = {
     border: {
         colour: "#000000",
         gradient: "#ffffff",
-        useGradient: true
+        useGradient: true,
+        thickness: 10
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
@@ -65,7 +66,7 @@ const init: CardData = {
                 }
             ]}
         },
-        hm: 
+        /*hm: 
         {
             elementSet: {elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  
             elementStyles: {group: true, style: {
@@ -77,7 +78,7 @@ const init: CardData = {
                 borderRounding: 25,
                 textColour: "black"
             }}
-        },
+        },*/
         hb: 
         {
             elementSet: {elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last"},  

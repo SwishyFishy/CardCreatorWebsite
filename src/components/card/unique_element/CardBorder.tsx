@@ -8,7 +8,8 @@ import './styles/card_border.css';
 export type BorderData = {
     colour: string,
     gradient: string,
-    useGradient: boolean
+    useGradient: boolean,
+    thickness: number
 }
 
 export default function CardBorder({children}: PropsWithChildren)
@@ -18,6 +19,7 @@ export default function CardBorder({children}: PropsWithChildren)
     // Set CSS variables from card data
     document.body.style.setProperty("--card-border-colour", borderData.colour);
     document.body.style.setProperty("--card-border-gradient", borderData.useGradient ? borderData.gradient : borderData.colour);
+    document.body.style.setProperty("--card-border-thickness", `${borderData.thickness / 10}em`);
 
     return(
         <div id="component-cardborder">
