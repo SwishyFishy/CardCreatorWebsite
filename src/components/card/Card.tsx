@@ -15,10 +15,6 @@ export default function Card()
 {
     const cardData: CardData = useContext(CONTEXT_cardData).cardData;
 
-    // Set CSS variables from card data
-    document.body.style.setProperty("--card-art-fullart", cardData.art.fullart ? `url(${cardData.art.src})` : 'none');
-    document.body.style.setProperty("--card-art-dominance", `calc(${cardData.art.dominance}% - var(--card-footer-dominance))`);
-
     return(
         <div id="component-card">
             <CardBorder>
