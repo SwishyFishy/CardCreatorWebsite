@@ -21,7 +21,12 @@ export default function BodyControls()
             <div className="column">
                 <Control>
                     <label htmlFor="body-content">Content:</label>
-                    <textarea id="body-content" value={bodyData.content.join('\n')} onChange={(e) => (setBodyData({...bodyData, content: e.target.value.split('\n')}))}/>
+                    <textarea id="body-content" value={bodyData.content.join('\n')} onChange={(e) => {
+                        setBodyData({...bodyData, content: e.target.value.split('\n')});
+                        const thisTextarea: HTMLElement = document.getElementById("body-content")!;
+                        thisTextarea.style.setProperty("height", "auto");
+                        thisTextarea.style.setProperty("height", `${thisTextarea.scrollHeight}px`);
+                    }}/>
                 </Control>
             </div>
             <div className="column">

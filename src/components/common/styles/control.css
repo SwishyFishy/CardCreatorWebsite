@@ -7,11 +7,14 @@
     height: fit-content;
 }
 
-.component-control input, .component-control select{
+.component-control input, .component-control select, .component-control textarea{
     border: none;
     margin: .25em 0em;
 
     width: 100%;
+
+    resize: none;
+    overflow: hidden;
 }
 
 .component-control input[type="text"], .component-control input[type="number"]{
