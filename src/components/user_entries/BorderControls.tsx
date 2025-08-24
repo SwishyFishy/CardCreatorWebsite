@@ -18,18 +18,26 @@ export default function BorderControls()
 
     return(
         <div id="component-bordercontrols" className="component-controls">
-            <Control>
-                <label htmlFor="border-colour">Colour:</label>
-                <ColourInput id="border-colour" value={borderData.colour} SetColour={(e: any) => setBorderData({...borderData, colour: e.target.value})}/>    
-            </Control>
-            <ToggleableControl toggle={borderData.useGradient} SetToggle={() => setBorderData({...borderData, useGradient: !borderData.useGradient})}>
-                <label htmlFor="border-gradient">Gradient:</label>
-                <ColourInput id="border-gradient" value={borderData.gradient} SetColour={(e: any) => setBorderData({...borderData, gradient: e.target.value})}/>
-            </ToggleableControl>
-            <Control>
-                <label htmlFor="border-thickness">Thickness:</label>
-                <RangeInput id="border-thickness" min={0} max={5} step={.1} value={borderData.thickness} SetRange={(e: any) => setBorderData({...borderData, thickness: e.target.value})}/>
-            </Control>
+            <div className="column">
+                <Control>
+                    <label htmlFor="border-colour">Colour:</label>
+                    <ColourInput id="border-colour" value={borderData.colour} SetColour={(e: any) => setBorderData({...borderData, colour: e.target.value})}/>    
+                </Control>
+                <ToggleableControl toggle={borderData.useGradient} SetToggle={() => setBorderData({...borderData, useGradient: !borderData.useGradient})}>
+                    <label htmlFor="border-gradient">Gradient:</label>
+                    <ColourInput id="border-gradient" value={borderData.gradient} SetColour={(e: any) => setBorderData({...borderData, gradient: e.target.value})}/>
+                </ToggleableControl>
+                <Control>
+                    <label htmlFor="border-thickness">Thickness:</label>
+                    <RangeInput id="border-thickness" min={0} max={5} step={.1} value={borderData.thickness} SetRange={(e: any) => setBorderData({...borderData, thickness: e.target.value})}/>
+                </Control>
+            </div>
+            <div className="column">
+
+            </div>
+            <div className="column">
+
+            </div>
         </div>
     );
 }
