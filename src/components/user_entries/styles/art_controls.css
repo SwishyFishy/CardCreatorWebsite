@@ -9,3 +9,9 @@
 
     padding: 2em;
 }
+
+#component-artcontrols .column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
