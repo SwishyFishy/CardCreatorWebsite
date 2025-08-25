@@ -5,14 +5,14 @@
     list-style-type: none;
 }
 
-.component-controlbackground ul li{
+.component-controlbackground ul .gradient-selector{
     display: grid;
     grid-template-columns: 95fr 5fr;
 
     justify-items: end;
 }
 
-.component-controlbackground ul li .delete{
+.component-controlbackground ul .gradient-selector .delete{
     border: none;
     border-radius: .25em;
     margin: .25em 0em;
