@@ -1,7 +1,6 @@
 .component-control{
     display: grid;
     grid-template-columns: 35fr 65fr;
-    gap: 1%;
     align-items: center;
 
     height: fit-content;
