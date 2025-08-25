@@ -53,18 +53,20 @@ const init: CardData = {
             elementSet: {elements: [{title: "Suuuuuper Long Card Title. Like really long. Mega long. So long, in fact, that its going to test what happens to overflow.", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
             elementStyles: {group: false, style: [
                 {
-                    colour: "black",
-                    gradient: "red",
-                    useGradient: true,
+                    background: {
+                        colour: "grey",
+                        gradient: [],
+                    },
                     inset: 0,
                     border: "transparent",
                     borderRounding: 0,
                     textColour: "blue"
                 },
                 {
-                    colour: "transparent",
-                    gradient: "lightgrey",
-                    useGradient: false,
+                    background: {
+                        colour: "transparent",
+                        gradient: []
+                    },
                     inset: 0,
                     border: "transparent",
                     borderRounding: 50,
@@ -89,9 +91,10 @@ const init: CardData = {
         {
             elementSet: {elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last"},  
             elementStyles: {group: false, style: [{
-                colour: "grey",
-                gradient: "lightgrey",
-                useGradient: true,
+                background: {
+                    colour: "grey",
+                    gradient: ["red"]
+                },
                 inset: .05,
                 border: "black",
                 borderRounding: 0,

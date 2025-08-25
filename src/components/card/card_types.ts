@@ -31,7 +31,7 @@ export type CardData = {
 export type Gradient = {
     colour: string;
     gradient: string[];
-    linear: boolean;
+    linear?: boolean;
     angle?: number;
 }
 export function GradientCSS(g: Gradient): string

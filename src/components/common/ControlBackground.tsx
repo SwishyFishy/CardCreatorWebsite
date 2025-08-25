@@ -1,12 +1,13 @@
 import Control from "./Control";
 import ColourInput from "./ColourInput";
 
-import type { CardBorder, CardBody, CardTitle, CardCost, CardType, CardStats } from "../card/card_types";
+import type { CardBorder, CardBody } from "../card/card_types";
+import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
 
 import './styles/control_background.css';
 
 interface props_ControlBackground {
-    data: CardBorder | CardBody /*| CardTitle | CardCost | CardType | CardStats*/,
+    data: CardBorder | CardBody | DetailStyleData,
     SetData: Function
 }
 

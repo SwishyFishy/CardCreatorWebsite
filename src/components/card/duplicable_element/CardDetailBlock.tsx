@@ -1,17 +1,19 @@
 import {v4 as uuid} from 'uuid';
 
 import CardDetail from './CardDetail';
+
 import type { TitleData } from './CardTitle';
 import type { CostData } from './CardCost';
 import type { TypeData } from './CardType';
 import type { StatsData } from './CardStats';
+import type { Gradient } from '../card_types';
+
+import { GradientCSS } from '../card_types';
 
 import './styles/card_detail_block.css';
 
 export type DetailStyleData = {
-    colour: string,
-    gradient: string,
-    useGradient: boolean,
+    background: Gradient,
     border: string,
     borderRounding: number,
     inset: number,
@@ -59,7 +61,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         else
         {
             style = {
-                backgroundImage: `linear-gradient(135deg, ${uStyle.colour}, ${uStyle.useGradient ? uStyle.gradient : uStyle.colour})`,
+                backgroundImage: GradientCSS(uStyle.background),
                 color: uStyle.textColour,
                 boxShadow: `inset ${uStyle.inset}em ${uStyle.inset}em ${uStyle.inset}em black, inset ${-uStyle.inset}em ${-uStyle.inset}em ${uStyle.inset}em black`,
                 outline: `.1em solid ${uStyle.border}`,
@@ -80,7 +82,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
             {details.elementSet.elements.map((element, index) => (
                 <span key={`${baseId}element${index}`}>
                     <CardDetail vertical={!(details.elementSet.align == "horizontal")} elementProps={element} elementStyle={details.elementStyles.group ? {} : Array.isArray(uStyle) ? {
-                        backgroundImage: `linear-gradient(135deg, ${uStyle[index].colour}, ${uStyle[index].useGradient ? uStyle[index].gradient : uStyle[index].colour})`,
+                        backgroundImage: GradientCSS(uStyle[index].background),
                         color: uStyle[index].textColour,
                         boxShadow: `inset ${uStyle[index].inset}em ${uStyle[index].inset}em ${uStyle[index].inset}em black, inset ${-uStyle[index].inset}em ${-uStyle[index].inset}em ${uStyle[index].inset}em black`,
                         outline: `.1em solid ${uStyle[index].border}`,
