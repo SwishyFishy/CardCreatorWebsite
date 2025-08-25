@@ -2,11 +2,19 @@ import type { PropsWithChildren } from "react";
 
 import './styles/control.css';
 
-export default function Control({children}: PropsWithChildren)
+interface props_Control {
+    toggleable?: {
+        toggle: boolean,
+        SetToggle: Function
+    }
+}
+
+export default function Control({toggleable = undefined, children}: PropsWithChildren<props_Control>)
 {
     return (
-        <div className="component-control">
+        <div className={`component-control ${toggleable ? "toggleable" : ""}`}>
             {children}
+            {toggleable ? <input type="checkbox" checked={toggleable.toggle} onChange={() => toggleable.SetToggle()}/> : ""}
         </div>
     );
 }

@@ -1,5 +1,4 @@
 import Control from "../common/Control";
-import ToggleableControl from "../common/ToggleableControl";
 import ColourInput from "../common/ColourInput";
 import { type SymbolData } from "./Symbol";
 
@@ -26,10 +25,10 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                     <label htmlFor="editor-colour">Colour:</label>
                     <ColourInput id="editor-colour" value={symbol.colour} SetColour={(e: any) => SetSymbol({...symbol, colour: e.target.value})}/>
                 </Control>
-                <ToggleableControl toggle={symbol.useGradient} SetToggle={() => SetSymbol({...symbol, useGradient: !symbol.useGradient})}>
+                <Control toggleable={{toggle: symbol.useGradient, SetToggle: () => SetSymbol({...symbol, useGradient: !symbol.useGradient})}}>
                     <label htmlFor="editor-gradient">Gradient:</label>
                     <ColourInput id="editor-gradient" value={symbol.gradient} SetColour={(e: any) => SetSymbol({...symbol, gradient: e.target.value})}/>
-                </ToggleableControl>
+                </Control>
                 <Control>
                     <label htmlFor="editor-text">Text:</label>
                     <input type="text" id="editor-text" value={symbol.text} onChange={(e) => SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}/>
