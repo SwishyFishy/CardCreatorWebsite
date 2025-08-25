@@ -11,8 +11,8 @@ import './styles/design_pane.css';
 
 export default function DesignPane()
 {
-    type Tab = "layout" | "border" | "art" | "body";
-    const tabs: Tab[] = ["layout", "border", "art", "body"];
+    type Tab = "layout" | "background" | "art" | "body";
+    const tabs: Tab[] = ["layout", "background", "art", "body"];
     const [selectedTab, setSelectedTab] = useState<Tab>("layout");
 
     return(
@@ -26,7 +26,7 @@ export default function DesignPane()
                 <HideableElement visible={selectedTab == "layout"}>
                     <LayoutControls/>
                 </HideableElement>
-                <HideableElement visible={selectedTab == "border"}>
+                <HideableElement visible={selectedTab == "background"}>
                     <BorderControls/>
                 </HideableElement>
                 <HideableElement visible={selectedTab == "art"}>
