@@ -20,6 +20,10 @@
     overflow: hidden;
 }
 
+.component-control input[type="button"]{
+    padding: 0em;
+}
+
 .component-control input[type="text"], .component-control input[type="number"]{
     box-sizing: border-box;
     padding: 0em .25em;

@@ -28,26 +28,14 @@ export type CardData = {
     details: {[key: string]: CardDetailGroup}
 }
 
-// Contains 
-export class Gradient
-{
+export type Gradient = {
     colour: string;
     gradient: string[];
     linear: boolean;
     angle: number;
-    useGradient: boolean;
-
-    constructor(colour: string, gradient: string[] = [],  useGradient: boolean = false, linear: boolean = true, angle: number = 0,)
-    {
-        this.colour = colour;
-        this.gradient = gradient;
-        this.linear = linear;
-        this.angle = angle;
-        this.useGradient = useGradient;
-    }
-
-    CSS(): string
-    {
-        return(`${this.linear ? `linear-gradient(${this.angle}deg, ` : 'radial-gradient('}${this.colour}, ${this.useGradient ? this.gradient.join(' ') : this.colour})`);        
-    }
+}
+export function GradientCSS(g: Gradient): string
+{
+    console.log(`${g.linear ? `linear-gradient(${g.angle}deg, ` : 'radial-gradient('}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
+    return(`${g.linear ? `linear-gradient(${g.angle}deg, ` : 'radial-gradient('}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
 }

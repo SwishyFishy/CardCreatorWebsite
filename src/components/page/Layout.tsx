@@ -2,7 +2,6 @@ import { createContext, useState, useMemo } from "react";
 
 import BasicSymbols from "../symbol_library/BasicSymbols";
 import type { CardData, CardBorder, CardArt, CardBody, CardDetailGroup, CardFooter } from "../card/card_types";
-import { Gradient } from "../card/card_types";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -15,7 +14,12 @@ import './styles/layout.css';
 
 const init: CardData = {
     border: {
-        background: new Gradient("#000000", ["#ffffff"], true, true, 135),
+        background: {
+            colour: "#000000", 
+            gradient: ["#ffffff", "#000000"],
+            linear: true, 
+            angle: 135
+        },
         thickness: 2.5
     },
     art: {
