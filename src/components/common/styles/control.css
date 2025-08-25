@@ -11,25 +11,25 @@
 }
 
 .component-control input, .component-control select, .component-control textarea{
+    box-sizing: border-box;
+    
+    width: 100%;
+    height: 2em;
+    
+    padding: 0em .25em;
     border: none;
     margin: .25em 0em;
-
-    width: 100%;
 
     resize: none;
     overflow: hidden;
 }
 
-.component-control input[type="button"]{
-    padding: 0em;
-    height: 2em;
+.component-control [type="color"]
+{
+    padding: .25em;
 }
 
-.component-control input[type="text"], .component-control input[type="number"]{
-    box-sizing: border-box;
-    padding: 0em .25em;
-}
-
-.component-control input:invalid{
-    outline: .2em solid red;
+.component-control [type="checkbox"]{
+    width: auto;
+    height: auto;
 }
