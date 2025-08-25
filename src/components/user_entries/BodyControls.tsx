@@ -4,7 +4,7 @@ import { CONTEXT_cardData } from '../page/Layout';
 import type { BodyData } from '../card/unique_element/CardBody';
 
 import Control from '../common/Control';
-import ColourInput from '../common/ColourInput';
+import ControlBackground from '../common/ControlBackground';
 import RangeInput from '../common/RangeInput';
 
 import './styles/_controls.css';
@@ -29,14 +29,7 @@ export default function BodyControls()
                 </Control>
             </div>
             <div className="column">
-                <Control>
-                    <label htmlFor="body-colour">Colour:</label>
-                    <ColourInput id="body-colour" value={bodyData.colour} SetColour={(e: any) => setBodyData({...bodyData, colour: e.target.value})}/>    
-                </Control>
-                <Control toggleable={{toggle: bodyData.useGradient, SetToggle:() => setBodyData({...bodyData, useGradient: !bodyData.useGradient})}}>
-                    <label htmlFor="body-gradient">Gradient:</label>
-                    <ColourInput id="body-gradient" value={bodyData.gradient} SetColour={(e: any) => setBodyData({...bodyData, gradient: e.target.value})}/>
-                </Control>
+                <ControlBackground data={bodyData} SetData={setBodyData}/>
                 <Control>
                     <label htmlFor="body-opacity">Opacity:</label>
                     <RangeInput id="body-opacity" min={0} max={1} step={0.01} value={bodyData.opacity} SetRange={(e: any) => setBodyData({...bodyData, opacity: e.target.value})}/>

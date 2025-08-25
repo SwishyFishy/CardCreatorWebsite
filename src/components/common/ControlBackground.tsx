@@ -13,7 +13,7 @@ interface props_ControlBackground {
 export default function ControlBackground({data, SetData}: props_ControlBackground)
 {
     return(
-        <div className="component-background">   
+        <div className="component-controlbackground">   
             <Control>
                 <label htmlFor="border-colour">Colour:</label>
                 <ColourInput id="border-colour" value={data.background.colour} SetColour={(e: any) => SetData({...data, background: {...data.background, colour: e.target.value}})}/>    

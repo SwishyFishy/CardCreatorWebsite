@@ -17,14 +17,9 @@ body{
     --card-art-vertical-shift: 0px;
     --card-art-zoom: 1;
 
-    --card-body-colour: #666666;
-    --card-body-gradient: #666666;
     --card-body-dominance: calc(100% - (var(--card-art-dominance)));
-    --card-body-opacity: 1;
-
-    --card-border-colour: #000000;
-    --card-border-gradient: #000000;
-    --card-border-thickness: 3mm;
+    
+    --card-border-background: "linear-gradient(#000000, #000000)";
 
     --card-content-width: calc(var(--card-width) - 2 * var(--card-border-thickness));
     --card-content-height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));

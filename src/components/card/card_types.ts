@@ -32,10 +32,9 @@ export type Gradient = {
     colour: string;
     gradient: string[];
     linear: boolean;
-    angle: number;
+    angle?: number;
 }
 export function GradientCSS(g: Gradient): string
 {
-    console.log(`${g.linear ? `linear-gradient(${g.angle}deg, ` : 'radial-gradient('}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
-    return(`${g.linear ? `linear-gradient(${g.angle}deg, ` : 'radial-gradient('}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
+    return(`${g.linear ? `linear-gradient(${g.angle ? g.angle : 0}deg, ` : 'radial-gradient('}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
 }

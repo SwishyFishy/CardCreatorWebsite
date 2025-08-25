@@ -22,6 +22,7 @@
 
 .component-control input[type="button"]{
     padding: 0em;
+    height: 2em;
 }
 
 .component-control input[type="text"], .component-control input[type="number"]{

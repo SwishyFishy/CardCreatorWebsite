@@ -4,8 +4,7 @@ import { CONTEXT_cardData } from '../page/Layout';
 import type { BorderData } from '../card/unique_element/CardBorder';
 
 import Control from '../common/Control';
-import ControlGradient from '../common/ControlGradient';
-import ColourInput from '../common/ColourInput';
+import ControlBackground from '../common/ControlBackground';
 import RangeInput from '../common/RangeInput';
 
 import './styles/_controls.css';
@@ -19,11 +18,7 @@ export default function BorderControls()
     return(
         <div id="component-bordercontrols" className="component-controls">
             <div className="column">
-                <Control>
-                    <label htmlFor="border-colour">Colour:</label>
-                    <ColourInput id="border-colour" value={borderData.background.colour} SetColour={(e: any) => setBorderData({...borderData, background: {...borderData.background, colour: e.target.value}})}/>    
-                </Control>
-                <ControlGradient data={borderData} SetData={setBorderData}/>
+                <ControlBackground data={borderData} SetData={setBorderData}/>
                 <Control>
                     <label htmlFor="border-thickness">Thickness:</label>
                     <RangeInput id="border-thickness" min={0} max={5} step={.1} value={borderData.thickness} SetRange={(e: any) => setBorderData({...borderData, thickness: e.target.value})}/>
