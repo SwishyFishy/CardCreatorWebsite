@@ -30,7 +30,7 @@ body{
     --card-content-height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
     
     --card-footer-dominance: 6%;
-    --card-footer-text-colour: #ffffff;
+    --card-footer-text-colour: #000000;
 
     /* Apply base colours */
     color: var(--text);

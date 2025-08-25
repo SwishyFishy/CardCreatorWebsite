@@ -15,8 +15,8 @@ export type CardFooter = FooterData;
 export type CardTitle = TitleData;
 export type CardCost = CostData;
 export type CardType = TypeData;
-export type CardStats = StatsData
-export type CardDetailGroup = DetailGroupData
+export type CardStats = StatsData;
+export type CardDetailGroup = DetailGroupData;
 
 export type AllowableDetailKeys = 'ht' | 'hm' | 'hb' | 'lvt' | 'lvm' | 'lvb' | 'rvt' | 'rvm' | 'rvb';
 
@@ -26,4 +26,28 @@ export type CardData = {
     body: CardBody,
     footer: CardFooter,
     details: {[key: string]: CardDetailGroup}
+}
+
+// Contains 
+export class Gradient
+{
+    colour: string;
+    gradient: string[];
+    linear: boolean;
+    angle: number;
+    useGradient: boolean;
+
+    constructor(colour: string, gradient: string[] = [],  useGradient: boolean = false, linear: boolean = true, angle: number = 0,)
+    {
+        this.colour = colour;
+        this.gradient = gradient;
+        this.linear = linear;
+        this.angle = angle;
+        this.useGradient = useGradient;
+    }
+
+    CSS(): string
+    {
+        return(`${this.linear ? `linear-gradient(${this.angle}deg, ` : 'radial-gradient('}${this.colour}, ${this.useGradient ? this.gradient.join(' ') : this.colour})`);        
+    }
 }

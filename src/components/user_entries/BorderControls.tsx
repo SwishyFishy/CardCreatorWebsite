@@ -9,6 +9,7 @@ import RangeInput from '../common/RangeInput';
 
 import './styles/_controls.css';
 import './styles/border_controls.css';
+import { Gradient } from '../card/card_types';
 
 export default function BorderControls()
 {
@@ -20,11 +21,12 @@ export default function BorderControls()
             <div className="column">
                 <Control>
                     <label htmlFor="border-colour">Colour:</label>
-                    <ColourInput id="border-colour" value={borderData.colour} SetColour={(e: any) => setBorderData({...borderData, colour: e.target.value})}/>    
+                    {/*Make Gradient a type instead of a class, and implement an independent function which accepts a Gradient type and returns the CSS*/}
+                    <ColourInput id="border-colour" value={borderData.background.colour} SetColour={(e: any) => setBorderData({...borderData, background: new Gradient(e.target.value, borderData.background.gradient, /*...*/)/*colour: e.target.value*/})}/>    
                 </Control>
-                <Control toggleable={{toggle: borderData.useGradient, SetToggle: () => setBorderData({...borderData, useGradient: !borderData.useGradient})}}>
+                <Control toggleable={{toggle: borderData.background.useGradient, SetToggle: () => setBorderData({...borderData, useGradient: !borderData.background.useGradient})}}>
                     <label htmlFor="border-gradient">Gradient:</label>
-                    <ColourInput id="border-gradient" value={borderData.gradient} SetColour={(e: any) => setBorderData({...borderData, gradient: e.target.value})}/>
+                    <ColourInput id="border-gradient" value={borderData.background.gradient.join(',')} SetColour={(e: any) => setBorderData({...borderData, gradient: e.target.value})}/>
                 </Control>
                 <Control>
                     <label htmlFor="border-thickness">Thickness:</label>
