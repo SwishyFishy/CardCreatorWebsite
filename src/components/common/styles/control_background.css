@@ -1,0 +1,21 @@
+.component-controlbackground ul{
+    padding-left: 2.9%;
+    margin: 0em;
+
+    list-style-type: none;
+}
+
+.component-controlbackground ul li{
+    display: grid;
+    grid-template-columns: 95fr 5fr;
+
+    justify-items: end;
+}
+
+.component-controlbackground ul li .delete{
+    border: none;
+    border-radius: .25em;
+    margin: .25em 0em;
+
+    color: red;
+}

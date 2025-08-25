@@ -3,17 +3,21 @@ import ColourInput from "./ColourInput";
 
 import type { CardBorder, CardBody, CardTitle, CardCost, CardType, CardStats } from "../card/card_types";
 
-import './styles/control_gradient.css';
+import './styles/control_background.css';
 
-interface props_ControlGradient {
-    data: CardBorder/* | CardBody | CardTitle | CardCost | CardType | CardStats*/,
+interface props_ControlBackground {
+    data: CardBorder | CardBody /*| CardTitle | CardCost | CardType | CardStats*/,
     SetData: Function
 }
 
-export default function ControlGradient({data, SetData}: props_ControlGradient)
+export default function ControlBackground({data, SetData}: props_ControlBackground)
 {
     return(
-        <div className="component-controlgradient">
+        <div className="component-background">   
+            <Control>
+                <label htmlFor="border-colour">Colour:</label>
+                <ColourInput id="border-colour" value={data.background.colour} SetColour={(e: any) => SetData({...data, background: {...data.background, colour: e.target.value}})}/>    
+            </Control>
             <Control>
                 <label htmlFor="border-gradient-add">Gradient:</label>
                 <input type="button" id="border-gradient-add" value="Add Gradient" onClick={() => SetData({...data, background: {...data.background, gradient: data.background.gradient.toSpliced(data.background.gradient.length, 0, "#ffffff")}})}/>
