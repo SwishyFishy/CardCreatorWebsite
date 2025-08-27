@@ -23,7 +23,7 @@ export default function ArtControls()
                 </Control>
                 <Control>
                     <label htmlFor="art-border">Artbox Border Thickness:</label>
-                    <RangeInput id="art-border" min={0} max={5} step={.1} value={artData.border} SetRange={(e: any) => setArtData({...artData, border: e.target.value})}/>
+                    <RangeInput id="art-border" min={0} max={88} step={.1} value={artData.border} SetRange={(e: any) => setArtData({...artData, border: e.target.value})}/>
                 </Control>
             </div>
             <div className="column">                    

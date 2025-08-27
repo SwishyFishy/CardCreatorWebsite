@@ -10,7 +10,7 @@
     }
 }
 
-.component-control input, .component-control select, .component-control textarea{
+.component-control input, .component-control select{
     box-sizing: border-box;
     
     width: 100%;
@@ -19,9 +19,13 @@
     padding: 0em .25em;
     border: none;
     margin: .25em 0em;
+}
+
+.component-control textarea{
+    height: 8em;
 
     resize: none;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .component-control [type="color"]
