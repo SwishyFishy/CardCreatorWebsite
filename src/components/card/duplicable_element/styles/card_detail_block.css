@@ -2,7 +2,6 @@
     position: absolute;
 
     display: flex;
-    justify-content: space-between;
 
     /* Position along an edge */
     &.horizontal{
@@ -38,6 +37,7 @@
         right: 0;
     }
 
+    /* Justify the block */
     &.first{
         top: 0;
 
@@ -62,5 +62,22 @@
         &[class*="vertical-"]{
             height: var(--card-body-dominance);
         }
+    }
+
+    /* Justify the elements inside a block */
+    &.start{
+        justify-content: flex-start;
+    }
+
+    &.center{
+        justify-content: space-around;
+    }
+
+    &.spread{
+        justify-content: space-between;
+    }
+
+    &.end{
+        justify-content: flex-end;
     }
 }

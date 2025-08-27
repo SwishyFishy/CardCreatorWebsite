@@ -22,16 +22,12 @@ export type DetailStyleData = {
 
 export type DetailGroupData = {
     name: string
-    elementSet: {   
-        elements: (TitleData | CostData | TypeData | StatsData)[],
-        align: "horizontal" | "vertical-left" | "vertical-right",
-        justify: "first" | "middle" | "last",
-        style?: DetailStyleData
-    },
-    elementStyles: {
-        group: boolean,
-        style: DetailStyleData[]
-    }
+    elements: (TitleData | CostData | TypeData | StatsData)[],
+    align: "horizontal" | "vertical-left" | "vertical-right",
+    justify: "first" | "middle" | "last",
+    position?: "start" | "center" | "spread" | "end",
+    groupStyle?: DetailStyleData,
+    elementStyles?: DetailStyleData[]
 }
 
 export type DetailStyleCSS = {
@@ -51,7 +47,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const baseId: string = uuid();
 
     // Style conversion and error checking
-    const groupStyle: DetailStyleData | undefined = details.elementSet.style;
+    const groupStyle: DetailStyleData | undefined = details.groupStyle;
     const groupCSS: DetailStyleCSS = groupStyle ? {
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
@@ -60,20 +56,20 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         borderRadius: `${groupStyle.borderRounding}%`
     } : {};
 
-    const elementStyle: DetailStyleData[] = details.elementStyles.style;
-    const elementCSS: DetailStyleCSS[] = elementStyle.map((style) => ({
+    const elementStyle: DetailStyleData[] | undefined = details.elementStyles;
+    const elementCSS: DetailStyleCSS[] = elementStyle ? elementStyle.map((style) => ({
         backgroundImage: GradientCSS(style.background),
         color: style.textColour,
         boxShadow: `inset ${style.inset}em ${style.inset}em ${style.inset}em black, inset ${-style.inset}em ${-style.inset}em ${style.inset}em black`,
         outline: `.1em solid ${style.border}`,
         borderRadius: `${style.borderRounding}%`
-    }));
+    })) : [];
 
     return(
-        <div key={baseId} className={`component-carddetailblock ${details.elementSet.align} ${details.elementSet.justify}`} style={groupCSS}>
-            {details.elementSet.elements.map((element, index) => (
+        <div key={baseId} className={`component-carddetailblock ${details.align} ${details.justify} ${details.position}`} style={groupCSS}>
+            {details.elements.map((element, index) => (
                 <span key={`${baseId}element${index}`}>
-                    <CardDetail vertical={!(details.elementSet.align == "horizontal")} elementProps={element} elementStyle={elementCSS[index]}/>
+                    <CardDetail vertical={!(details.align == "horizontal")} elementProps={element} elementStyle={elementCSS[index]}/>
                 </span>
             ))}
         </div>

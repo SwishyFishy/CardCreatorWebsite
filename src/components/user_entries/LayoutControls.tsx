@@ -36,7 +36,7 @@ export default function  LayoutControls()
             </div>
             <div className="column">
                 <Control>
-                    <label htmlFor="detail-align">Alignment:</label>
+                    <label htmlFor="detail-align">Block Alignment:</label>
                     <select id="detail-align" value={detailData[detailIndex].align} onChange={(e) => setDetailData({...detailData[detailIndex], align: e.target.value})}>
                         <option value="horizontal">Horizontal</option>
                         <option value="vertical-left">Left</option>
@@ -44,11 +44,20 @@ export default function  LayoutControls()
                     </select>
                 </Control>
                 <Control>
-                    <label htmlFor="detail-justify">Justification:</label>
+                    <label htmlFor="detail-justify">Block Justification:</label>
                     <select id="detail-justify" value={detailData[detailIndex].justify} onChange={(e) => setDetailData({...detailData[detailIndex], justify: e.target.value})}>
                         <option value="first">Start</option>
                         <option value="middle">Middle</option>
                         <option value="last">End</option>
+                    </select>
+                </Control>
+                <Control>
+                    <label htmlFor="detail-position">Block Element Justification:</label>
+                    <select id="detail-position" value={detailData[detailIndex].position} onChange={(e) => setDetailData({...detailData[detailIndex], position: e.target.value})}>
+                        <option value="start">Start</option>
+                        <option value="center">Center</option>
+                        <option value="spread">Spread</option>
+                        <option value="end">End</option>
                     </select>
                 </Control>
             </div>

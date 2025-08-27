@@ -54,8 +54,8 @@ const init: CardData = {
     details: [              /*Remove from default in final product*/
         {
             name: "titlebar",
-            elementSet: {elements: [{title: "Suuuuuper Long Card Title. Like really long. Mega long. So long, in fact, that its going to test what happens to overflow.", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
-            elementStyles: {group: false, style: [
+            elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first", position: "spread",
+            elementStyles: [
                 {
                     background: {
                         colour: "grey",
@@ -76,7 +76,7 @@ const init: CardData = {
                     borderRounding: 50,
                     textColour: "blue"
                 }
-            ]}
+            ]
         },/* 
         {
             elementSet: {elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  
@@ -91,18 +91,19 @@ const init: CardData = {
             }}
         },*/
         {
-            name: "Stats",
-            elementSet: {elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last"},  
-            elementStyles: {group: false, style: [{
-                background: {
-                    colour: "grey",
-                    gradient: ["red"]
-                },
-                inset: .05,
-                border: "black",
-                borderRounding: 0,
-                textColour: "black"
-            }]}
+            name: "Stats",elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last", position: "end",  
+            elementStyles: [
+                {
+                    background: {
+                        colour: "grey",
+                        gradient: ["red"]
+                    },
+                    inset: .05,
+                    border: "black",
+                    borderRounding: 0,
+                    textColour: "black"
+                }
+            ]
         }
     ]
 };
