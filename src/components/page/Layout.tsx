@@ -77,19 +77,21 @@ const init: CardData = {
                     textColour: "blue"
                 }
             ]
-        },/* 
+        },
         {
-            elementSet: {elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  
-            elementStyles: {group: true, style: {
-                colour: "grey",
-                gradient: "lightgrey",
-                useGradient: true,
+            name: "Typeline",
+            elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle",  
+            groupStyle: {
+                background: {
+                        colour: "grey",
+                        gradient: ["red"]
+                    },
                 inset: .1,
                 border: "black",
                 borderRounding: 25,
                 textColour: "black"
-            }}
-        },*/
+            }
+        },
         {
             name: "Stats",elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last", position: "end",  
             elementStyles: [

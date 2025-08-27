@@ -15,3 +15,10 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
+.component-controls .column h2{
+    text-align: center;
+
+    border-bottom: .15em solid var(--text);
+    margin: 1em 0em .5em 0em;
+}

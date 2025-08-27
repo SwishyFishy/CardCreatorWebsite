@@ -5,7 +5,7 @@ import type { CardCore, CardDetailGroup } from "../card/card_types";
 
 import Control from "../common/Control";
 
-export default function  LayoutControls()
+export default function LayoutControls()
 {
     const cardCoreData: CardCore = useContext(CONTEXT_cardData).cardData.card;
     const setCardCoreData: Function = useContext(CONTEXT_cardData).functions.setCore;
@@ -17,6 +17,7 @@ export default function  LayoutControls()
     return(
         <div id="component-layoutcontrols" className="component-controls">
             <div className="column">
+                <h2>Card</h2>
                 <Control>
                     <label htmlFor="card-height">Height (mm):</label>
                     <input type="number" id="card-height" value={cardCoreData.height} onChange={(e) => setCardCoreData({...cardCoreData, height: e.target.value})}/>
@@ -25,8 +26,8 @@ export default function  LayoutControls()
                     <label htmlFor="card-width">Width (mm):</label>
                     <input type="number" id="card-width" value={cardCoreData.width} onChange={(e) => setCardCoreData({...cardCoreData, width: e.target.value})}/>
                 </Control>
-            </div>
-            <div className="column">
+                
+                <h2>Card Detail Blocks</h2>
                 {detailData.map((detail, index) => (
                     <Control key={`detailselector${index}`}>
                         <label key={`detailselector${index}label`} htmlFor={`${index}`}>{detail.name}:</label>
@@ -35,6 +36,7 @@ export default function  LayoutControls()
                 ))}
             </div>
             <div className="column">
+                <h2>Detail Block: {detailData[detailIndex].name}</h2>
                 <Control>
                     <label htmlFor="detail-align">Block Alignment:</label>
                     <select id="detail-align" value={detailData[detailIndex].align} onChange={(e) => setDetailData({...detailData[detailIndex], align: e.target.value})}>
@@ -60,6 +62,9 @@ export default function  LayoutControls()
                         <option value="end">End</option>
                     </select>
                 </Control>
+            </div>
+            <div className="column">
+
             </div>
         </div>
     );

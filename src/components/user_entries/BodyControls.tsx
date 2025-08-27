@@ -18,12 +18,14 @@ export default function BodyControls()
     return(
         <div id="component-bodycontrols" className="component-controls">
             <div className="column">
+                <h2>Body Content</h2>
                 <Control>
                     <label htmlFor="body-content">Content:</label>
                     <textarea id="body-content" rows={5} value={bodyData.content.join('\n')} onChange={(e) => setBodyData({...bodyData, content: e.target.value.split('\n')})}/>
                 </Control>
             </div>
             <div className="column">
+                <h2>Body Background</h2>
                 <ControlBackground data={bodyData} SetData={setBodyData}/>
                 <Control>
                     <label htmlFor="body-opacity">Opacity (%):</label>
