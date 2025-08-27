@@ -25,11 +25,12 @@ export type DetailGroupData = {
     elementSet: {   
         elements: (TitleData | CostData | TypeData | StatsData)[],
         align: "horizontal" | "vertical-left" | "vertical-right",
-        justify: "first" | "middle" | "last"
+        justify: "first" | "middle" | "last",
+        style?: DetailStyleData
     },
     elementStyles: {
         group: boolean,
-        style: DetailStyleData | DetailStyleData[]
+        style: DetailStyleData[]
     }
 }
 
@@ -50,45 +51,29 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const baseId: string = uuid();
 
     // Style conversion and error checking
-    let style: DetailStyleCSS | DetailStyleCSS[] = {};
-    let uStyle: DetailStyleData | DetailStyleData[] = details.elementStyles.style;
+    const groupStyle: DetailStyleData | undefined = details.elementSet.style;
+    const groupCSS: DetailStyleCSS = groupStyle ? {
+        backgroundImage: GradientCSS(groupStyle.background),
+        color: groupStyle.textColour,
+        boxShadow: `inset ${groupStyle.inset}em ${groupStyle.inset}em ${groupStyle.inset}em black, inset ${-groupStyle.inset}em ${-groupStyle.inset}em ${groupStyle.inset}em black`,
+        outline: `.1em solid ${groupStyle.border}`,
+        borderRadius: `${groupStyle.borderRounding}%`
+    } : {};
 
-    if (details.elementStyles.group)
-    {
-        if (Array.isArray(uStyle))
-        {
-            console.error(`Grouped card details have conflicting styles`);
-        }
-        else
-        {
-            style = {
-                backgroundImage: GradientCSS(uStyle.background),
-                color: uStyle.textColour,
-                boxShadow: `inset ${uStyle.inset}em ${uStyle.inset}em ${uStyle.inset}em black, inset ${-uStyle.inset}em ${-uStyle.inset}em ${uStyle.inset}em black`,
-                outline: `.1em solid ${uStyle.border}`,
-                borderRadius: `${uStyle.borderRounding}%`
-            }
-        }
-    }
-    else
-    {
-        if (!Array.isArray(uStyle) || uStyle.length != details.elementSet.elements.length)
-        {
-            console.error(`Incompatible card details and card detail styles`);
-        }
-    }
+    const elementStyle: DetailStyleData[] = details.elementStyles.style;
+    const elementCSS: DetailStyleCSS[] = elementStyle.map((style) => ({
+        backgroundImage: GradientCSS(style.background),
+        color: style.textColour,
+        boxShadow: `inset ${style.inset}em ${style.inset}em ${style.inset}em black, inset ${-style.inset}em ${-style.inset}em ${style.inset}em black`,
+        outline: `.1em solid ${style.border}`,
+        borderRadius: `${style.borderRounding}%`
+    }));
 
     return(
-        <div key={baseId} className={`component-carddetailblock ${details.elementSet.align} ${details.elementSet.justify}`} style={style}>
+        <div key={baseId} className={`component-carddetailblock ${details.elementSet.align} ${details.elementSet.justify}`} style={groupCSS}>
             {details.elementSet.elements.map((element, index) => (
                 <span key={`${baseId}element${index}`}>
-                    <CardDetail vertical={!(details.elementSet.align == "horizontal")} elementProps={element} elementStyle={details.elementStyles.group ? {} : Array.isArray(uStyle) ? {
-                        backgroundImage: GradientCSS(uStyle[index].background),
-                        color: uStyle[index].textColour,
-                        boxShadow: `inset ${uStyle[index].inset}em ${uStyle[index].inset}em ${uStyle[index].inset}em black, inset ${-uStyle[index].inset}em ${-uStyle[index].inset}em ${uStyle[index].inset}em black`,
-                        outline: `.1em solid ${uStyle[index].border}`,
-                        borderRadius: `${uStyle[index].borderRounding}%`
-                    } : {}}/>
+                    <CardDetail vertical={!(details.elementSet.align == "horizontal")} elementProps={element} elementStyle={elementCSS[index]}/>
                 </span>
             ))}
         </div>
