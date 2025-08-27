@@ -15,6 +15,10 @@ export default function Card()
 {
     const cardData: CardData = useContext(CONTEXT_cardData).cardData;
 
+    // Set CSS properties from card data
+    document.body.style.setProperty("--card-height", `${cardData.card.height}mm`);
+    document.body.style.setProperty("--card-width", `${cardData.card.width}mm`);
+
     return(
         <div id="component-card">
             <CardBorder>

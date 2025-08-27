@@ -8,6 +8,10 @@ import type { TypeData } from "./duplicable_element/CardType";
 import type { StatsData } from "./duplicable_element/CardStats";
 import type { DetailGroupData } from "./duplicable_element/CardDetailBlock";
 
+export type CardCore = {
+    height: number,
+    width: number
+}
 export type CardBorder = BorderData;
 export type CardArt = ArtData;
 export type CardBody = BodyData;
@@ -19,6 +23,7 @@ export type CardStats = StatsData;
 export type CardDetailGroup = DetailGroupData;
 
 export type CardData = {
+    card: CardCore,
     border: CardBorder,
     art: CardArt,
     body: CardBody,

@@ -2,7 +2,7 @@ import { createContext, useState, useMemo } from "react";
 import {v4 as uuid} from 'uuid';
 
 import BasicSymbols from "../symbol_library/BasicSymbols";
-import type { CardData, CardBorder, CardArt, CardBody, CardDetailGroup, CardFooter } from "../card/card_types";
+import type { CardCore, CardData, CardBorder, CardArt, CardBody, CardDetailGroup, CardFooter } from "../card/card_types";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -14,6 +14,10 @@ import testArt from '../../assets/test/Necrolemur.jpg'; /*Remove from final prod
 import './styles/layout.css';
 
 const init: CardData = {
+    card: {
+        height: 88,
+        width: 63
+    },
     border: {
         background: {
             colour: "#000000", 
@@ -114,6 +118,7 @@ export default function Layout()
 {
     const [cardData, setCardData] = useState<CardData>(init);
 
+    const setCore = (newCore: CardCore) => setCardData({...cardData, card: newCore});
     const setBorder = (newBorder: CardBorder) => setCardData({...cardData, border: newBorder});
     const setArt = (newArt: CardArt) => setCardData({...cardData, art: newArt});
     const setBody = (newBody: CardBody) => setCardData({...cardData, body: newBody});
@@ -134,7 +139,7 @@ export default function Layout()
         <div id="component-layout">
             <Header/>
             <div className="main">
-                <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setBorder, setArt, setBody, setFooter, setDetail}}), [cardData])}>
+                <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setCore, setBorder, setArt, setBody, setFooter, setDetail}}), [cardData])}>
                     <CardPane/>
                     <DesignPane/>
                 </CONTEXT_cardData.Provider>
