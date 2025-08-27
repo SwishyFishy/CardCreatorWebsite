@@ -1,5 +1,4 @@
 import { createContext, useState, useMemo } from "react";
-import {v4 as uuid} from 'uuid';
 
 import BasicSymbols from "../symbol_library/BasicSymbols";
 import type { CardCore, CardData, CardBorder, CardArt, CardBody, CardDetailGroup, CardFooter } from "../card/card_types";
@@ -54,7 +53,7 @@ const init: CardData = {
     },
     details: [              /*Remove from default in final product*/
         {
-            id: uuid(),
+            name: "titlebar",
             elementSet: {elements: [{title: "Suuuuuper Long Card Title. Like really long. Mega long. So long, in fact, that its going to test what happens to overflow.", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
             elementStyles: {group: false, style: [
                 {
@@ -92,7 +91,7 @@ const init: CardData = {
             }}
         },*/
         {
-            id: uuid(),
+            name: "Stats",
             elementSet: {elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last"},  
             elementStyles: {group: false, style: [{
                 background: {
@@ -124,7 +123,7 @@ export default function Layout()
     const setBody = (newBody: CardBody) => setCardData({...cardData, body: newBody});
     const setFooter = (newFooter: CardFooter) => setCardData({...cardData, footer: newFooter});
     const setDetail = (newDetail: CardDetailGroup) => {
-        let index: number = cardData.details.findIndex((detail) => detail.id == newDetail.id);
+        let index: number = cardData.details.findIndex((detail) => detail.name == newDetail.name);
         if (index == -1)
         {
             setCardData({...cardData, details: [...cardData.details, newDetail]});
