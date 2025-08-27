@@ -12,7 +12,7 @@ export default function  LayoutControls()
     const detailData: CardDetailGroup[] = useContext(CONTEXT_cardData).cardData.details;
     const setDetailData: Function = useContext(CONTEXT_cardData).functions.setDetail;
 
-    const [detailIndeex, setDetailIndex] = useState<number>(0);
+    const [detailIndex, setDetailIndex] = useState<number>(0);
 
     return(
         <div id="component-layoutcontrols" className="component-controls">
@@ -35,7 +35,22 @@ export default function  LayoutControls()
                 ))}
             </div>
             <div className="column">
-                
+                <Control>
+                    <label htmlFor="detail-align">Alignment:</label>
+                    <select id="detail-align" value={detailData[detailIndex].elementSet.align} onChange={(e) => setDetailData({...detailData[detailIndex], elementSet: {...detailData[detailIndex].elementSet, align: e.target.value}})}>
+                        <option value="horizontal">Horizontal</option>
+                        <option value="vertical-left">Left</option>
+                        <option value="vertical-right">Right</option>
+                    </select>
+                </Control>
+                <Control>
+                    <label htmlFor="detail-justify">Justification:</label>
+                    <select id="detail-justify" value={detailData[detailIndex].elementSet.justify} onChange={(e) => setDetailData({...detailData[detailIndex], elementSet: {...detailData[detailIndex].elementSet, justify: e.target.value}})}>
+                        <option value="first">Start</option>
+                        <option value="middle">Middle</option>
+                        <option value="last">End</option>
+                    </select>
+                </Control>
             </div>
         </div>
     );
