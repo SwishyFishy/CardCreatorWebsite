@@ -26,8 +26,8 @@ export default function BodyControls()
             <div className="column">
                 <ControlBackground data={bodyData} SetData={setBodyData}/>
                 <Control>
-                    <label htmlFor="body-opacity">Opacity:</label>
-                    <RangeInput id="body-opacity" min={0} max={1} step={0.01} value={bodyData.opacity} SetRange={(e: any) => setBodyData({...bodyData, opacity: e.target.value})}/>
+                    <label htmlFor="body-opacity">Opacity (%):</label>
+                    <RangeInput id="body-opacity" min={0} max={100} step={1} value={bodyData.opacity * 100} SetRange={(e: any) => setBodyData({...bodyData, opacity: e.target.value / 100})}/>
                 </Control>
             </div>
             <div className="column">
