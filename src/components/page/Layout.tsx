@@ -1,4 +1,5 @@
 import { createContext, useState, useMemo } from "react";
+import {v4 as uuid} from 'uuid';
 
 import BasicSymbols from "../symbol_library/BasicSymbols";
 import type { CardData, CardBorder, CardArt, CardBody, CardDetailGroup, CardFooter } from "../card/card_types";
@@ -47,9 +48,9 @@ const init: CardData = {
         collectorMax: 0,
         artist: "credit the artist"
     },
-    details: {              /*Remove from default in final product*/
-        ht: 
+    details: [              /*Remove from default in final product*/
         {
+            id: uuid(),
             elementSet: {elements: [{title: "Suuuuuper Long Card Title. Like really long. Mega long. So long, in fact, that its going to test what happens to overflow.", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first"}, 
             elementStyles: {group: false, style: [
                 {
@@ -73,8 +74,7 @@ const init: CardData = {
                     textColour: "blue"
                 }
             ]}
-        },
-        /*hm: 
+        },/* 
         {
             elementSet: {elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle"},  
             elementStyles: {group: true, style: {
@@ -87,8 +87,8 @@ const init: CardData = {
                 textColour: "black"
             }}
         },*/
-        hb: 
         {
+            id: uuid(),
             elementSet: {elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last"},  
             elementStyles: {group: false, style: [{
                 background: {
@@ -101,7 +101,7 @@ const init: CardData = {
                 textColour: "black"
             }]}
         }
-    }
+    ]
 };
 
 export const CONTEXT_cardData: React.Context<{
@@ -118,21 +118,23 @@ export default function Layout()
     const setArt = (newArt: CardArt) => setCardData({...cardData, art: newArt});
     const setBody = (newBody: CardBody) => setCardData({...cardData, body: newBody});
     const setFooter = (newFooter: CardFooter) => setCardData({...cardData, footer: newFooter});
-    const setHTDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, ht: newDetail}});
-    const setHMDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, hm: newDetail}});
-    const setHBDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, hb: newDetail}});
-    const setLVTDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, lvt: newDetail}});
-    const setLVMDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, lvm: newDetail}});
-    const setLVBDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, lvb: newDetail}});
-    const setRVTDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, rvt: newDetail}});
-    const setRVMDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, rvm: newDetail}});
-    const setRVBDetail = (newDetail: CardDetailGroup) => setCardData({...cardData, details: {...cardData.details, rvb: newDetail}});
+    const setDetail = (newDetail: CardDetailGroup) => {
+        let index: number = cardData.details.findIndex((detail) => detail.id == newDetail.id);
+        if (index == -1)
+        {
+            setCardData({...cardData, details: [...cardData.details, newDetail]});
+        }
+        else
+        {
+            setCardData({...cardData, details: cardData.details.toSpliced(index, 1, newDetail)});
+        }
+    };
 
     return(
         <div id="component-layout">
             <Header/>
             <div className="main">
-                <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setBorder, setArt, setBody, setFooter, setHTDetail, setHMDetail, setHBDetail, setLVTDetail, setLVMDetail, setLVBDetail, setRVTDetail, setRVMDetail, setRVBDetail}}), [cardData])}>
+                <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setBorder, setArt, setBody, setFooter, setDetail}}), [cardData])}>
                     <CardPane/>
                     <DesignPane/>
                 </CONTEXT_cardData.Provider>

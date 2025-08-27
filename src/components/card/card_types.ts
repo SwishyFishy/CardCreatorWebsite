@@ -18,14 +18,12 @@ export type CardType = TypeData;
 export type CardStats = StatsData;
 export type CardDetailGroup = DetailGroupData;
 
-export type AllowableDetailKeys = 'ht' | 'hm' | 'hb' | 'lvt' | 'lvm' | 'lvb' | 'rvt' | 'rvm' | 'rvb';
-
 export type CardData = {
     border: CardBorder,
     art: CardArt,
     body: CardBody,
     footer: CardFooter,
-    details: {[key: string]: CardDetailGroup}
+    details: CardDetailGroup[]
 }
 
 export type Gradient = {

@@ -21,6 +21,7 @@ export type DetailStyleData = {
 }
 
 export type DetailGroupData = {
+    id: string
     elementSet: {   
         elements: (TitleData | CostData | TypeData | StatsData)[],
         align: "horizontal" | "vertical-left" | "vertical-right",
