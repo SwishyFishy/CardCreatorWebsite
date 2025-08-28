@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CONTEXT_cardData } from "../page/Layout";
 
-import type { CardCore, CardDetailGroup } from "../card/card_types";
+import type { CardCore, CardCost, CardDetailGroup, CardStats, CardTitle, CardType } from "../card/card_types";
 
 import Control from "../common/Control";
 import ControlDetails from "../common/ControlDetails";
@@ -15,11 +15,13 @@ export default function LayoutControls()
     const setDetailData: Function = useContext(CONTEXT_cardData).functions.setDetail;
     const deleteDetailData: Function = useContext(CONTEXT_cardData).functions.deleteDetail;
 
-    const [detailIndex, setDetailIndex] = useState<number>(0);
+    const [detailIndex, setDetailIndex] = useState<number>(-1);
+    const [elementIndex, setElementIndex] = useState<number>(-1);
     const [newDetailBlock, setNewDetailBlock] = useState<{name: string, valid: boolean}>({
         name: "New Block",
         valid: detailData.findIndex((detail) => detail.name == "New Block") > -1 ? false : true
     });
+    const [newElement, setNewElement] = useState<string>("title");
 
     return(
         <div id="component-layoutcontrols" className="component-controls">
@@ -40,7 +42,7 @@ export default function LayoutControls()
                         deleteDetailData(detail);
                         if (detailIndex == index)
                         {
-                            setDetailIndex(detailIndex - 1);
+                            setDetailIndex(-1);
                         }
                     }}}>
                         <label key={`detailselector${index}label`} htmlFor={`${index}`}>{detail.name}:</label>
@@ -84,7 +86,7 @@ export default function LayoutControls()
             <div className="column">
                 {detailIndex > -1 ? 
                 <>
-                    <h2>Detail Block: {detailData[detailIndex].name}</h2>
+                    <h2>{detailData[detailIndex].name}</h2>
                     <Control>
                         <label htmlFor="detail-align">Block Alignment:</label>
                         <select id="detail-align" value={detailData[detailIndex].align} onChange={(e) => setDetailData({...detailData[detailIndex], align: e.target.value})}>
@@ -111,11 +113,59 @@ export default function LayoutControls()
                         </select>
                     </Control>
                     <ControlDetails detail={detailData[detailIndex].groupStyle} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], groupStyle: newStyle})}/>
+                    
+                    <h2>{detailData[detailIndex].name} Elements</h2>
+                    {detailData[detailIndex].elements.map((element, index) => (
+                        <Control key={`detailselector${index}`} deletable={{Delete: () => {
+                            setDetailData({...detailData[detailIndex], 
+                                elements: detailData[detailIndex].elements.toSpliced(index, 1),
+                                elementStyles: detailData[detailIndex].elementStyles.toSpliced(index, 1)});
+                            if (elementIndex == index)
+                            {
+                                setElementIndex(-1);
+                            }
+                        }}}>
+                            <label key={`elementselector${index}label`} htmlFor={`${index}`}>{element.id}:</label>
+                            <input type="button" key={`elementselector${index}button1`} id={`${index}`} value="Edit" onClick={() => setElementIndex(index)}/>
+                        </Control>
+                    ))}
+                    <Control spawnable={{Spawn: () => {
+                        let newDetail: CardTitle | CardCost | CardType | CardStats;
+                        switch (newElement)
+                        {
+                            case "title":
+                                newDetail = {id: "title", title: ""} as CardTitle;
+                                break;
+                            case "cost":
+                                newDetail = {id: "cost", cost: [], direction: "row"} as CardCost;
+                                break;
+                            case "type":
+                                newDetail = {id: "type", types: []} as CardType;
+                                break;
+                            case "stats":
+                                newDetail = {id: "stats", stats: [], separator: false} as CardStats;
+                                break;
+                        }
+                        setDetailData({...detailData[detailIndex], elements: [...detailData[detailIndex].elements, newDetail!]});
+                        setNewElement("title");
+                    }}}>
+                        <label htmlFor="detail-block-add-element">Add Detail:</label>
+                        <select id="detail-block-add-element" value={newElement} onChange={(e) => setNewElement(e.target.value)}>
+                            <option value="title">Card Title</option>
+                            <option value="cost">Card Cost</option>
+                            <option value="type">Card Type</option>
+                            <option value="stats">Card Stats</option>
+                        </select>
+                    </Control>
                 </>
                 : ""}
              </div>
             <div className="column">
-
+                {elementIndex > -1 ?
+                <>
+                    <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}/>
+                </>
+                : ""}
             </div>
         </div>
     );
