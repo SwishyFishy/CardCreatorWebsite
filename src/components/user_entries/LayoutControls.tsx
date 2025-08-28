@@ -125,7 +125,8 @@ export default function LayoutControls()
                                 setElementIndex(-1);
                             }
                         }}}>
-                            <label key={`elementselector${index}label`} htmlFor={`${index}`}>{element.id}:</label>
+                            {/* {element.id?.slice(0, 1).toUpperCase().concat(element.id?.slice(1))} capitalizes the first letter of the id */}
+                            <label key={`elementselector${index}label`} htmlFor={`${index}`}>{element.id?.slice(0, 1).toUpperCase().concat(element.id?.slice(1))}:</label>
                             <input type="button" key={`elementselector${index}button1`} id={`${index}`} value="Edit" onClick={() => setElementIndex(index)}/>
                         </Control>
                     ))}
