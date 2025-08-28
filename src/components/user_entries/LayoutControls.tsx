@@ -4,6 +4,8 @@ import { CONTEXT_cardData } from "../page/Layout";
 import type { CardCore, CardDetailGroup } from "../card/card_types";
 
 import Control from "../common/Control";
+import ControlDetails from "../common/ControlDetails";
+import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
 
 export default function LayoutControls()
 {
@@ -89,6 +91,7 @@ export default function LayoutControls()
                         <option value="end">End</option>
                     </select>
                 </Control>
+                <ControlDetails detail={detailData[detailIndex].groupStyle} SetDetail={setDetailData}/>
             </div>
             <div className="column">
 

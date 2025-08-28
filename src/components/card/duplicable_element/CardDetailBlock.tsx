@@ -26,8 +26,8 @@ export type DetailGroupData = {
     align: "horizontal" | "vertical-left" | "vertical-right",
     justify: "first" | "middle" | "last",
     position: "start" | "center" | "spread" | "end",
-    groupStyle?: DetailStyleData,
-    elementStyles?: DetailStyleData[]
+    groupStyle: DetailStyleData,
+    elementStyles: DetailStyleData[]
 }
 
 export type DetailStyleCSS = {
@@ -48,22 +48,22 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
 
     // Style conversion and error checking
     const groupStyle: DetailStyleData | undefined = details.groupStyle;
-    const groupCSS: DetailStyleCSS = groupStyle ? {
+    const groupCSS: DetailStyleCSS = {
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
         boxShadow: `inset ${groupStyle.inset}em ${groupStyle.inset}em ${groupStyle.inset}em black, inset ${-groupStyle.inset}em ${-groupStyle.inset}em ${groupStyle.inset}em black`,
         outline: `.1em solid ${groupStyle.border}`,
         borderRadius: `${groupStyle.borderRounding}%`
-    } : {};
+    };
 
     const elementStyle: DetailStyleData[] | undefined = details.elementStyles;
-    const elementCSS: DetailStyleCSS[] = elementStyle ? elementStyle.map((style) => ({
+    const elementCSS: DetailStyleCSS[] = elementStyle.map((style) => ({
         backgroundImage: GradientCSS(style.background),
         color: style.textColour,
         boxShadow: `inset ${style.inset}em ${style.inset}em ${style.inset}em black, inset ${-style.inset}em ${-style.inset}em ${style.inset}em black`,
         outline: `.1em solid ${style.border}`,
         borderRadius: `${style.borderRounding}%`
-    })) : [];
+    }));
 
     return(
         <div key={baseId} className={`component-carddetailblock ${details.align} ${details.justify} ${details.position}`} style={groupCSS}>

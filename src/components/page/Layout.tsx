@@ -58,6 +58,16 @@ const init: CardData = {
             align: "horizontal", 
             justify: "first", 
             position: "spread",
+            groupStyle: {
+                background: {
+                    colour: "transparent",
+                    gradient: []
+                },
+                border: "none",
+                borderRounding: 0,
+                inset: 0,
+                textColour: ""
+            },
             elementStyles: [
                 {
                     background: {
@@ -94,10 +104,21 @@ const init: CardData = {
                 border: "black",
                 borderRounding: 25,
                 textColour: "black"
-            }
+            },
+            elementStyles: []
         },
         {
-            name: "Stats",elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last", position: "end",  
+            name: "Stats", elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last", position: "end",
+            groupStyle: {
+                background: {
+                    colour: "transparent",
+                    gradient: []
+                },
+                border: "none",
+                borderRounding: 0,
+                inset: 0,
+                textColour: ""
+            },
             elementStyles: [
                 {
                     background: {
