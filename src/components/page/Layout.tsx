@@ -136,12 +136,19 @@ export default function Layout()
             setCardData({...cardData, details: cardData.details.toSpliced(index, 1, newDetail)});
         }
     };
+    const deleteDetail = (detail: CardDetailGroup) => {
+        let index: number = cardData.details.findIndex((d) => detail.name == d.name);
+        if (index > -1)
+        {
+            setCardData({...cardData, details: cardData.details.toSpliced(index, 1)});
+        }
+    }
 
     return(
         <div id="component-layout">
             <Header/>
             <div className="main">
-                <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setCore, setBorder, setArt, setBody, setFooter, setDetail}}), [cardData])}>
+                <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setCore, setBorder, setArt, setBody, setFooter, setDetail, deleteDetail}}), [cardData])}>
                     <CardPane/>
                     <DesignPane/>
                 </CONTEXT_cardData.Provider>

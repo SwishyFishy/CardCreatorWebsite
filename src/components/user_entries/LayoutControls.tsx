@@ -11,6 +11,7 @@ export default function LayoutControls()
     const setCardCoreData: Function = useContext(CONTEXT_cardData).functions.setCore;
     const detailData: CardDetailGroup[] = useContext(CONTEXT_cardData).cardData.details;
     const setDetailData: Function = useContext(CONTEXT_cardData).functions.setDetail;
+    const deleteDetailData: Function = useContext(CONTEXT_cardData).functions.deleteDetail;
 
     const [detailIndex, setDetailIndex] = useState<number>(0);
 
@@ -29,9 +30,9 @@ export default function LayoutControls()
                 
                 <h2>Card Detail Blocks</h2>
                 {detailData.map((detail, index) => (
-                    <Control key={`detailselector${index}`}>
+                    <Control key={`detailselector${index}`} deletable={{Delete: () => deleteDetailData(detail)}}>
                         <label key={`detailselector${index}label`} htmlFor={`${index}`}>{detail.name}:</label>
-                        <input type="button" key={`detailselector${index}button`} id={`${index}`} value="Edit" onClick={() => setDetailIndex(index)}/>
+                        <input type="button" key={`detailselector${index}button1`} id={`${index}`} value="Edit" onClick={() => setDetailIndex(index)}/>
                     </Control>
                 ))}
             </div>
