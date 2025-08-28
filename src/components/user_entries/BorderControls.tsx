@@ -18,6 +18,7 @@ export default function BorderControls()
     return(
         <div id="component-bordercontrols" className="component-controls">
             <div className="column">
+                <h2>Background</h2>
                 <ControlBackground data={borderData} SetData={setBorderData}/>
                 <Control>
                     <label htmlFor="border-thickness">Thickness (mm):</label>
