@@ -1,6 +1,7 @@
 #component-card{
     width: var(--card-width);
     height: var(--card-height);
+    background-image: url("../../../assets/backdrop.png");
 
     font-size: x-small;
 
