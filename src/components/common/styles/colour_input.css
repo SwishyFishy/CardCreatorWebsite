@@ -1,6 +1,6 @@
 .component-colourinput{
     display: grid;
-    grid-template-columns: 35fr 15fr 50fr;
+    grid-template-columns: 35fr 30fr 35fr;
 }
 
 .component-colourinput input{
@@ -8,4 +8,8 @@
     margin: .25em 0em;
 
     width: 100%;
+}
+
+.component-colourinput input[type="button"]{
+    font-style: italic;
 }
