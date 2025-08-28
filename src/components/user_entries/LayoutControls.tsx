@@ -43,10 +43,14 @@ export default function LayoutControls()
                         if (detailIndex == index)
                         {
                             setDetailIndex(-1);
+                            setElementIndex(-1);
                         }
                     }}}>
                         <label key={`detailselector${index}label`} htmlFor={`${index}`}>{detail.name}:</label>
-                        <input type="button" key={`detailselector${index}button1`} id={`${index}`} value="Edit" onClick={() => setDetailIndex(index)}/>
+                        <input type="button" key={`detailselector${index}button`} id={`${index}`} value="Edit" onClick={() => {
+                            setDetailIndex(index);
+                            index == detailIndex || setElementIndex(-1); // Reset the element index if a new detail is selected, but leave it alone if nothing changes
+                        }}/>
                     </Control>
                 ))}
                 <Control spawnable={{Spawn: () => {
@@ -127,7 +131,7 @@ export default function LayoutControls()
                         }}}>
                             {/* {element.id?.slice(0, 1).toUpperCase().concat(element.id?.slice(1))} capitalizes the first letter of the id */}
                             <label key={`elementselector${index}label`} htmlFor={`${index}`}>{element.id?.slice(0, 1).toUpperCase().concat(element.id?.slice(1))}:</label>
-                            <input type="button" key={`elementselector${index}button1`} id={`${index}`} value="Edit" onClick={() => setElementIndex(index)}/>
+                            <input type="button" key={`elementselector${index}button`} id={`${index}`} value="Edit" onClick={() => setElementIndex(index)}/>
                         </Control>
                     ))}
                     <Control spawnable={{Spawn: () => {
@@ -147,7 +151,17 @@ export default function LayoutControls()
                                 newDetail = {id: "stats", stats: [], separator: false} as CardStats;
                                 break;
                         }
-                        setDetailData({...detailData[detailIndex], elements: [...detailData[detailIndex].elements, newDetail!]});
+                        setDetailData({...detailData[detailIndex], elements: [...detailData[detailIndex].elements, newDetail!], elementStyles: [...detailData[detailIndex].elementStyles, {
+                            background: {
+                                colour: "transparent",
+                                gradient: []
+                            },
+                            borderColour: "transparent",
+                            borderThickness: 0,
+                            borderRounding: 0,
+                            inset: 0,
+                            textColour: ""
+                        }]});
                         setNewElement("title");
                     }}}>
                         <label htmlFor="detail-block-add-element">Add Detail:</label>
@@ -164,6 +178,7 @@ export default function LayoutControls()
             <div className="column">
                 {elementIndex > -1 ?
                 <>
+                {console.log(detailData[detailIndex])}
                     <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}/>
                 </>
                 : ""}

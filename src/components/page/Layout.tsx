@@ -72,14 +72,14 @@ const init: CardData = {
             elementStyles: [
                 {
                     background: {
-                        colour: "grey",
+                        colour: "#999999",
                         gradient: [],
                     },
                     inset: 0,
                     borderColour: "transparent",
                     borderThickness: .1,
                     borderRounding: 0,
-                    textColour: "blue"
+                    textColour: "#2222ff"
                 },
                 {
                     background: {
@@ -90,7 +90,7 @@ const init: CardData = {
                     borderColour: "transparent",
                     borderThickness: .1,
                     borderRounding: 50,
-                    textColour: "blue"
+                    textColour: "#2222ff"
                 }
             ]
         },
@@ -100,16 +100,26 @@ const init: CardData = {
             position: "center",
             groupStyle: {
                 background: {
-                        colour: "grey",
-                        gradient: ["red"]
+                        colour: "#666666",
+                        gradient: ["#ff6611"]
                     },
                 inset: .1,
-                borderColour: "black",
+                borderColour: "#000000",
                 borderThickness: .1,
                 borderRounding: 25,
-                textColour: "black"
+                textColour: "#000000"
             },
-            elementStyles: []
+            elementStyles: [{
+                background: {
+                    colour: "transparent",
+                    gradient: []
+                },
+                borderColour: "transparent",
+                borderThickness: 0,
+                borderRounding: 0,
+                inset: 0,
+                textColour: ""
+            }]
         },
         {
             name: "Stats", elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last", position: "end",
@@ -127,14 +137,14 @@ const init: CardData = {
             elementStyles: [
                 {
                     background: {
-                        colour: "grey",
-                        gradient: ["red"]
+                        colour: "#999999",
+                        gradient: ["#ff4444"]
                     },
                     inset: .05,
                     borderColour: "black",
                     borderThickness: .1,
                     borderRounding: 0,
-                    textColour: "black"
+                    textColour: "#000000"
                 }
             ]
         }
