@@ -25,7 +25,7 @@ export type DetailGroupData = {
     elements: (TitleData | CostData | TypeData | StatsData)[],
     align: "horizontal" | "vertical-left" | "vertical-right",
     justify: "first" | "middle" | "last",
-    position?: "start" | "center" | "spread" | "end",
+    position: "start" | "center" | "spread" | "end",
     groupStyle?: DetailStyleData,
     elementStyles?: DetailStyleData[]
 }

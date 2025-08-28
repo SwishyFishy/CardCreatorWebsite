@@ -54,7 +54,10 @@ const init: CardData = {
     details: [              /*Remove from default in final product*/
         {
             name: "titlebar",
-            elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], align: "horizontal", justify: "first", position: "spread",
+            elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], 
+            align: "horizontal", 
+            justify: "first", 
+            position: "spread",
             elementStyles: [
                 {
                     background: {
@@ -81,6 +84,7 @@ const init: CardData = {
         {
             name: "Typeline",
             elements: [{types: ["Cardii", "Type"], id: "type"}], align: "horizontal", justify: "middle",  
+            position: "center",
             groupStyle: {
                 background: {
                         colour: "grey",
