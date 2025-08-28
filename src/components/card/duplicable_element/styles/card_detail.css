@@ -1,3 +1,5 @@
 .component-carddetail{
     padding: .2em;
+
+    overflow: hidden;
 }

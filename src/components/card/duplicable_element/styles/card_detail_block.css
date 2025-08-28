@@ -3,6 +3,8 @@
 
     display: flex;
 
+    overflow: hidden;
+
     /* Position along an edge */
     &.horizontal{
         flex-direction: row;
