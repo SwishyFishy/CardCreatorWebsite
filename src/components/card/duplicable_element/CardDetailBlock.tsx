@@ -51,7 +51,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const groupCSS: DetailStyleCSS = {
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
-        boxShadow: `inset ${groupStyle.inset}em ${groupStyle.inset}em ${groupStyle.inset}em black, inset ${-groupStyle.inset}em ${-groupStyle.inset}em ${groupStyle.inset}em black`,
+        boxShadow: `inset ${groupStyle.inset}mm ${groupStyle.inset}mm ${groupStyle.inset}mm black, inset ${-groupStyle.inset}mm ${-groupStyle.inset}mm ${groupStyle.inset}mm black`,
         outline: `.1em solid ${groupStyle.border}`,
         borderRadius: `${groupStyle.borderRounding}%`
     };
@@ -60,7 +60,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const elementCSS: DetailStyleCSS[] = elementStyle.map((style) => ({
         backgroundImage: GradientCSS(style.background),
         color: style.textColour,
-        boxShadow: `inset ${style.inset}em ${style.inset}em ${style.inset}em black, inset ${-style.inset}em ${-style.inset}em ${style.inset}em black`,
+        boxShadow: `inset ${style.inset}mm ${style.inset}mm ${style.inset}mm black, inset ${-style.inset}mm ${-style.inset}mm ${style.inset}mm black`,
         outline: `.1em solid ${style.border}`,
         borderRadius: `${style.borderRounding}%`
     }));
