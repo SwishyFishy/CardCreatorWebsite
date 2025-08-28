@@ -14,6 +14,10 @@ export default function LayoutControls()
     const deleteDetailData: Function = useContext(CONTEXT_cardData).functions.deleteDetail;
 
     const [detailIndex, setDetailIndex] = useState<number>(0);
+    const [newDetailBlock, setNewDetailBlock] = useState<{name: string, valid: boolean}>({
+        name: "New Block",
+        valid: detailData.findIndex((detail) => detail.name == "New Block") > -1 ? false : true
+    });
 
     return(
         <div id="component-layoutcontrols" className="component-controls">
@@ -35,6 +39,28 @@ export default function LayoutControls()
                         <input type="button" key={`detailselector${index}button1`} id={`${index}`} value="Edit" onClick={() => setDetailIndex(index)}/>
                     </Control>
                 ))}
+                <Control spawnable={{Spawn: () => {
+                    if (newDetailBlock.valid)
+                    {
+                        setDetailData({
+                            name: newDetailBlock.name,
+                            elements: [],
+                            align: "horizontal",
+                            justify: "first",
+                            position: "start",
+                        });
+                        setNewDetailBlock({
+                            name: "New Block",
+                            valid: detailData.findIndex((detail) => detail.name == "New Block") > -1 ? false : true
+                        })
+                    }
+                }}}>
+                    <label htmlFor="detail-add-block">Add Detail Block:</label>
+                    <input type="text" id="detail-add-block" className={newDetailBlock.valid ? "" : "invalid"} placeholder="Block Name" value={newDetailBlock.name} onChange={(e) => setNewDetailBlock({
+                        name: e.target.value,
+                        valid: e.target.value != "" ? (detailData.findIndex((detail) => detail.name == e.target.value) == -1 ? true : false) : false
+                        })}/>
+                </Control>
             </div>
             <div className="column">
                 <h2>Detail Block: {detailData[detailIndex].name}</h2>

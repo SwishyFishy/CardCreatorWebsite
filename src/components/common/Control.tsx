@@ -10,15 +10,19 @@ interface props_Control {
     deletable?: {
         Delete: Function
     }
+    spawnable?: {
+        Spawn: Function
+    }
 }
 
-export default function Control({toggleable = undefined, deletable = undefined, children}: PropsWithChildren<props_Control>)
+export default function Control({toggleable = undefined, deletable = undefined, spawnable = undefined, children}: PropsWithChildren<props_Control>)
 {
     return (
-        <div className={`component-control ${toggleable ? "toggleable" : ""} ${deletable ? "deletable" : ""}`}>
+        <div className={`component-control ${toggleable ? "toggleable" : ""} ${deletable ? "deletable" : ""} ${spawnable ? "spawnable" : ""}`}>
             {children}
             {toggleable ? <input type="checkbox" checked={toggleable.toggle} onChange={() => toggleable.SetToggle()}/> : ""}
             {deletable ? <input className="delete" type="button" value="X" onClick={() => deletable.Delete()}/> : ""}
+            {spawnable ? <input className="spawn" type="button" value="+" onClick={() => spawnable.Spawn()}/> : ""}
         </div>
     );
 }
