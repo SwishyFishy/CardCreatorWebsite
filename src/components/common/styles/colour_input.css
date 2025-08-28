@@ -1,6 +1,6 @@
 .component-colourinput{
     display: grid;
-    grid-template-columns: 25fr 75fr;
+    grid-template-columns: 35fr 15fr 50fr;
 }
 
 .component-colourinput input{

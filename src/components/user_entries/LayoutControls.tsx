@@ -178,7 +178,6 @@ export default function LayoutControls()
             <div className="column">
                 {elementIndex > -1 ?
                 <>
-                {console.log(detailData[detailIndex])}
                     <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}/>
                 </>
                 : ""}
