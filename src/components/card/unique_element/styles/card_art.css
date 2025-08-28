@@ -5,6 +5,10 @@
     overflow: hidden;
 
     border-bottom: var(--card-art-border-thickness) solid transparent;
+
+    &.fullart{
+        border-bottom: none;
+    }
 }
 
 #component-cardart img{

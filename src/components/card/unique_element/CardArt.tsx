@@ -23,10 +23,10 @@ export default function CardArt()
     document.body.style.setProperty("--card-art-horizontal-shift", `${artData.hShift}px`);
     document.body.style.setProperty("--card-art-vertical-shift", `${-artData.vShift}px`);
     document.body.style.setProperty("--card-art-zoom", `${artData.zoom}%`);
-    document.body.style.setProperty("--card-art-border-thickness", artData.fullart ? '0' : `${artData.border}mm`);
+    document.body.style.setProperty("--card-art-border-thickness", `${artData.border}mm`);
 
     return(
-        <div id="component-cardart">
+        <div id="component-cardart" className={artData.fullart ? 'fullart' : ""}>
             {artData.fullart ? "" : <img src={artData.src}/>}
         </div>
     );
