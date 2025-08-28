@@ -36,7 +36,13 @@ export default function LayoutControls()
                 
                 <h2>Card Detail Blocks</h2>
                 {detailData.map((detail, index) => (
-                    <Control key={`detailselector${index}`} deletable={{Delete: () => deleteDetailData(detail)}}>
+                    <Control key={`detailselector${index}`} deletable={{Delete: () => {
+                        deleteDetailData(detail);
+                        if (detailIndex == index)
+                        {
+                            setDetailIndex(detailIndex - 1);
+                        }
+                    }}}>
                         <label key={`detailselector${index}label`} htmlFor={`${index}`}>{detail.name}:</label>
                         <input type="button" key={`detailselector${index}button1`} id={`${index}`} value="Edit" onClick={() => setDetailIndex(index)}/>
                     </Control>
@@ -50,6 +56,17 @@ export default function LayoutControls()
                             align: "horizontal",
                             justify: "first",
                             position: "start",
+                            groupStyle: {
+                                background: {
+                                    colour: "transparent",
+                                    gradient: []
+                                },
+                                border: "transparent",
+                                borderRounding: 0,
+                                inset: 0,
+                                textColour: "black"
+                            },
+                            elementStyles: []
                         });
                         setNewDetailBlock({
                             name: "New Block",
@@ -65,34 +82,38 @@ export default function LayoutControls()
                 </Control>
             </div>
             <div className="column">
-                <h2>Detail Block: {detailData[detailIndex].name}</h2>
-                <Control>
-                    <label htmlFor="detail-align">Block Alignment:</label>
-                    <select id="detail-align" value={detailData[detailIndex].align} onChange={(e) => setDetailData({...detailData[detailIndex], align: e.target.value})}>
-                        <option value="horizontal">Horizontal</option>
-                        <option value="vertical-left">Left</option>
-                        <option value="vertical-right">Right</option>
-                    </select>
-                </Control>
-                <Control>
-                    <label htmlFor="detail-justify">Block Justification:</label>
-                    <select id="detail-justify" value={detailData[detailIndex].justify} onChange={(e) => setDetailData({...detailData[detailIndex], justify: e.target.value})}>
-                        <option value="first">Start</option>
-                        <option value="middle">Middle</option>
-                        <option value="last">End</option>
-                    </select>
-                </Control>
-                <Control>
-                    <label htmlFor="detail-position">Block Element Justification:</label>
-                    <select id="detail-position" value={detailData[detailIndex].position} onChange={(e) => setDetailData({...detailData[detailIndex], position: e.target.value})}>
-                        <option value="start">Start</option>
-                        <option value="center">Center</option>
-                        <option value="spread">Spread</option>
-                        <option value="end">End</option>
-                    </select>
-                </Control>
-                <ControlDetails detail={detailData[detailIndex].groupStyle} SetDetail={setDetailData}/>
-            </div>
+                {detailIndex > -1 ? 
+                <>
+                    <h2>Detail Block: {detailData[detailIndex].name}</h2>
+                    <Control>
+                        <label htmlFor="detail-align">Block Alignment:</label>
+                        <select id="detail-align" value={detailData[detailIndex].align} onChange={(e) => setDetailData({...detailData[detailIndex], align: e.target.value})}>
+                            <option value="horizontal">Horizontal</option>
+                            <option value="vertical-left">Left</option>
+                            <option value="vertical-right">Right</option>
+                        </select>
+                    </Control>
+                    <Control>
+                        <label htmlFor="detail-justify">Block Justification:</label>
+                        <select id="detail-justify" value={detailData[detailIndex].justify} onChange={(e) => setDetailData({...detailData[detailIndex], justify: e.target.value})}>
+                            <option value="first">Start</option>
+                            <option value="middle">Middle</option>
+                            <option value="last">End</option>
+                        </select>
+                    </Control>
+                    <Control>
+                        <label htmlFor="detail-position">Block Element Justification:</label>
+                        <select id="detail-position" value={detailData[detailIndex].position} onChange={(e) => setDetailData({...detailData[detailIndex], position: e.target.value})}>
+                            <option value="start">Start</option>
+                            <option value="center">Center</option>
+                            <option value="spread">Spread</option>
+                            <option value="end">End</option>
+                        </select>
+                    </Control>
+                    <ControlDetails detail={detailData[detailIndex].groupStyle} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], groupStyle: newStyle})}/>
+                </>
+                : ""}
+             </div>
             <div className="column">
 
             </div>
