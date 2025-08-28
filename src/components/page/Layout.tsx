@@ -33,7 +33,7 @@ const init: CardData = {
         border: 2.5,
         vShift: 0,
         hShift: 0,
-        zoom: 100
+        zoom: 150
     },
     body: {
         content: ["Rules", "text"],

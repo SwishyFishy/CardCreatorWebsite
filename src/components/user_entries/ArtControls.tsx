@@ -23,8 +23,12 @@ export default function ArtControls()
                     <RangeInput id="art-dominance" min={0} max={100} step={1} value={artData.dominance} SetRange={(e: any) => setArtData({...artData, dominance: e.target.value})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="art-border">Artbox Border Thickness (mm):</label>
+                    <label htmlFor="art-border">Artbox/Body Gap (mm):</label>
                     <RangeInput id="art-border" min={0} max={88} step={.1} value={artData.border} SetRange={(e: any) => setArtData({...artData, border: e.target.value})}/>
+                </Control>
+                <Control>
+                    <label htmlFor="art-fullart">Fullart:</label>
+                    <input type="checkbox" id="art-fullart" checked={artData.fullart} onChange={() => {setArtData({...artData, fullart: !artData.fullart})}}/>
                 </Control>
             </div>
             <div className="column">
@@ -43,10 +47,6 @@ export default function ArtControls()
                 </Control>
             </div>
             <div className="column">
-                <Control>
-                    <label htmlFor="art-fullart">Fullart:</label>
-                    <input type="checkbox" id="art-fullart" checked={artData.fullart} onChange={() => {setArtData({...artData, fullart: !artData.fullart})}}/>
-                </Control>
             </div>
         </div>
     );
