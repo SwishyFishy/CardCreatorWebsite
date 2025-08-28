@@ -21,7 +21,7 @@ export default function BorderControls()
                 <h2>Background</h2>
                 <ControlBackground data={borderData} SetData={setBorderData}/>
                 <Control>
-                    <label htmlFor="border-thickness">Thickness (mm):</label>
+                    <label htmlFor="border-thickness">Border Thickness (mm):</label>
                     <RangeInput id="border-thickness" min={0} max={31.5} step={.1} value={borderData.thickness} SetRange={(e: any) => setBorderData({...borderData, thickness: e.target.value})}/>
                 </Control>
             </div>
