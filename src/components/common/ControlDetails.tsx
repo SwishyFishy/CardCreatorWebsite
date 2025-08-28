@@ -16,8 +16,12 @@ export default function ControlDetails({detail, SetDetail}: props_ControlDetails
         <div className="component-controldetails">
             <ControlBackground data={detail} SetData={SetDetail}/>
             <Control>
-                <label htmlFor="detail-border">Border Colour:</label>
-                <ColourInput id="detail-border" value={detail.border} SetColour={(e: any) => SetDetail({...detail, border: e.target.value})}/>
+                <label htmlFor="detail-border-colour">Border Colour:</label>
+                <ColourInput id="detail-border-colour" value={detail.borderColour} SetColour={(e: any) => SetDetail({...detail, borderColour: e.target.value})}/>
+            </Control>
+            <Control>
+                <label htmlFor="detail-border-thickness">Border Thickness (mm):</label>
+                <input type="number" id="detail-border-thickness" step={.1} value={detail.borderThickness} onChange={(e) => SetDetail({...detail, borderThickness: e.target.value})}/>
             </Control>
             <Control>
                 <label htmlFor="detail-border-radius">Border Rounding (%):</label>

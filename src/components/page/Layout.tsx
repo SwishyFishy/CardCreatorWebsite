@@ -63,7 +63,8 @@ const init: CardData = {
                     colour: "transparent",
                     gradient: []
                 },
-                border: "none",
+                borderColour: "none",
+                borderThickness: .1,
                 borderRounding: 0,
                 inset: 0,
                 textColour: ""
@@ -75,7 +76,8 @@ const init: CardData = {
                         gradient: [],
                     },
                     inset: 0,
-                    border: "transparent",
+                    borderColour: "transparent",
+                    borderThickness: .1,
                     borderRounding: 0,
                     textColour: "blue"
                 },
@@ -85,7 +87,8 @@ const init: CardData = {
                         gradient: []
                     },
                     inset: 0,
-                    border: "transparent",
+                    borderColour: "transparent",
+                    borderThickness: .1,
                     borderRounding: 50,
                     textColour: "blue"
                 }
@@ -101,7 +104,8 @@ const init: CardData = {
                         gradient: ["red"]
                     },
                 inset: .1,
-                border: "black",
+                borderColour: "black",
+                borderThickness: .1,
                 borderRounding: 25,
                 textColour: "black"
             },
@@ -114,7 +118,8 @@ const init: CardData = {
                     colour: "transparent",
                     gradient: []
                 },
-                border: "none",
+                borderColour: "none",
+                borderThickness: .1,
                 borderRounding: 0,
                 inset: 0,
                 textColour: ""
@@ -126,7 +131,8 @@ const init: CardData = {
                         gradient: ["red"]
                     },
                     inset: .05,
-                    border: "black",
+                    borderColour: "black",
+                    borderThickness: .1,
                     borderRounding: 0,
                     textColour: "black"
                 }

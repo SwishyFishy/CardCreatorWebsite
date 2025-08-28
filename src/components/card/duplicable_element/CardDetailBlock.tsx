@@ -14,7 +14,8 @@ import './styles/card_detail_block.css';
 
 export type DetailStyleData = {
     background: Gradient,
-    border: string,
+    borderColour: string,
+    borderThickness: number,
     borderRounding: number,
     inset: number,
     textColour: string
@@ -52,7 +53,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
         boxShadow: `inset ${groupStyle.inset}mm ${groupStyle.inset}mm ${groupStyle.inset}mm black, inset ${-groupStyle.inset}mm ${-groupStyle.inset}mm ${groupStyle.inset}mm black`,
-        outline: `.1em solid ${groupStyle.border}`,
+        outline: `${groupStyle.borderThickness}mm solid ${groupStyle.borderColour}`,
         borderRadius: `${groupStyle.borderRounding}%`
     };
 
@@ -61,7 +62,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         backgroundImage: GradientCSS(style.background),
         color: style.textColour,
         boxShadow: `inset ${style.inset}mm ${style.inset}mm ${style.inset}mm black, inset ${-style.inset}mm ${-style.inset}mm ${style.inset}mm black`,
-        outline: `.1em solid ${style.border}`,
+        outline: `${style.borderThickness}mm solid ${style.borderColour}`,
         borderRadius: `${style.borderRounding}%`
     }));
 
