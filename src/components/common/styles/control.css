@@ -35,8 +35,10 @@
 }
 
 .component-control [type="checkbox"]{
-    width: auto;
-    height: auto;
+    width: 1em;
+    height: 1em;
+
+    margin-left: calc(100% - 1em);
 }
 
 /* Deletable Control Styles */
