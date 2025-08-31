@@ -6,6 +6,7 @@ import type { BodyData } from '../card/unique_element/CardBody';
 import Control from '../common/Control';
 import ControlBackground from '../common/ControlBackground';
 import RangeInput from '../common/RangeInput';
+import TextSymbolInput from '../common/TextSymbolInput';
 
 import './styles/_controls.css';
 import './styles/body_controls.css';
@@ -21,7 +22,7 @@ export default function BodyControls()
                 <h2>Body Content</h2>
                 <Control>
                     <label htmlFor="body-content">Content:</label>
-                    <textarea id="body-content" rows={5} value={bodyData.content.join('\n')} onChange={(e) => setBodyData({...bodyData, content: e.target.value.split('\n')})}/>
+                    <TextSymbolInput id="body-content" value={bodyData.content.join('\n')} SetText={(e: any) => setBodyData({...bodyData, content: e.target.value.split('\n')})}/>
                 </Control>
             </div>
             <div className="column">

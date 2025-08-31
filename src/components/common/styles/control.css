@@ -24,6 +24,7 @@
 
 .component-control textarea{
     height: 8em;
+    width: 100%;
 
     resize: none;
     overflow: scroll;

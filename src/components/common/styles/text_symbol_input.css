@@ -1,0 +1,26 @@
+.component-textsymbolinput{
+    position: relative;
+}
+
+.component-textsymbolinput textarea{
+    padding-bottom: 2em;
+}
+
+.component-textsymbolinput .input-symbol{
+    position: absolute;
+    bottom: 0;
+    right: -2%;
+
+    width: fit-content;
+    padding: 0em;
+}
+
+.component-textsymbolinput .input-symbol input{
+    background-color: var(--accent);
+    border: .25em solid var(--background-highlight);
+}
+
+.component-textsymbolinput .input-symbol .input-symbol-library{
+    position: absolute;
+    top: 100%;
+}
