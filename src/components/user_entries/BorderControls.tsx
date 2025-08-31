@@ -24,6 +24,10 @@ export default function BorderControls()
                     <label htmlFor="border-thickness">Border Thickness (mm):</label>
                     <RangeInput id="border-thickness" min={0} max={31.5} step={.1} value={borderData.thickness} SetRange={(e: any) => setBorderData({...borderData, thickness: e.target.value})}/>
                 </Control>
+                <Control>
+                    <label htmlFor="border-radius">Corner Rounding (mm):</label>
+                    <RangeInput id="border-radius" min={0} max={31.5} step={.1} value={borderData.rounding} SetRange={(e: any) => setBorderData({...borderData, rounding: e.target.value})}/>
+                </Control>
             </div>
             <div className="column">
 

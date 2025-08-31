@@ -3,7 +3,7 @@
     height: 100%;
 
     background-image: var(--card-border-background);
-    border-radius: 1em;
+    border-radius: var(--card-border-radius);
 
     display: flex;
     flex-direction: row;
