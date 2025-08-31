@@ -24,7 +24,8 @@ const init: CardData = {
             linear: true, 
             angle: 135
         },
-        thickness: 2.5
+        thickness: 2.5,
+        rounding: 2.5
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
