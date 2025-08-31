@@ -2,6 +2,7 @@ import {v4 as uuid} from 'uuid';
 
 import Control from "./Control";
 import ColourInput from "./ColourInput";
+import RangeInput from './RangeInput';
 
 import type { CardBorder, CardBody } from "../card/card_types";
 import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
@@ -49,6 +50,16 @@ export default function ControlBackground({data, SetData}: props_ControlBackgrou
                     <Control>
                         <label htmlFor={`${baseId}-bg-gradient-angle`}>Gradient Angle:</label>
                         <input type="number" id={`${baseId}-bg-gradient-angle`} value={data.background.angle} onChange={(e: any) => SetData({...data, background: {...data.background, angle: e.target.value}})}/>
+                    </Control>
+                </li>
+                <li className={data.background.gradient.length > 0 && !data.background.linear ? "visible" : "hidden"}>
+                    <Control>
+                        <label htmlFor={`${baseId}-bg-gradient-offsetX`}>Horizontal Gradient Offset (%):</label>
+                        <RangeInput id={`${baseId}-bg-gradient-offsetX`} min={0} max={100} step={1} value={data.background.offset?.x || 50} SetRange={(e: any) => SetData({...data, background: {...data.background, offset: {...data.background.offset, x: e.target.value}}})}/>
+                    </Control>
+                    <Control>
+                        <label htmlFor={`${baseId}-bg-gradient-offsetY`}>Vertical Gradient Offset (%):</label>
+                        <RangeInput id={`${baseId}-bg-gradient-offsetY`} min={0} max={100} step={1} value={data.background.offset?.y || 50} SetRange={(e: any) => SetData({...data, background: {...data.background, offset: {...data.background.offset, y: e.target.value}}})}/>
                     </Control>
                 </li>
             </ul>

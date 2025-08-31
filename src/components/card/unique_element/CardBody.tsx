@@ -17,6 +17,7 @@ export type BodyData = {
 export default function CardBody()
 {
     const bodyData: BodyData = useContext(CONTEXT_cardData).cardData.body;
+    console.log(GradientCSS(bodyData.background));
 
     return(
         <div id="component-cardbody">

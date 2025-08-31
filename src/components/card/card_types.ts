@@ -36,8 +36,12 @@ export type Gradient = {
     gradient: string[];
     linear?: boolean;
     angle?: number;
+    offset?: {
+        x: number,
+        y: number
+    }
 }
 export function GradientCSS(g: Gradient): string
 {
-    return(`${g.linear ? `linear-gradient(${g.angle ? g.angle : 0}deg, ` : 'radial-gradient('}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
+    return(`${g.linear ? `linear-gradient(${g.angle ? g.angle : 0}deg, ` : `radial-gradient(${g.offset ? `at ${g.offset.x ? g.offset.x : 50}% ${g.offset.y ? g.offset.y : 50}%, ` : ""}`}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
 }
