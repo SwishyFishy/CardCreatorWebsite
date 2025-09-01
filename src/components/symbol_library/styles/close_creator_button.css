@@ -1,16 +1,19 @@
-.component-closebutton{
+#component-closebutton{
     position: absolute;
     top: 0;
     right: 0;
+    
+    width: fit-content;
+    height: fit-content;
 
     color: var(--text);
     background: transparent;
 
     padding: 0em;
     border: none;
-    margin: .25em;
+    margin: .25em .4em;
 }
 
-.component-closebutton:hover{
+#component-closebutton:hover{
     cursor: pointer;
 }

@@ -15,7 +15,7 @@
     padding: 0em;
 }
 
-.component-textsymbolinput .input-symbol input{
+.component-textsymbolinput .input-symbol > input{
     background-color: var(--accent);
     border: .25em solid var(--background-highlight);
 

@@ -4,12 +4,14 @@ import { type SymbolData } from "./Symbol";
 
 const BasicSymbols: SymbolData[] = [
     {
+        background: {
+            colour: "#aaaaaa",
+            gradient: []
+        },
         shape: "square",
-        colour: "grey",
-        gradient: "white",
-        useGradient: false,
-        icon: symbols.icon_up
-    },
+        icon: symbols.icon_up,
+        textColour: "#000000"
+    },/*
     {
         shape: "square",
         colour: "grey",
@@ -135,7 +137,7 @@ const BasicSymbols: SymbolData[] = [
         gradient: "white",
         useGradient: false,
         icon: symbols.icon_tree
-    }
+    }*/
 ];
 
 export default BasicSymbols;

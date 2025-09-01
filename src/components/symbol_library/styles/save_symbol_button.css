@@ -3,6 +3,9 @@
     bottom: 0;
     right: 0;
 
+    width: fit-content;
+    height: fit-content;
+
     padding: 0em;
     border: none;
     margin: .25em;

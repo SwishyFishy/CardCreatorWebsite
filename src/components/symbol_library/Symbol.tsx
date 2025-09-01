@@ -1,14 +1,15 @@
 import {v4 as uuid} from 'uuid';
 
+import { GradientCSS } from '../card/card_types';
+import type { Gradient } from '../card/card_types';
+
 import './styles/symbol.css';
 
 export type SymbolData = {
-    colour: string,
-    gradient: string,
-    useGradient: boolean
+    background: Gradient,
     shape: "circle" | "square",
     text?: string,
-    textColour?: string,
+    textColour: string,
     icon?: string,
 }
 
@@ -20,7 +21,7 @@ export default function Symbol({symbol}: props_Symbol)
 {
     const baseId: string = uuid();
 
-    const symbolColour: string = `linear-gradient(135deg, ${symbol.colour}, ${symbol.useGradient ? symbol.gradient : symbol.colour})`;
+    const symbolColour: string = GradientCSS(symbol.background);
     const iconColour: string = symbol.textColour || "black";
 
     return(

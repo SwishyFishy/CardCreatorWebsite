@@ -6,11 +6,12 @@ import RangeInput from './RangeInput';
 
 import type { CardBorder, CardBody } from "../card/card_types";
 import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
+import type { SymbolData } from '../symbol_library/Symbol';
 
 import './styles/control_background.css';
 
 interface props_ControlBackground {
-    data: CardBorder | CardBody | DetailStyleData,
+    data: CardBorder | CardBody | DetailStyleData | SymbolData,
     SetData: Function
 }
 

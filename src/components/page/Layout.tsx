@@ -55,7 +55,7 @@ const init: CardData = {
     details: [              /*Remove from default in final product*/
         {
             name: "titlebar",
-            elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[5]], direction: "row", id: "cost"}], 
+            elements: [{title: "Card Title", id: "title"}, {cost: [BasicSymbols[0]], direction: "row", id: "cost"}], 
             align: "horizontal", 
             justify: "first", 
             position: "spread",

@@ -6,7 +6,7 @@
     right: 0;
 
     width: 60em;
-    height: 11em;
+    height: fit-content;
     
     background-color: var(--background-highlight);
     padding: .25em;
@@ -18,7 +18,7 @@
     height: 100%;
 
     display: grid;
-    grid-template-columns: 12fr 30fr 58fr;
+    grid-template-columns: 12fr 50fr 38fr;
     gap: 1em;
     align-content: center;
 

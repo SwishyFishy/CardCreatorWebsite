@@ -1,4 +1,5 @@
 import Control from "../common/Control";
+import ControlBackground from "../common/ControlBackground";
 import ColourInput from "../common/ColourInput";
 import { type SymbolData } from "./Symbol";
 
@@ -21,20 +22,13 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                         <option value="square">Square</option>
                     </select>
                 </Control>
-                <Control>
-                    <label htmlFor="editor-colour">Colour:</label>
-                    <ColourInput id="editor-colour" value={symbol.colour} SetColour={(e: any) => SetSymbol({...symbol, colour: e.target.value})}/>
-                </Control>
-                <Control toggleable={{toggle: symbol.useGradient, SetToggle: () => SetSymbol({...symbol, useGradient: !symbol.useGradient})}}>
-                    <label htmlFor="editor-gradient">Gradient:</label>
-                    <ColourInput id="editor-gradient" value={symbol.gradient} SetColour={(e: any) => SetSymbol({...symbol, gradient: e.target.value})}/>
-                </Control>
+                <ControlBackground data={symbol} SetData={SetSymbol}/>
                 <Control>
                     <label htmlFor="editor-text">Text:</label>
                     <input type="text" id="editor-text" value={symbol.text} onChange={(e) => SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="editor-text-colour">Colour:</label>
+                    <label htmlFor="editor-text-colour">Text Colour:</label>
                     <ColourInput id="editor-text-colour" value={symbol.textColour} SetColour={(e: any) => SetSymbol({...symbol, textColour: e.target.value})}/>
                 </Control>
             </form>

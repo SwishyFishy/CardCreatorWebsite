@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import CloseButton from '../common/CloseButton';
+import CloseCreatorButton from './CloseCreatorButton';
 import PageMask from '../common/PageMask';
 import Symbol, {type SymbolData } from './Symbol';
 import SymbolEditorBase from './SymbolEditorBase';
@@ -18,9 +18,10 @@ interface props_SymbolCreator {
 export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
 {
     const [newSymbol, setNewSymbol] = useState<SymbolData>({
-        colour: "#ffffff",
-        gradient: "#ffffff",
-        useGradient: false,
+        background: {
+            colour: "#ffffff",
+            gradient: [],
+        },
         shape: "circle",
         text: "",
         textColour: "#000000",
@@ -31,7 +32,7 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
         <div id={show ? "component-symbolcreator": "hidden"}>
             <PageMask/>
             <div className="symbolcreator">
-                <CloseButton Close={Hide}/>
+                <CloseCreatorButton Close={Hide}/>
                 <div className="display">
                     <div className="thumbnail">
                         <h1>Symbol</h1>
@@ -44,9 +45,10 @@ export default function SymbolCreator({show, Add, Hide}: props_SymbolCreator)
                     Add(newSymbol);
                     Hide();
                     setNewSymbol({
-                        colour: "#ffffff",
-                        gradient: "#ffffff",
-                        useGradient: false,
+                        background: {
+                            colour: "#ffffff",
+                            gradient: [],
+                        },
                         shape: "circle",
                         text: "",
                         textColour: "#000000",
