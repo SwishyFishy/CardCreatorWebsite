@@ -4,7 +4,6 @@ import { type SymbolData } from "./Symbol";
 
 import SymbolLibrary from "./SymbolLibrary";
 import SymbolCreator from "./SymbolCreator";
-import SymbolCreatorButton from "./SymbolCreatorButton";
 
 import './styles/symbol_library_pane.css';
 
