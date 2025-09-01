@@ -16,7 +16,7 @@ export default function SymbolLibrary({symbols, ShowCreator}: props_SymbolLibrar
     return (
         <div id="component-symbollibrary">
             {library.map((symbol, index) => (
-                <Symbol symbol={symbol} key={`symbol${index}`}/>
+                <span key={`symbol${index}container`}><Symbol symbol={symbol} key={`symbol${index}`}/></span>
             ))}
             <SymbolCreatorButton Show={ShowCreator}/>
         </div>

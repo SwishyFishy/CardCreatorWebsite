@@ -8,5 +8,10 @@
     width: 20em;
 
     background-color: var(--background-highlight);
+    padding-bottom: .1em;
     border: .25em solid var(--accent);
+}
+
+#component-symbollibrary span{
+    box-shadow: .1em .1em 0.2em black;
 }
