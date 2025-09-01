@@ -18,7 +18,7 @@ export default function TextSymbolInput({id, value, SetText}: props_TextSymbolIn
         <div className="component-textsymbolinput">
             <textarea id={id} rows={5} value={value} onChange={(e) => SetText(e)}/>
             <div className="input-symbol">
-                <input type="button" className="add-symbol" value="Add Symbol" onClick={() => {setShowSymbols(true)}}/>
+                <input type="button" className="add-symbol" value={`${showSymbols ? "Close" : "Add Symbol"}`} onClick={() => {setShowSymbols(!showSymbols)}}/>
                 <div className={`input-symbol-library ${showSymbols ? "visible" : "hidden"}`}>
                     <SymbolLibraryPane/>
                 </div>

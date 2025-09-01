@@ -1,8 +1,12 @@
 #component-symbollibrary{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
 
-    flex-wrap: wrap;
+    width: 20em;
+
+    background-color: var(--background-highlight);
+    border: .25em solid var(--accent);
 }

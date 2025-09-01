@@ -2,13 +2,13 @@ interface props_SymbolCreatorButton {
     Show: Function
 }
 
-import './styles/new_symbol_button.css';
+import './styles/symbol_creator_button.css';
 
 export default function SymbolCreatorButton({Show}: props_SymbolCreatorButton)
 {
     return (
-        <div id="component-newsymbolbutton">
-            <input type="button" value="+" onClick={() => Show()}/>
+        <div id="component-symbolcreatorbutton">
+            <input type="button" value="New Symbol" onClick={() => Show()}/>
         </div>
     );
 }

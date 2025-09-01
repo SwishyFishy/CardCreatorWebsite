@@ -4,7 +4,7 @@ import { type SymbolData } from "./Symbol";
 
 import SymbolLibrary from "./SymbolLibrary";
 import SymbolCreator from "./SymbolCreator";
-import SymbolCreatorButton from "./NewSymbolButton";
+import SymbolCreatorButton from "./SymbolCreatorButton";
 
 import './styles/symbol_library_pane.css';
 
@@ -27,10 +27,7 @@ export default function SymbolLibraryPane()
 
     return (
         <div id="component-symbollibrarypane">
-            <div className="visible">
-                <SymbolLibrary symbols={symbols}/>
-                <SymbolCreatorButton Show={ShowCreator}/>
-            </div>
+            <SymbolLibrary symbols={symbols} ShowCreator={ShowCreator}/>
             <SymbolCreator show={showCreator} Add={AddSymbol} Hide={HideCreator}/>
         </div>
     );

@@ -18,6 +18,8 @@
 .component-textsymbolinput .input-symbol input{
     background-color: var(--accent);
     border: .25em solid var(--background-highlight);
+
+    width: 7.5em;
 }
 
 .component-textsymbolinput .input-symbol .input-symbol-library{
