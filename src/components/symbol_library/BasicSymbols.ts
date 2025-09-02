@@ -4,6 +4,7 @@ import { type SymbolData } from "./Symbol";
 
 const BasicSymbols: SymbolData[] = [
     {
+        id: "up",
         background: {
             colour: "#aaaaaa",
             gradient: []

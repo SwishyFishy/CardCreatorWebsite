@@ -1,24 +1,64 @@
+import { useState } from "react";
+import {v4 as uuid} from 'uuid';
+
 import SymbolCreatorButton from "./SymbolCreatorButton";
+import SymbolCreator from "./SymbolCreator";
 import Symbol, { type SymbolData } from "./Symbol";
 import BasicSymbols from "./BasicSymbols";
 
 import './styles/symbol_library.css';
 
-interface props_SymbolLibrary {
-    symbols: SymbolData[],
-    ShowCreator: Function
-}
-
-export default function SymbolLibrary({symbols, ShowCreator}: props_SymbolLibrary)
+export default function SymbolLibrary()
 {
-    const library: SymbolData[] = [...BasicSymbols, ...symbols]
+    const GenerateDefaultSymbol = (): SymbolData => {
+        return({
+            id: uuid().substring(0, 6),
+            background: {
+                colour: "#ffffff",
+                gradient: [],
+            },
+            shape: "circle",
+            text: "",
+            textColour: "#000000",
+            icon: ""
+        });
+    }
+
+    const [symbols, setSymbols] = useState<SymbolData[]>(BasicSymbols);
+    const [showCreator, setShowCreator] = useState<boolean>(false);
+    const [creatorSymbol, setCreatorSymbol] = useState<SymbolData>(GenerateDefaultSymbol());
+
+    const AddSymbol = (symbol: SymbolData): void => {
+        const index: number = symbols.findIndex((s) => s.id == symbol.id);
+        if (index > -1)
+        {
+            setSymbols(symbols.toSpliced(symbols.findIndex((s) => s.id == symbol.id), 1, symbol));
+        }
+        else
+        {
+            setSymbols([...symbols, symbol]);
+        }
+    }
+
+    const ShowCreator = (initial: SymbolData): void => {
+        setCreatorSymbol({...initial});
+        setShowCreator(true);
+    }
+
+    const HideCreator = (): void => {
+        setShowCreator(false);
+    }
 
     return (
         <div id="component-symbollibrary">
-            {library.map((symbol, index) => (
-                <span key={`symbol${index}container`}><Symbol symbol={symbol} key={`symbol${index}`}/></span>
+            {symbols.map((symbol, index) => (
+                <span key={`symbol${index}container`} onContextMenu={(e) => {
+                    e.preventDefault();
+                    ShowCreator(symbol);
+                }}><Symbol symbol={symbol} key={`symbol${index}`}/></span>
             ))}
-            <SymbolCreatorButton Show={ShowCreator}/>
+            <SymbolCreatorButton Show={() => ShowCreator(GenerateDefaultSymbol())}/>
+            <SymbolCreator show={showCreator} symbol={creatorSymbol} SetSymbol={setCreatorSymbol} Save={AddSymbol} Hide={HideCreator}/>
         </div>
     );
 }

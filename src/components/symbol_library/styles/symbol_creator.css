@@ -38,6 +38,6 @@
     margin-bottom: 1.5em;
 }
 
-#component-symbolcreator .display #component-symbol{
+#component-symbolcreator .display .component-symbol{
     transform: scale(5);
 }

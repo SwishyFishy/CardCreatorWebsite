@@ -8,10 +8,24 @@
     width: 20em;
 
     background-color: var(--background-highlight);
-    padding-bottom: .1em;
+    padding: .1em;
     border: .25em solid var(--accent);
 }
 
-#component-symbollibrary span{
-    box-shadow: .1em .1em 0.2em black;
+#component-symbollibrary > span{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    box-shadow: .1em .1em .2em black, -.1em -.1em .2em black;
+
+    margin: 0em .1em;
+}
+
+#component-symbollibrary .component-symbol{
+    transform-origin: center;
+    transform: scale(2);
+
+    margin: .75em;
 }

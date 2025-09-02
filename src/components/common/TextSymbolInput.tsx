@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import SymbolLibraryPane from "../symbol_library/SymbolLibraryPane"
+import SymbolLibrary from "../symbol_library/SymbolLibrary";
 
 import './styles/text_symbol_input.css';
 
@@ -20,7 +20,7 @@ export default function TextSymbolInput({id, value, SetText}: props_TextSymbolIn
             <div className="input-symbol">
                 <input type="button" className="add-symbol" value={`${showSymbols ? "Close" : "Add Symbol"}`} onClick={() => {setShowSymbols(!showSymbols)}}/>
                 <div className={`input-symbol-library ${showSymbols ? "visible" : "hidden"}`}>
-                    <SymbolLibraryPane/>
+                    <SymbolLibrary/>
                 </div>
             </div>
         </div>

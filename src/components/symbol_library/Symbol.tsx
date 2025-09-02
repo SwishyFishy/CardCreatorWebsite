@@ -6,6 +6,7 @@ import type { Gradient } from '../card/card_types';
 import './styles/symbol.css';
 
 export type SymbolData = {
+    id: string,
     background: Gradient,
     shape: "circle" | "square",
     text?: string,
@@ -25,7 +26,7 @@ export default function Symbol({symbol}: props_Symbol)
     const iconColour: string = symbol.textColour || "black";
 
     return(
-        <div key={baseId} id="component-symbol" className={`symbol-${symbol.shape}`} style={{backgroundImage: symbolColour}}>
+        <div key={baseId} className={`component-symbol symbol-${symbol.shape}`} style={{backgroundImage: symbolColour}}>
             {<span key={`${baseId}sbackground`} style={{color: iconColour, fontSize: symbol.text && symbol.text.length < 2 ? '85%' : '50%'}}>{symbol.icon ? <img key={`${baseId}simage`} src={symbol.icon}/> : symbol.text}</span>}
         </div>
     );
