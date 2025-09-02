@@ -5,11 +5,8 @@
     justify-content: flex-start;
     align-items: center;
 
-    width: 20em;
-
-    background-color: var(--background-highlight);
-    padding: .1em;
-    border: .25em solid var(--accent);
+    background-color: white;
+    padding: .05em .15em;
 }
 
 #component-symbollibrary > span{
@@ -18,14 +15,5 @@
     justify-content: space-around;
     align-items: center;
 
-    box-shadow: .1em .1em .2em black, -.1em -.1em .2em black;
-
-    margin: 0em .1em;
-}
-
-#component-symbollibrary .component-symbol{
-    transform-origin: center;
-    transform: scale(2);
-
-    margin: .75em;
+    width: fit-content;
 }

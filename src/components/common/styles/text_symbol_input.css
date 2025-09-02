@@ -1,17 +1,8 @@
-.component-textsymbolinput{
-    position: relative;
-}
-
 .component-textsymbolinput textarea{
-    padding-bottom: 2em;
+    box-sizing: border-box;
 }
 
 .component-textsymbolinput .input-symbol{
-    position: absolute;
-    bottom: 0;
-    right: -2%;
-
-    width: fit-content;
     padding: 0em;
 }
 
