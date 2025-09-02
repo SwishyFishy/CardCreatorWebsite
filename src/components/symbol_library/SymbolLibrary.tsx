@@ -8,7 +8,11 @@ import BasicSymbols from "./BasicSymbols";
 
 import './styles/symbol_library.css';
 
-export default function SymbolLibrary()
+interface props_SymbolLibrary {
+    InsertSymbolToText: Function
+}
+
+export default function SymbolLibrary({InsertSymbolToText}: props_SymbolLibrary)
 {
     const GenerateDefaultSymbol = (): SymbolData => {
         return({
@@ -49,13 +53,17 @@ export default function SymbolLibrary()
         setShowCreator(false);
     }
 
+    const handleEditSymbol = (e: any, symbol: SymbolData) => {
+        e.preventDefault();
+        ShowCreator(symbol);
+    }
+
     return (
         <div id="component-symbollibrary">
             {symbols.map((symbol, index) => (
-                <span key={`symbol${index}container`} onContextMenu={(e) => {
-                    e.preventDefault();
-                    ShowCreator(symbol);
-                }}><Symbol symbol={symbol} key={`symbol${index}`}/></span>
+                <span key={`symbol${index}container`} onContextMenu={(e) => handleEditSymbol(e, symbol)} onClick={(e) => InsertSymbolToText(e, symbol)}>
+                    <Symbol symbol={symbol} key={`symbol${index}`}/>
+                </span>
             ))}
             <SymbolCreatorButton Show={() => ShowCreator(GenerateDefaultSymbol())}/>
             <SymbolCreator show={showCreator} symbol={creatorSymbol} SetSymbol={setCreatorSymbol} Save={AddSymbol} Hide={HideCreator}/>
