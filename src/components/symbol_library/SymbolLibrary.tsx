@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {v4 as uuid} from 'uuid';
 
 import SymbolCreatorButton from "./SymbolCreatorButton";
 import SymbolCreator from "./SymbolCreator";
 import Symbol, { type SymbolData } from "./Symbol";
 import BasicSymbols from "./BasicSymbols";
+
+import { CONTEXT_symbols } from "../page/Layout";
 
 import './styles/symbol_library.css';
 
@@ -28,7 +30,10 @@ export default function SymbolLibrary({InsertSymbolToText}: props_SymbolLibrary)
         });
     }
 
-    const [symbols, setSymbols] = useState<SymbolData[]>(BasicSymbols);
+    const symbols: SymbolData[] = useContext(CONTEXT_symbols).symbols;
+    const setSymbols: Function = useContext(CONTEXT_symbols).setSymbols!;
+
+    //const [symbols, setSymbols] = useState<SymbolData[]>(BasicSymbols);
     const [showCreator, setShowCreator] = useState<boolean>(false);
     const [creatorSymbol, setCreatorSymbol] = useState<SymbolData>(GenerateDefaultSymbol());
 

@@ -2,6 +2,7 @@ import { createContext, useState, useMemo } from "react";
 
 import BasicSymbols from "../symbol_library/BasicSymbols";
 import type { CardCore, CardData, CardBorder, CardArt, CardBody, CardDetailGroup, CardFooter } from "../card/card_types";
+import type { SymbolData } from "../symbol_library/Symbol";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -158,9 +159,17 @@ export const CONTEXT_cardData: React.Context<{
     functions: {[key: string]: (arg0: any) => void}
 }> = createContext({cardData: init, functions: {}});
 
+const initSymbols: SymbolData[] = [];
+
+export const CONTEXT_symbols: React.Context<{
+    symbols: SymbolData[], 
+    setSymbols?: Function
+}> = createContext({symbols: initSymbols});
+
 export default function Layout()
 {
     const [cardData, setCardData] = useState<CardData>(init);
+    const [symbols, setSymbols] = useState<SymbolData[]>(BasicSymbols);
 
     const setCore = (newCore: CardCore) => setCardData({...cardData, card: newCore});
     const setBorder = (newBorder: CardBorder) => setCardData({...cardData, border: newBorder});
@@ -190,10 +199,12 @@ export default function Layout()
         <div id="component-layout">
             <Header/>
             <div className="main">
-                <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setCore, setBorder, setArt, setBody, setFooter, setDetail, deleteDetail}}), [cardData])}>
-                    <CardPane/>
-                    <DesignPane/>
-                </CONTEXT_cardData.Provider>
+                <CONTEXT_symbols.Provider value={useMemo(() => ({symbols: symbols, setSymbols: (symbols: SymbolData[]) => setSymbols([...symbols])}), [symbols])}>
+                    <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setCore, setBorder, setArt, setBody, setFooter, setDetail, deleteDetail}}), [cardData])}>
+                        <CardPane/>
+                        <DesignPane/>
+                    </CONTEXT_cardData.Provider>
+                </CONTEXT_symbols.Provider>
             </div>
             <Footer/>
         </div>
