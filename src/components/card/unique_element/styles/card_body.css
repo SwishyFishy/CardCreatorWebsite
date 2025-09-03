@@ -1,7 +1,14 @@
 #component-cardbody #card-body-content{
+    height: 100%;
+    overflow: hidden;
+    
     padding: 0em .5em;
 }
 
 #component-cardbody #card-body-content .ability-text{
+    width: 100%;
+    
+    overflow-wrap: break-word;
+
     color: black;
 }

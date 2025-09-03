@@ -4,7 +4,6 @@ import {v4 as uuid} from 'uuid';
 import SymbolCreatorButton from "./SymbolCreatorButton";
 import SymbolCreator from "./SymbolCreator";
 import Symbol, { type SymbolData } from "./Symbol";
-import BasicSymbols from "./BasicSymbols";
 
 import { CONTEXT_symbols } from "../page/Layout";
 

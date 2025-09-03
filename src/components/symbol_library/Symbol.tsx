@@ -26,8 +26,8 @@ export default function Symbol({symbol}: props_Symbol)
     const iconColour: string = symbol.textColour || "black";
 
     return(
-        <div key={baseId} className={`component-symbol symbol-${symbol.shape}`} style={{backgroundImage: symbolColour}}>
+        <span key={baseId} className={`component-symbol symbol-${symbol.shape}`} style={{backgroundImage: symbolColour}}>
             {<span key={`${baseId}sbackground`} style={{color: iconColour, fontSize: symbol.text && symbol.text.length < 2 ? '85%' : '50%'}}>{symbol.icon ? <img key={`${baseId}simage`} src={symbol.icon}/> : symbol.text}</span>}
-        </div>
+        </span>
     );
 }
