@@ -14,6 +14,15 @@ export default function ControlDetails({detail, SetDetail}: props_ControlDetails
 {
     return(
         <div className="component-controldetails">
+            <Control>
+                <label htmlFor="detail-offsetX">Horizontal Offset (px):</label>
+                <input type="number" value={detail.offsetX || 0} step={1} onChange={(e) => SetDetail({...detail, offsetX: e.target.value})}/>
+            </Control>
+            <Control>
+                <label htmlFor="detail-offsetY">Vertical Offset (px):</label>
+                <input type="number" value={detail.offsetY || 0} step={1} onChange={(e) => SetDetail({...detail, offsetY: e.target.value})}/>
+            </Control>
+
             <ControlBackground data={detail} SetData={SetDetail}/>
             <Control>
                 <label htmlFor="detail-border-colour">Border Colour:</label>
