@@ -18,7 +18,9 @@ export type DetailStyleData = {
     borderThickness: number,
     borderRounding: number,
     inset: number,
-    textColour: string
+    textColour: string,
+    offsetX?: number,
+    offsetY?: number
 }
 
 export type DetailGroupData = {
@@ -36,7 +38,8 @@ export type DetailStyleCSS = {
     color?: string,
     boxShadow?: string,
     outline?: string,
-    borderRadius?: string
+    borderRadius?: string,
+    transform?: string
 }
 
 interface props_CardDetailBlock {
@@ -54,7 +57,8 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         color: groupStyle.textColour,
         boxShadow: `inset ${groupStyle.inset}mm ${groupStyle.inset}mm ${groupStyle.inset}mm black, inset ${-groupStyle.inset}mm ${-groupStyle.inset}mm ${groupStyle.inset}mm black`,
         outline: `${groupStyle.borderThickness}mm solid ${groupStyle.borderColour}`,
-        borderRadius: `${groupStyle.borderRounding}%`
+        borderRadius: `${groupStyle.borderRounding}%`,
+        transform: groupStyle.offsetX || groupStyle.offsetY ? `translate(${groupStyle.offsetX || 0}px, ${(groupStyle.offsetY || 0) * -1}px)` : ""
     };
 
     const elementStyle: DetailStyleData[] | undefined = details.elementStyles;
@@ -63,7 +67,8 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         color: style.textColour,
         boxShadow: `inset ${style.inset}mm ${style.inset}mm ${style.inset}mm ${style.borderColour}, inset ${-style.inset}mm ${-style.inset}mm ${style.inset}mm ${style.borderColour}`,
         outline: `${style.borderThickness}mm solid ${style.borderColour}`,
-        borderRadius: `${style.borderRounding}%`
+        borderRadius: `${style.borderRounding}%`,
+        transform: style.offsetX || style.offsetY ? `translate(${style.offsetX || 0}px, ${(style.offsetY || 0) * -1}px)` : ""
     }));
 
     return(

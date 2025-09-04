@@ -9,6 +9,8 @@
     
     transform-origin: top;
     transform: scale(var(--card-view-scale));
+
+    overflow: hidden;
 }
 
 #component-card #card{
