@@ -7,9 +7,13 @@
 
 #component-cardbody #card-body-content .ability-text{
     width: 100%;
-    
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 
     color: black;
+
+    white-space: pre-wrap;
 }

@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import { CONTEXT_cardData, CONTEXT_symbols } from '../../page/Layout';
 import Symbol, { type SymbolData } from '../../symbol_library/Symbol';
@@ -29,7 +29,9 @@ export default function CardBody()
 
         // Loop over abilityText, adding the text and appropriate symbol to the symbolicAbility array on each iteration
         abilityText.forEach((ability, index) => {
-            symbolicAbility.push(ability);
+            ability.split('').map((char) => (
+                symbolicAbility.push(char)
+            ));
             
             if (index < abilityText.length - 1)
             {
@@ -38,8 +40,7 @@ export default function CardBody()
                 const symbol: SymbolData | undefined = symbols.find((symbol) => symbol.id == abilityPart.substring(abilityPart.indexOf('{') + 1, abilityPart.indexOf('}')));
                 if (symbol)
                 {
-                    //symbolicAbility.push(createElement(Symbol, {symbol, key: elementKey.concat(`symbol${index}`)}));
-                    symbolicAbility.push("__");
+                    symbolicAbility.push(<Symbol key={`${elementKey}symbol${index}`} symbol={symbol}/>);
                 }
                 else
                 {
@@ -50,10 +51,11 @@ export default function CardBody()
             }
         });
 
-        //return createElement('p', {key: elementKey, className: "ability-text"}, symbolicAbility);
         return(
             <p key={elementKey} className="ability-text">
-                {symbolicAbility.join("")}
+                {symbolicAbility.map((c, index) => (
+                    <span key={`${elementKey}cwrapper${index}`}>{c}</span>
+                ))}
             </p>
         );
     }
