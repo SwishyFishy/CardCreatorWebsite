@@ -31,21 +31,31 @@ export default function CardBody()
         abilityText.forEach((ability, index) => {
             symbolicAbility.push(ability);
             
-            if (index < abilityText.length)
+            if (index < abilityText.length - 1)
             {
                 abilityPart = text.slice(totalLength);
 
                 const symbol: SymbolData | undefined = symbols.find((symbol) => symbol.id == abilityPart.substring(abilityPart.indexOf('{') + 1, abilityPart.indexOf('}')));
                 if (symbol)
                 {
-                    symbolicAbility.push(createElement(Symbol, {symbol, key: elementKey.concat(`symbol${index}`)}));
+                    //symbolicAbility.push(createElement(Symbol, {symbol, key: elementKey.concat(`symbol${index}`)}));
+                    symbolicAbility.push("__");
+                }
+                else
+                {
+                    symbolicAbility.push("{Unknown Symbol}");
                 }
 
                 totalLength += abilityPart.indexOf('}') + 1;
             }
         });
 
-        return createElement('p', {key: elementKey, className: "ability-text"}, symbolicAbility);
+        //return createElement('p', {key: elementKey, className: "ability-text"}, symbolicAbility);
+        return(
+            <p key={elementKey} className="ability-text">
+                {symbolicAbility.join("")}
+            </p>
+        );
     }
 
     return(

@@ -9,6 +9,7 @@
     width: 100%;
     
     overflow-wrap: break-word;
+    white-space: pre-wrap;
 
     color: black;
 }
