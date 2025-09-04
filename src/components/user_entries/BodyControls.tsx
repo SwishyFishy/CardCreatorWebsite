@@ -4,12 +4,13 @@ import { CONTEXT_cardData } from '../page/Layout';
 import type { BodyData } from '../card/unique_element/CardBody';
 
 import Control from '../common/Control';
-import ControlBackground from '../common/ControlBackground';
+import ControlUniversalProperties from '../common/ControlUniversalProperties';
 import RangeInput from '../common/RangeInput';
 import TextSymbolInput from '../common/TextSymbolInput';
 
 import './styles/_controls.css';
 import './styles/body_controls.css';
+import type { Gradient, Border } from '../card/card_types';
 
 export default function BodyControls()
 {
@@ -27,7 +28,7 @@ export default function BodyControls()
             </div>
             <div className="column">
                 <h2>Body Background</h2>
-                <ControlBackground data={bodyData} SetData={setBodyData}/>
+                <ControlUniversalProperties data={{background: bodyData.background, border: bodyData.border}} SetData={(newBG: Gradient, newBorder: Border) => setBodyData({...bodyData, background: newBG, border: newBorder})}/>
                 <Control>
                     <label htmlFor="body-opacity">Opacity (%):</label>
                     <RangeInput id="body-opacity" min={0} max={100} step={1} value={bodyData.opacity * 100} SetRange={(e: any) => setBodyData({...bodyData, opacity: e.target.value / 100})}/>

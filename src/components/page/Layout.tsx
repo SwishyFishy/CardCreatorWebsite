@@ -25,17 +25,31 @@ const init: CardData = {
             linear: true, 
             angle: 135
         },
-        thickness: 2.5,
-        rounding: 2.5
+        border: {
+            colour: "#000000",
+            thickness: 2.5,
+            inset: 0,
+            radius: 2.5
+        }
     },
     art: {
         src: testArt,           /*Remove from default in final product*/
         dominance: 60,
         fullart: false,
-        border: 2.5,
+        gap: 2.5,
         vShift: 0,
         hShift: 0,
-        zoom: 150
+        zoom: 150,
+        background: {
+            colour: "transparent",
+            gradient: []
+        },
+        border: {
+            colour: "transparent",
+            thickness: 0,
+            inset: 0,
+            radius: 0
+        }
     },
     body: {
         content: ["Rules", "text"],
@@ -43,6 +57,12 @@ const init: CardData = {
             colour: "#120fb6",
             gradient: ["#f108eb"],
             linear: false,
+        },
+        border: {
+            colour: "#ffffff",
+            thickness: .1,
+            inset: 0,
+            radius: 0
         },
         opacity: .75
     },
@@ -65,10 +85,13 @@ const init: CardData = {
                     colour: "transparent",
                     gradient: []
                 },
-                borderColour: "none",
-                borderThickness: .1,
-                borderRounding: 0,
-                inset: 0,
+                border: 
+                {
+                    colour: "transparent",
+                    thickness: 0,
+                    radius: 0,
+                    inset: 0
+                },
                 textColour: ""
             },
             elementStyles: [
@@ -77,10 +100,13 @@ const init: CardData = {
                         colour: "#999999",
                         gradient: [],
                     },
-                    inset: 0,
-                    borderColour: "transparent",
-                    borderThickness: .1,
-                    borderRounding: 0,
+                    border: 
+                    {
+                        colour: "transparent",
+                        thickness: 0,
+                        radius: 0,
+                        inset: 0
+                    },
                     textColour: "#2222ff"
                 },
                 {
@@ -88,10 +114,13 @@ const init: CardData = {
                         colour: "transparent",
                         gradient: []
                     },
-                    inset: 0,
-                    borderColour: "transparent",
-                    borderThickness: .1,
-                    borderRounding: 50,
+                    border: 
+                    {
+                        colour: "transparent",
+                        thickness: 0,
+                        radius: 0,
+                        inset: 0
+                    },
                     textColour: "#2222ff"
                 }
             ]
@@ -102,13 +131,15 @@ const init: CardData = {
             position: "center",
             groupStyle: {
                 background: {
-                        colour: "#666666",
-                        gradient: ["#ff6611"]
-                    },
-                inset: .1,
-                borderColour: "#000000",
-                borderThickness: .1,
-                borderRounding: 25,
+                    colour: "#666666",
+                    gradient: ["#ff6611"]
+                },
+                border: {
+                    colour: "#000000",
+                    thickness: .1,
+                    radius: 25,
+                    inset: .1
+                },
                 textColour: "#000000"
             },
             elementStyles: [{
@@ -116,10 +147,13 @@ const init: CardData = {
                     colour: "transparent",
                     gradient: []
                 },
-                borderColour: "transparent",
-                borderThickness: 0,
-                borderRounding: 0,
-                inset: 0,
+                    border: 
+                    {
+                        colour: "transparent",
+                        thickness: 0,
+                        radius: 0,
+                        inset: 0
+                    },
                 textColour: ""
             }]
         },
@@ -130,10 +164,13 @@ const init: CardData = {
                     colour: "transparent",
                     gradient: []
                 },
-                borderColour: "none",
-                borderThickness: .1,
-                borderRounding: 0,
-                inset: 0,
+                    border: 
+                    {
+                        colour: "transparent",
+                        thickness: 0,
+                        radius: 0,
+                        inset: 0
+                    },
                 textColour: ""
             },
             elementStyles: [
@@ -142,10 +179,13 @@ const init: CardData = {
                         colour: "#999999",
                         gradient: ["#ff4444"]
                     },
-                    inset: .05,
-                    borderColour: "black",
-                    borderThickness: .1,
-                    borderRounding: 0,
+                    border: 
+                    {
+                        colour: "#000000",
+                        thickness: 0.1,
+                        radius: 0,
+                        inset: 0.05
+                    },
                     textColour: "#000000"
                 }
             ]

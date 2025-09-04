@@ -67,9 +67,12 @@ export default function LayoutControls()
                                     colour: "transparent",
                                     gradient: []
                                 },
-                                border: "transparent",
-                                borderRounding: 0,
-                                inset: 0,
+                                border: {
+                                    colour: "transparent",
+                                    thickness: 0,
+                                    radius: 0,
+                                    inset: 0
+                                },
                                 textColour: "black"
                             },
                             elementStyles: []
@@ -156,10 +159,12 @@ export default function LayoutControls()
                                 colour: "transparent",
                                 gradient: []
                             },
-                            borderColour: "transparent",
-                            borderThickness: 0,
-                            borderRounding: 0,
-                            inset: 0,
+                            border: {
+                                colour: "transparent",
+                                thickness: 0,
+                                radius: 0,
+                                inset: 0
+                            },
                             textColour: ""
                         }]});
                         setNewElement("title");

@@ -1,17 +1,19 @@
 import { useContext } from "react";
 import { CONTEXT_cardData } from "../../page/Layout";
 
+import type { UniversalProperties } from "../card_types";
+
 import './styles/card_art.css';
 
 export type ArtData = {
     src: string,
     dominance: number,
     fullart: boolean,
-    border: number,
+    gap: number,
     vShift: number,
     hShift: number,
     zoom: number
-}
+} & UniversalProperties
 
 export default function CardArt()
 {
@@ -23,7 +25,7 @@ export default function CardArt()
     document.body.style.setProperty("--card-art-horizontal-shift", `${artData.hShift}px`);
     document.body.style.setProperty("--card-art-vertical-shift", `${-artData.vShift}px`);
     document.body.style.setProperty("--card-art-zoom", `${artData.zoom}%`);
-    document.body.style.setProperty("--card-art-border-thickness", `${artData.border}mm`);
+    document.body.style.setProperty("--card-art-gap-thickness", `${artData.gap}mm`);
 
     return(
         <div id="component-cardart" className={artData.fullart ? 'fullart' : ""}>

@@ -5,16 +5,15 @@ import Symbol, { type SymbolData } from '../../symbol_library/Symbol';
 
 import UninheritablyOpaqueBackground from '../../common/UninheritablyOpaqueBackground';
 
-import type { Gradient } from '../card_types';
+import type { UniversalProperties } from '../card_types';
 import { GradientCSS } from '../card_types';
 
 import './styles/card_body.css';
 
 export type BodyData = {
-    background: Gradient
     content: string[],
     opacity: number
-}
+} & UniversalProperties
 
 export default function CardBody()
 {

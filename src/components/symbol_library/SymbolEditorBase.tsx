@@ -1,7 +1,9 @@
 import Control from "../common/Control";
-import ControlBackground from "../common/ControlBackground";
+import ControlUniversalProperties from "../common/ControlUniversalProperties";
 import ColourInput from "../common/ColourInput";
+
 import { type SymbolData } from "./Symbol";
+import type { Gradient, Border } from "../card/card_types";
 
 import './styles/symbol_editor_base.css'
 
@@ -22,7 +24,7 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                         <option value="square">Square</option>
                     </select>
                 </Control>
-                <ControlBackground data={symbol} SetData={SetSymbol}/>
+                <ControlUniversalProperties data={{background: symbol.background, border: symbol.border}} SetData={(newBG: Gradient, newBorder: Border ) => SetSymbol({...symbol, background: newBG, border: newBorder})}/>
                 <Control>
                     <label htmlFor="editor-text">Text:</label>
                     <input type="text" id="editor-text" value={symbol.text} onChange={(e) => SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}/>

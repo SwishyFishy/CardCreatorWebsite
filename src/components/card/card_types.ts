@@ -45,3 +45,15 @@ export function GradientCSS(g: Gradient): string
 {
     return(`${g.linear ? `linear-gradient(${g.angle ? g.angle : 0}deg, ` : `radial-gradient(${g.offset ? `at ${g.offset.x ? g.offset.x : 50}% ${g.offset.y ? g.offset.y : 50}%, ` : ""}`}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
 }
+
+export type Border = {
+    colour: string
+    thickness: number,
+    inset: number,
+    radius: number
+}
+
+export type UniversalProperties = {
+    background: Gradient,
+    border: Border
+}

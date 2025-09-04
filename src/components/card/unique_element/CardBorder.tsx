@@ -3,15 +3,11 @@ import type { PropsWithChildren } from "react";
 import { useContext } from "react";
 import { CONTEXT_cardData } from "../../page/Layout";
 
-import { type Gradient, GradientCSS } from "../card_types";
+import { GradientCSS, type UniversalProperties } from "../card_types";
 
 import './styles/card_border.css';
 
-export type BorderData = {
-    background: Gradient,
-    thickness: number,
-    rounding: number
-}
+export type BorderData = UniversalProperties
 
 export default function CardBorder({children}: PropsWithChildren)
 {
@@ -19,8 +15,8 @@ export default function CardBorder({children}: PropsWithChildren)
 
     // Set CSS variables from card data
     document.body.style.setProperty("--card-border-background", GradientCSS(borderData.background));
-    document.body.style.setProperty("--card-border-thickness", `${borderData.thickness}mm`);
-    document.body.style.setProperty("--card-border-radius", `${borderData.rounding}mm`)
+    document.body.style.setProperty("--card-border-thickness", `${borderData.border.thickness}mm`);
+    document.body.style.setProperty("--card-border-radius", `${borderData.border.radius}mm`)
 
     return(
         <div id="component-cardborder">

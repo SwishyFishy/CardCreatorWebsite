@@ -3,12 +3,11 @@ import { CONTEXT_cardData } from '../page/Layout';
 
 import type { BorderData } from '../card/unique_element/CardBorder';
 
-import Control from '../common/Control';
-import ControlBackground from '../common/ControlBackground';
-import RangeInput from '../common/RangeInput';
+import ControlUniversalProperties from '../common/ControlUniversalProperties';
 
 import './styles/_controls.css';
 import './styles/border_controls.css';
+import type { Gradient, Border } from '../card/card_types';
 
 export default function BorderControls()
 {
@@ -19,18 +18,7 @@ export default function BorderControls()
         <div id="component-bordercontrols" className="component-controls">
             <div className="column">
                 <h2>Background</h2>
-                <ControlBackground data={borderData} SetData={setBorderData}/>
-            </div>
-            <div className="column">
-                <h2>Border</h2>
-                <Control>
-                    <label htmlFor="border-thickness">Border Thickness (mm):</label>
-                    <RangeInput id="border-thickness" min={0} max={31.5} step={.1} value={borderData.thickness} SetRange={(e: any) => setBorderData({...borderData, thickness: e.target.value})}/>
-                </Control>
-                <Control>
-                    <label htmlFor="border-radius">Corner Rounding (mm):</label>
-                    <RangeInput id="border-radius" min={0} max={31.5} step={.1} value={borderData.rounding} SetRange={(e: any) => setBorderData({...borderData, rounding: e.target.value})}/>
-                </Control>
+                <ControlUniversalProperties data={{background: borderData.background, border: borderData.border}} SetData={(newBG: Gradient, newBorder: Border) => setBorderData({...borderData, background: newBG, border: newBorder})}/>
             </div>
             <div className="column">
 

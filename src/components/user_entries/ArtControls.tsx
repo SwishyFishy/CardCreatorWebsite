@@ -24,7 +24,7 @@ export default function ArtControls()
                 </Control>
                 <Control>
                     <label htmlFor="art-border">Artbox/Body Gap (mm):</label>
-                    <RangeInput id="art-border" min={0} max={88} step={.1} value={artData.border} SetRange={(e: any) => setArtData({...artData, border: e.target.value})}/>
+                    <RangeInput id="art-border" min={0} max={88} step={.1} value={artData.gap} SetRange={(e: any) => setArtData({...artData, gap: e.target.value})}/>
                 </Control>
                 <Control>
                     <label htmlFor="art-fullart">Fullart:</label>

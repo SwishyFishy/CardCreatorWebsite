@@ -6,22 +6,17 @@ import type { TitleData } from './CardTitle';
 import type { CostData } from './CardCost';
 import type { TypeData } from './CardType';
 import type { StatsData } from './CardStats';
-import type { Gradient } from '../card_types';
+import type { UniversalProperties } from '../card_types';
 
 import { GradientCSS } from '../card_types';
 
 import './styles/card_detail_block.css';
 
 export type DetailStyleData = {
-    background: Gradient,
-    borderColour: string,
-    borderThickness: number,
-    borderRounding: number,
-    inset: number,
     textColour: string,
     offsetX?: number,
     offsetY?: number
-}
+} & UniversalProperties
 
 export type DetailGroupData = {
     name: string
@@ -55,9 +50,9 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const groupCSS: DetailStyleCSS = {
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
-        boxShadow: `inset ${groupStyle.inset}mm ${groupStyle.inset}mm ${groupStyle.inset}mm black, inset ${-groupStyle.inset}mm ${-groupStyle.inset}mm ${groupStyle.inset}mm black`,
-        outline: `${groupStyle.borderThickness}mm solid ${groupStyle.borderColour}`,
-        borderRadius: `${groupStyle.borderRounding}%`,
+        boxShadow: `inset ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm black, inset ${-groupStyle.border.inset}mm ${-groupStyle.border.inset}mm ${groupStyle.border.inset}mm black`,
+        outline: `${groupStyle.border.thickness}mm solid ${groupStyle.border.colour}`,
+        borderRadius: `${groupStyle.border.radius}%`,
         transform: groupStyle.offsetX || groupStyle.offsetY ? `translate(${groupStyle.offsetX || 0}px, ${(groupStyle.offsetY || 0) * -1}px)` : ""
     };
 
@@ -65,9 +60,9 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const elementCSS: DetailStyleCSS[] = elementStyle.map((style) => ({
         backgroundImage: GradientCSS(style.background),
         color: style.textColour,
-        boxShadow: `inset ${style.inset}mm ${style.inset}mm ${style.inset}mm ${style.borderColour}, inset ${-style.inset}mm ${-style.inset}mm ${style.inset}mm ${style.borderColour}`,
-        outline: `${style.borderThickness}mm solid ${style.borderColour}`,
-        borderRadius: `${style.borderRounding}%`,
+        boxShadow: `inset ${style.border.inset}mm ${style.border.inset}mm ${style.border.inset}mm ${style.border.colour}, inset ${-style.border.inset}mm ${-style.border.inset}mm ${style.border.inset}mm ${style.border.colour}`,
+        outline: `${style.border.thickness}mm solid ${style.border.colour}`,
+        borderRadius: `${style.border.radius}%`,
         transform: style.offsetX || style.offsetY ? `translate(${style.offsetX || 0}px, ${(style.offsetY || 0) * -1}px)` : ""
     }));
 

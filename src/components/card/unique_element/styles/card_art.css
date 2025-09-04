@@ -1,13 +1,13 @@
 #component-cardart{
     width: 100%;
-    height: calc(100% - var(--card-art-border-thickness));
+    height: calc(100% - var(--card-art-gap-thickness));
 
     overflow: hidden;
 
-    border-bottom: var(--card-art-border-thickness) solid transparent;
+    margin-bottom: var(--card-art-gap-thickness);
 
     &.fullart{
-        border-bottom: none;
+        margin-bottom: none;
     }
 }
 

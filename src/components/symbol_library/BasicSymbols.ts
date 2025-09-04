@@ -9,6 +9,12 @@ const BasicSymbols: SymbolData[] = [
             colour: "#aaaaaa",
             gradient: []
         },
+        border: {
+            colour: "transparent",
+            thickness: 0,
+            radius: 0,
+            inset: 0
+        },
         shape: "square",
         icon: symbols.icon_up,
         textColour: "#000000"

@@ -22,6 +22,12 @@ export default function SymbolLibrary({InsertSymbolToText}: props_SymbolLibrary)
                 colour: "#ffffff",
                 gradient: [],
             },
+            border: {
+                colour: "transparent",
+                thickness: 0,
+                radius: 0,
+                inset: 0
+            },
             shape: "circle",
             text: "",
             textColour: "#000000",
@@ -32,7 +38,6 @@ export default function SymbolLibrary({InsertSymbolToText}: props_SymbolLibrary)
     const symbols: SymbolData[] = useContext(CONTEXT_symbols).symbols;
     const setSymbols: Function = useContext(CONTEXT_symbols).setSymbols!;
 
-    //const [symbols, setSymbols] = useState<SymbolData[]>(BasicSymbols);
     const [showCreator, setShowCreator] = useState<boolean>(false);
     const [creatorSymbol, setCreatorSymbol] = useState<SymbolData>(GenerateDefaultSymbol());
 

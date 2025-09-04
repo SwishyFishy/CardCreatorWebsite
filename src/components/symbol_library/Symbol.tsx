@@ -1,18 +1,17 @@
 import {v4 as uuid} from 'uuid';
 
 import { GradientCSS } from '../card/card_types';
-import type { Gradient } from '../card/card_types';
+import type { UniversalProperties } from '../card/card_types';
 
 import './styles/symbol.css';
 
 export type SymbolData = {
     id: string,
-    background: Gradient,
     shape: "circle" | "square",
     text?: string,
     textColour: string,
     icon?: string,
-}
+} & UniversalProperties
 
 interface props_Symbol {
     symbol: SymbolData
