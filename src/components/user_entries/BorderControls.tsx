@@ -23,6 +23,9 @@ export default function BorderControls()
             <div className="column">
 
             </div>
+            <div className="column">
+
+            </div>
         </div>
     );
 }

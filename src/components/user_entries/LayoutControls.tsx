@@ -28,12 +28,12 @@ export default function LayoutControls()
             <div className="column">
                 <h2>Card</h2>
                 <Control>
-                    <label htmlFor="card-height">Height (mm):</label>
-                    <input type="number" id="card-height" value={cardCoreData.height} onChange={(e) => setCardCoreData({...cardCoreData, height: e.target.value})}/>
+                    <label>Height (mm):</label>
+                    <input type="number" value={cardCoreData.height} onChange={(e) => setCardCoreData({...cardCoreData, height: e.target.value})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="card-width">Width (mm):</label>
-                    <input type="number" id="card-width" value={cardCoreData.width} onChange={(e) => setCardCoreData({...cardCoreData, width: e.target.value})}/>
+                    <label>Width (mm):</label>
+                    <input type="number" value={cardCoreData.width} onChange={(e) => setCardCoreData({...cardCoreData, width: e.target.value})}/>
                 </Control>
                 
                 <h2>Card Detail Blocks</h2>
@@ -46,8 +46,8 @@ export default function LayoutControls()
                             setElementIndex(-1);
                         }
                     }}}>
-                        <label key={`detailselector${index}label`} htmlFor={`${index}`}>{detail.name}:</label>
-                        <input type="button" key={`detailselector${index}button`} id={`${index}`} value="Edit" onClick={() => {
+                        <label key={`detailselector${index}label`}>{detail.name}:</label>
+                        <input type="button" key={`detailselector${index}button`} value="Edit" onClick={() => {
                             setDetailIndex(index);
                             index == detailIndex || setElementIndex(-1); // Reset the element index if a new detail is selected, but leave it alone if nothing changes
                         }}/>
@@ -83,8 +83,8 @@ export default function LayoutControls()
                         })
                     }
                 }}}>
-                    <label htmlFor="detail-add-block">Add Detail Block:</label>
-                    <input type="text" id="detail-add-block" className={newDetailBlock.valid ? "" : "invalid"} placeholder="Block Name" value={newDetailBlock.name} onChange={(e) => setNewDetailBlock({
+                    <label>Add Detail Block:</label>
+                    <input type="text" className={newDetailBlock.valid ? "" : "invalid"} placeholder="Block Name" value={newDetailBlock.name} onChange={(e) => setNewDetailBlock({
                         name: e.target.value,
                         valid: e.target.value != "" ? (detailData.findIndex((detail) => detail.name == e.target.value) == -1 ? true : false) : false
                         })}/>
@@ -95,24 +95,24 @@ export default function LayoutControls()
                 <>
                     <h2>{detailData[detailIndex].name}</h2>
                     <Control>
-                        <label htmlFor="detail-align">Block Alignment:</label>
-                        <select id="detail-align" value={detailData[detailIndex].align} onChange={(e) => setDetailData({...detailData[detailIndex], align: e.target.value})}>
+                        <label>Block Alignment:</label>
+                        <select value={detailData[detailIndex].align} onChange={(e) => setDetailData({...detailData[detailIndex], align: e.target.value})}>
                             <option value="horizontal">Horizontal</option>
                             <option value="vertical-left">Left</option>
                             <option value="vertical-right">Right</option>
                         </select>
                     </Control>
                     <Control>
-                        <label htmlFor="detail-justify">Block Justification:</label>
-                        <select id="detail-justify" value={detailData[detailIndex].justify} onChange={(e) => setDetailData({...detailData[detailIndex], justify: e.target.value})}>
+                        <label>Block Justification:</label>
+                        <select value={detailData[detailIndex].justify} onChange={(e) => setDetailData({...detailData[detailIndex], justify: e.target.value})}>
                             <option value="first">Start</option>
                             <option value="middle">Middle</option>
                             <option value="last">End</option>
                         </select>
                     </Control>
                     <Control>
-                        <label htmlFor="detail-position">Block Element Justification:</label>
-                        <select id="detail-position" value={detailData[detailIndex].position} onChange={(e) => setDetailData({...detailData[detailIndex], position: e.target.value})}>
+                        <label>Block Element Justification:</label>
+                        <select value={detailData[detailIndex].position} onChange={(e) => setDetailData({...detailData[detailIndex], position: e.target.value})}>
                             <option value="start">Start</option>
                             <option value="center">Center</option>
                             <option value="spread">Spread</option>
@@ -133,8 +133,8 @@ export default function LayoutControls()
                             }
                         }}}>
                             {/* {element.id?.slice(0, 1).toUpperCase().concat(element.id?.slice(1))} capitalizes the first letter of the id */}
-                            <label key={`elementselector${index}label`} htmlFor={`${index}`}>{element.id?.slice(0, 1).toUpperCase().concat(element.id?.slice(1))}:</label>
-                            <input type="button" key={`elementselector${index}button`} id={`${index}`} value="Edit" onClick={() => setElementIndex(index)}/>
+                            <label key={`elementselector${index}label`}>{element.id?.slice(0, 1).toUpperCase().concat(element.id?.slice(1))}:</label>
+                            <input type="button" key={`elementselector${index}button`} value="Edit" onClick={() => setElementIndex(index)}/>
                         </Control>
                     ))}
                     <Control spawnable={{Spawn: () => {
@@ -169,8 +169,8 @@ export default function LayoutControls()
                         }]});
                         setNewElement("title");
                     }}}>
-                        <label htmlFor="detail-block-add-element">Add Detail:</label>
-                        <select id="detail-block-add-element" value={newElement} onChange={(e) => setNewElement(e.target.value)}>
+                        <label>Add Detail:</label>
+                        <select value={newElement} onChange={(e) => setNewElement(e.target.value)}>
                             <option value="title">Card Title</option>
                             <option value="cost">Card Cost</option>
                             <option value="type">Card Type</option>

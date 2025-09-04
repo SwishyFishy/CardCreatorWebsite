@@ -22,16 +22,16 @@ export default function BodyControls()
             <div className="column">
                 <h2>Body Content</h2>
                 <Control>
-                    <label htmlFor="body-content">Content:</label>
-                    <TextSymbolInput id="body-content" value={bodyData.content.join('\n')} SetText={(e: any) => setBodyData({...bodyData, content: e.target.value.split('\n')})}/>
+                    <label>Content:</label>
+                    <TextSymbolInput value={bodyData.content.join('\n')} SetText={(e: any) => setBodyData({...bodyData, content: e.target.value.split('\n')})}/>
                 </Control>
             </div>
             <div className="column">
                 <h2>Body Background</h2>
                 <ControlUniversalProperties data={{background: bodyData.background, border: bodyData.border}} SetData={(newBG: Gradient, newBorder: Border) => setBodyData({...bodyData, background: newBG, border: newBorder})}/>
                 <Control>
-                    <label htmlFor="body-opacity">Opacity (%):</label>
-                    <RangeInput id="body-opacity" min={0} max={100} step={1} value={bodyData.opacity * 100} SetRange={(e: any) => setBodyData({...bodyData, opacity: e.target.value / 100})}/>
+                    <label>Opacity (%):</label>
+                    <RangeInput min={0} max={100} step={1} value={bodyData.opacity * 100} SetRange={(e: any) => setBodyData({...bodyData, opacity: e.target.value / 100})}/>
                 </Control>
             </div>
             <div className="column">

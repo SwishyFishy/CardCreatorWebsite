@@ -1,16 +1,18 @@
+import {v4 as uuid} from 'uuid';
+
 import SymbolLibrary from "../symbol_library/SymbolLibrary";
 import type { SymbolData } from "../symbol_library/Symbol";
 
 import './styles/text_symbol_input.css';
 
 interface props_TextSymbolInput {
-    id: string,
     value: string,
     SetText: Function
 }
 
-export default function TextSymbolInput({id, value, SetText}: props_TextSymbolInput)
+export default function TextSymbolInput({value, SetText}: props_TextSymbolInput)
 {
+    const id: string = uuid();
     const self: HTMLInputElement = document.getElementById(id)! as HTMLInputElement;
 
     const handleAddSymbol = (e: any, symbol: SymbolData): void => {

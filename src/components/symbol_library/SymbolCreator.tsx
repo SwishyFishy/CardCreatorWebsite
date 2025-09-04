@@ -17,8 +17,6 @@ interface props_SymbolCreator {
 
 export default function SymbolCreator({show, symbol, SetSymbol, Save, Hide}: props_SymbolCreator)
 {
-    console.log(symbol);
-
     return (
         <div id={show ? "component-symbolcreator": "hidden"}>
             <PageMask/>

@@ -19,31 +19,31 @@ export default function ArtControls()
             <div className="column">
                 <h2>Art Size</h2>
                 <Control>
-                    <label htmlFor="art-dominance">Artbox Size (%):</label>
-                    <RangeInput id="art-dominance" min={0} max={100} step={1} value={artData.dominance} SetRange={(e: any) => setArtData({...artData, dominance: e.target.value})}/>
+                    <label>Artbox Size (%):</label>
+                    <RangeInput min={0} max={100} step={1} value={artData.dominance} SetRange={(e: any) => setArtData({...artData, dominance: e.target.value})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="art-border">Artbox/Body Gap (mm):</label>
-                    <RangeInput id="art-border" min={0} max={88} step={.1} value={artData.gap} SetRange={(e: any) => setArtData({...artData, gap: e.target.value})}/>
+                    <label>Artbox/Body Gap (mm):</label>
+                    <RangeInput min={0} max={88} step={.1} value={artData.gap} SetRange={(e: any) => setArtData({...artData, gap: e.target.value})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="art-fullart">Fullart:</label>
-                    <input type="checkbox" id="art-fullart" checked={artData.fullart} onChange={() => {setArtData({...artData, fullart: !artData.fullart})}}/>
+                    <label>Fullart:</label>
+                    <input type="checkbox" checked={artData.fullart} onChange={() => {setArtData({...artData, fullart: !artData.fullart})}}/>
                 </Control>
             </div>
             <div className="column">
                 <h2>Art Position</h2>                 
                 <Control>
-                    <label htmlFor="art-vShift">Vertical Shift (px):</label>
-                    <input type="number" id="art-vShift" value={artData.vShift} onChange={(e) => setArtData({...artData, vShift: e.target.value})}/>
+                    <label>Vertical Shift (px):</label>
+                    <input type="number" value={artData.vShift} onChange={(e) => setArtData({...artData, vShift: e.target.value})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="art-hShift">Horizontal Shift (px):</label>
-                    <input type="number" id="art-hShift" value={artData.hShift} onChange={(e) => setArtData({...artData, hShift: e.target.value})}/>
+                    <label>Horizontal Shift (px):</label>
+                    <input type="number" value={artData.hShift} onChange={(e) => setArtData({...artData, hShift: e.target.value})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="art-zoom">Zoom (%):</label>
-                    <input type="number" id="art-hShift" value={artData.zoom} onChange={(e) => setArtData({...artData, zoom: e.target.value})}/>
+                    <label>Zoom (%):</label>
+                    <input type="number" value={artData.zoom} onChange={(e) => setArtData({...artData, zoom: e.target.value})}/>
                 </Control>
             </div>
             <div className="column">
