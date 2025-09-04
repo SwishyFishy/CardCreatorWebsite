@@ -50,7 +50,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const groupCSS: DetailStyleCSS = {
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
-        boxShadow: `inset ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm black, inset ${-groupStyle.border.inset}mm ${-groupStyle.border.inset}mm ${groupStyle.border.inset}mm black`,
+        boxShadow: `inset ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.colour}, inset ${-groupStyle.border.inset}mm ${-groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.colour}`,
         outline: `${groupStyle.border.thickness}mm solid ${groupStyle.border.colour}`,
         borderRadius: `${groupStyle.border.radius}%`,
         transform: groupStyle.offsetX || groupStyle.offsetY ? `translate(${groupStyle.offsetX || 0}px, ${(groupStyle.offsetY || 0) * -1}px)` : ""
