@@ -2,6 +2,7 @@ import Control from "./Control";
 import ControlUniversalProperties from "./ControlUniversalProperties";
 import ColourInput from "./ColourInput";
 
+import type { Gradient, Border } from "../card/card_types";
 import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
 
 interface props_ControlDetails {
@@ -22,7 +23,7 @@ export default function ControlDetails({detail, SetDetail}: props_ControlDetails
                 <input type="number" value={detail.offsetY || 0} step={1} onChange={(e) => SetDetail({...detail, offsetY: e.target.value})}/>
             </Control>
 
-            <ControlUniversalProperties data={{background: detail.background, border: detail.border}} SetData={SetDetail}/>
+            <ControlUniversalProperties data={{background: detail.background, border: detail.border}} SetData={(newBG: Gradient, newBorder: Border) => SetDetail({...detail, background: newBG, border: newBorder})}/>
 
             <Control>
                 <label>Text Colour:</label>

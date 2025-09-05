@@ -46,7 +46,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     const baseId: string = uuid();
 
     // Style conversion and error checking
-    const groupStyle: DetailStyleData | undefined = details.groupStyle;
+    const groupStyle: DetailStyleData = details.groupStyle;
     const groupCSS: DetailStyleCSS = {
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
@@ -56,7 +56,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         transform: groupStyle.offsetX || groupStyle.offsetY ? `translate(${groupStyle.offsetX || 0}px, ${(groupStyle.offsetY || 0) * -1}px)` : ""
     };
 
-    const elementStyle: DetailStyleData[] | undefined = details.elementStyles;
+    const elementStyle: DetailStyleData[] = details.elementStyles;
     const elementCSS: DetailStyleCSS[] = elementStyle.map((style) => ({
         backgroundImage: GradientCSS(style.background),
         color: style.textColour,
