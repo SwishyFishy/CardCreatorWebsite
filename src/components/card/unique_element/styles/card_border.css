@@ -4,6 +4,7 @@
 
     background-image: var(--card-border-background);
     border-radius: var(--card-border-radius);
+    box-shadow: inset var(--card-border-inset) var(--card-border-inset) var(--card-border-inset) black, inset calc(-1 * var(--card-border-inset)) calc(-1 * var(--card-border-inset)) var(--card-border-inset) black;
 
     display: flex;
     flex-direction: row;
