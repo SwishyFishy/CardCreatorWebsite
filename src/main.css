@@ -23,7 +23,6 @@ body{
     --card-border-thickness: 2.5mm;
     --card-border-radius: var(--card-border-thickness);
 
-    --card-content-width: calc(var(--card-width) - 2 * var(--card-border-thickness));
     --card-content-height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
     
     --card-footer-dominance: 6%;
