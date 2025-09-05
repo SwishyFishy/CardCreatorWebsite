@@ -17,8 +17,9 @@ export default function CardBorder({children}: PropsWithChildren)
 
     // Set CSS variables from card data
     document.body.style.setProperty("--card-border-background", GradientCSS(borderData.background));
+    document.body.style.setProperty("--card-border-colour", borderData.border.colour);
     document.body.style.setProperty("--card-border-thickness", `${borderData.border.thickness}mm`);
-    document.body.style.setProperty("--card-border-radius", `${borderData.border.radius}mm`);
+    document.body.style.setProperty("--card-border-radius", `${borderData.border.radius}%`);
     document.body.style.setProperty("--card-border-inset", `${borderData.border.inset}mm`);
 
     return(
