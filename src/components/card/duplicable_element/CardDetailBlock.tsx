@@ -32,7 +32,7 @@ export type DetailStyleCSS = {
     backgroundImage?: string, 
     color?: string,
     boxShadow?: string,
-    outline?: string,
+    border?: string,
     borderRadius?: string,
     transform?: string
 }
@@ -51,7 +51,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         backgroundImage: GradientCSS(groupStyle.background),
         color: groupStyle.textColour,
         boxShadow: `inset ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.colour}, inset ${-groupStyle.border.inset}mm ${-groupStyle.border.inset}mm ${groupStyle.border.inset}mm ${groupStyle.border.colour}`,
-        outline: `${groupStyle.border.thickness}mm solid ${groupStyle.border.colour}`,
+        border: `${groupStyle.border.thickness}mm solid ${groupStyle.border.colour}`,
         borderRadius: `${groupStyle.border.radius}%`,
         transform: groupStyle.offsetX || groupStyle.offsetY ? `translate(${groupStyle.offsetX || 0}px, ${(groupStyle.offsetY || 0) * -1}px)` : ""
     };
@@ -61,7 +61,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         backgroundImage: GradientCSS(style.background),
         color: style.textColour,
         boxShadow: `inset ${style.border.inset}mm ${style.border.inset}mm ${style.border.inset}mm ${style.border.colour}, inset ${-style.border.inset}mm ${-style.border.inset}mm ${style.border.inset}mm ${style.border.colour}`,
-        outline: `${style.border.thickness}mm solid ${style.border.colour}`,
+        border: `${style.border.thickness}mm solid ${style.border.colour}`,
         borderRadius: `${style.border.radius}%`,
         transform: style.offsetX || style.offsetY ? `translate(${style.offsetX || 0}px, ${(style.offsetY || 0) * -1}px)` : ""
     }));
