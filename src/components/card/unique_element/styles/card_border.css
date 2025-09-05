@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    background-origin: border-box;
 
     background-image: var(--card-border-background);
     box-shadow: inset var(--card-border-inset) var(--card-border-inset) var(--card-border-inset) var(--card-border-colour), 
