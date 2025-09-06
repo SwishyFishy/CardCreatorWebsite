@@ -1,5 +1,7 @@
 import {v4 as uuid} from 'uuid';
 
+import { useState } from 'react';
+
 import SymbolLibrary from "../symbol_library/SymbolLibrary";
 import type { SymbolData } from "../symbol_library/Symbol";
 
@@ -12,8 +14,10 @@ interface props_TextSymbolInput {
 
 export default function TextSymbolInput({value, SetText}: props_TextSymbolInput)
 {
-    const id: string = uuid();
+    const [id] = useState<string>(uuid())[0];
     const self: HTMLInputElement = document.getElementById(id)! as HTMLInputElement;
+
+    console.log(self);
 
     const handleAddSymbol = (e: any, symbol: SymbolData): void => {
         e.preventDefault();
