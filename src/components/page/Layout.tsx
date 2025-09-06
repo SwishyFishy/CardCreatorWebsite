@@ -60,7 +60,7 @@ const init: CardData = {
         },
         border: {
             colour: "#ffffff",
-            thickness: .1,
+            thickness: 0,
             inset: 0,
             radius: 0
         },

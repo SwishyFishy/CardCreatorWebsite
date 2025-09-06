@@ -5,8 +5,8 @@ import Symbol, { type SymbolData } from '../../symbol_library/Symbol';
 
 import UninheritablyOpaqueBackground from '../../common/UninheritablyOpaqueBackground';
 
+import { UniversalPropertiesCSS } from '../card_types';
 import type { UniversalProperties } from '../card_types';
-import { GradientCSS } from '../card_types';
 
 import './styles/card_body.css';
 
@@ -61,7 +61,7 @@ export default function CardBody()
 
     return(
         <div id="component-cardbody">
-            <UninheritablyOpaqueBackground opacity={bodyData.opacity} background={GradientCSS(bodyData.background)}>
+            <UninheritablyOpaqueBackground opacity={bodyData.opacity} style={UniversalPropertiesCSS({background: bodyData.background, border: bodyData.border})}>
                 <div id="card-body-content">
                     {bodyData.content.map((ability, index) => ParseAbility(ability, `body${Object.keys(bodyData.content)[index]}`))}
                 </div>

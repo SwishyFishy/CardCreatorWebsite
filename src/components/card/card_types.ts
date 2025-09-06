@@ -41,9 +41,11 @@ export type Gradient = {
         y: number
     }
 }
-export function GradientCSS(g: Gradient): string
+export function GradientCSS(g: Gradient): {backgroundImage: string}
 {
-    return(`${g.linear ? `linear-gradient(${g.angle ? g.angle : 0}deg, ` : `radial-gradient(${g.offset ? `at ${g.offset.x ? g.offset.x : 50}% ${g.offset.y ? g.offset.y : 50}%, ` : ""}`}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`);
+    return{
+        backgroundImage: `${g.linear ? `linear-gradient(${g.angle ? g.angle : 0}deg, ` : `radial-gradient(${g.offset ? `at ${g.offset.x ? g.offset.x : 50}% ${g.offset.y ? g.offset.y : 50}%, ` : ""}`}${g.colour}, ${g.gradient.length > 0 ? g.gradient.join(", ") : g.colour})`
+    };
 }
 
 export type Border = {
@@ -52,8 +54,23 @@ export type Border = {
     inset: number,
     radius: number
 }
+export function BorderCSS(b: Border)
+{
+    return{
+        border: `${b.thickness}mm solid ${b.colour}`,
+        borderRadius: `${b.radius}%`,
+        boxShadow: `inset ${b.inset}mm ${b.inset}mm ${b.inset}mm ${b.colour}, inset ${-b.inset}mm ${-b.inset}mm ${b.inset}mm ${b.colour}`
+    };
+}
 
 export type UniversalProperties = {
     background: Gradient,
     border: Border
+}
+export function UniversalPropertiesCSS(u: UniversalProperties)
+{
+    return{
+        ...GradientCSS(u.background),
+        ...BorderCSS(u.border)
+    };
 }

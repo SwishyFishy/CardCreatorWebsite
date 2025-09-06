@@ -1,7 +1,7 @@
 import ControlBackground from './ControlBackground';
 import ControlBorder from './ControlBorder';
 
-import type { Gradient, Border, UniversalProperties } from "../card/card_types";
+import { type Gradient, type Border, type UniversalProperties,  } from "../card/card_types";
 
 interface props_ControlUniversalProperties {
     data: UniversalProperties,
