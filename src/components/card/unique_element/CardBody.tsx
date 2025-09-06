@@ -61,7 +61,7 @@ export default function CardBody()
 
     return(
         <div id="component-cardbody">
-            <UninheritablyOpaqueBackground opacity={bodyData.opacity} style={UniversalPropertiesCSS({background: bodyData.background, border: bodyData.border})}>
+            <UninheritablyOpaqueBackground opacity={bodyData.opacity} styles={UniversalPropertiesCSS({background: bodyData.background, border: bodyData.border})}>
                 <div id="card-body-content">
                     {bodyData.content.map((ability, index) => ParseAbility(ability, `body${Object.keys(bodyData.content)[index]}`))}
                 </div>
