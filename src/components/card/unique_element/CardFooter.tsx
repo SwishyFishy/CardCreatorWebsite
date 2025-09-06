@@ -23,6 +23,7 @@ type FooterDisplay = {
 export default function CardFooter()
 {
     const footerData = useContext(CONTEXT_cardData).cardData.footer;
+    const borderColour: string = useContext(CONTEXT_cardData).cardData.border.border.colour;
 
     const footerDisplay: FooterDisplay = {
         year: footerData.year,
@@ -32,6 +33,12 @@ export default function CardFooter()
         siteCredit: "Designed with CardCreator",
         licence: "CC/BY-SA 4.0"
     }
+
+    // Set CSS variables from data
+    document.body.style.setProperty("--card-footer-text-colour",
+        0.2126 * parseInt(borderColour.substring(1, 3)) + 0.7152 * parseInt(borderColour.substring(3, 5)) + 0.0722 * parseInt(borderColour.substring(5)) < 75 ? 
+        "white" : "black"
+    );
 
     return(
         <div id="component-cardfooter">
