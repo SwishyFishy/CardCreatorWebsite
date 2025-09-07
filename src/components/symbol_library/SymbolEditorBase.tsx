@@ -17,21 +17,14 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
     return (
         <div id="component-symboleditorbase">
             <form>
-                <Control>
-                    <label htmlFor="editor-shape">Shape:</label>
-                    <select id="editor-shape" value={symbol.shape} onChange={(e) => SetSymbol({...symbol, shape: e.target.value})}>
-                        <option value="circle">Circle</option>
-                        <option value="square">Square</option>
-                    </select>
-                </Control>
                 <ControlUniversalProperties data={{background: symbol.background, border: symbol.border}} SetData={(newBG: Gradient, newBorder: Border ) => SetSymbol({...symbol, background: newBG, border: newBorder})}/>
                 <Control>
-                    <label htmlFor="editor-text">Text:</label>
-                    <input type="text" id="editor-text" value={symbol.text} onChange={(e) => SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}/>
+                    <label>Text:</label>
+                    <input type="text" value={symbol.text} onChange={(e) => SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}/>
                 </Control>
                 <Control>
-                    <label htmlFor="editor-text-colour">Text Colour:</label>
-                    <ColourInput id="editor-text-colour" value={symbol.textColour} SetColour={(e: any) => SetSymbol({...symbol, textColour: e.target.value})}/>
+                    <label>Text Colour:</label>
+                    <ColourInput value={symbol.textColour} SetColour={(e: any) => SetSymbol({...symbol, textColour: e.target.value})}/>
                 </Control>
             </form>
         </div>
