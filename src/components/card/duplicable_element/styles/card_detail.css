@@ -1,5 +1,13 @@
 .component-carddetail{
+    box-sizing: border-box;
+
+    height: var(--card-detail-thickness);
+
     padding: .2em;
 
-    box-sizing: border-box;
+    &[class*="vertical"]{
+        width: max-content;
+        transform-origin: calc(var(--card-detail-thickness) / 2) calc(var(--card-detail-thickness) / 2);
+        transform: rotate(90deg);
+    }
 }

@@ -24,11 +24,12 @@ body{
     --card-border-radius: var(--card-border-thickness);
 
     --card-content-height: calc(var(--card-height) - 2 * var(--card-border-thickness) - var(--card-footer-dominance));
+
+    --card-detail-thickness: 4.5mm;
     
     --card-footer-dominance: 6%;
     --card-footer-text-colour: #000000;
 
-    
     /* Page */
     color: var(--text);
     background-color: var(--background);

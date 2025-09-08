@@ -11,6 +11,7 @@
         align-items: center;
 
         width: 100%;
+        height: var(--card-detail-thickness);
 
         left: 0;
     }
@@ -19,8 +20,7 @@
         flex-direction: column;
         justify-content: space-around;
 
-        max-width: .95em;
-        overflow-wrap: break-word;
+        width: var(--card-detail-thickness);
         line-height: .8em;
         text-align: center;
 
@@ -31,8 +31,7 @@
         flex-direction: column;
         justify-content: space-around;
 
-        max-width: .95em;
-        overflow-wrap: break-word;
+        width: var(--card-detail-thickness);
         line-height: .8em;
         text-align: center;
 
@@ -44,7 +43,7 @@
         top: 0;
 
         &[class*="vertical-"]{
-            height: calc(var(--card-art-dominance) - var(--card-border-thickness));
+            height: calc(var(--card-art-dominance));
         }
     }
 
