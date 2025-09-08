@@ -31,6 +31,8 @@
     background-position: var(--card-art-horizontal-shift) var(--card-art-vertical-shift);
     background-size: var(--card-art-zoom);
     background-repeat: no-repeat;
+
+    overflow: hidden;
 }
 
 #component-card #card #card-details{
@@ -40,4 +42,6 @@
 
     width: 100%;
     height: var(--card-content-height);
+
+    overflow: hidden;
 }

@@ -6,8 +6,5 @@
     padding: .2em;
 
     &[class*="vertical"]{
-        width: max-content;
-        transform-origin: calc(var(--card-detail-thickness) / 2) calc(var(--card-detail-thickness) / 2);
-        transform: rotate(90deg);
     }
 }

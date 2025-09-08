@@ -11,13 +11,13 @@ body{
     --card-view-scale: 2;
 
     --card-art-gap-thickness: var(--card-border-thickness);
-    --card-art-dominance: calc(50% + var(--card-art-border-thickness));
+    --card-art-dominance: calc(var(--card-height) / 2);
     --card-art-fullart: none;
     --card-art-horizontal-shift: 0px;
     --card-art-vertical-shift: 0px;
     --card-art-zoom: 1;
 
-    --card-body-dominance: calc(100% - (var(--card-art-dominance)));
+    --card-body-dominance: calc(var(--card-content-height) - var(--card-art-dominance));
     
     --card-border-background: linear-gradient(#000000, #000000);
     --card-border-thickness: 2.5mm;
@@ -27,7 +27,7 @@ body{
 
     --card-detail-thickness: 4.5mm;
     
-    --card-footer-dominance: 6%;
+    --card-footer-dominance: 5mm;
     --card-footer-text-colour: #000000;
 
     /* Page */
