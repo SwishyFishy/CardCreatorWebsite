@@ -6,7 +6,7 @@ import './styles/card_title.css';
 
 export type TitleData = {
     title: string,
-    readonly id?: "title"
+    readonly id: "title"
 }
 
 interface props_CardTitle {

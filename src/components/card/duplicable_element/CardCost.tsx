@@ -10,7 +10,7 @@ import './styles/card_cost.css';
 export type CostData = {
     cost: SymbolData[],
     direction: "row" | "column",
-    readonly id?: "cost"
+    readonly id: "cost"
 }
 
 interface props_CardCost {

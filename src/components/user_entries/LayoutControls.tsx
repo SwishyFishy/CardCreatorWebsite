@@ -73,7 +73,7 @@ export default function LayoutControls()
                                     radius: 0,
                                     inset: 0
                                 },
-                                textColour: "black"
+                                textColour: "#000000"
                             },
                             elementStyles: []
                         });
@@ -165,7 +165,8 @@ export default function LayoutControls()
                                 radius: 0,
                                 inset: 0
                             },
-                            textColour: ""
+                            textColour: "#000000",
+                            ...newDetail!
                         }]});
                         setNewElement("title");
                     }}}>
@@ -185,6 +186,7 @@ export default function LayoutControls()
                 <>
                     <h2>{detailData[detailIndex].elements[elementIndex].id!.slice(0, 1).toUpperCase().concat(detailData[detailIndex].elements[elementIndex].id!.slice(1))}</h2>
                     <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}/>
+                    {/*Check detailData[detailIndex].elements[elementIndex].id to determine whoch content controls to put here*/}
                 </>
                 : ""}
             </div>

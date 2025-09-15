@@ -7,7 +7,7 @@ import './styles/card_stats.css';
 export type StatsData = {
     stats: string[],
     separator: boolean,
-    readonly id?: "stats"
+    readonly id: "stats"
 }
 
 interface props_CardStats {

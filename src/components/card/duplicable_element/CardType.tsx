@@ -4,7 +4,7 @@ import type { DetailStyleCSS } from './CardDetailBlock';
 
 export type TypeData = {
     types: string[],
-    readonly id?: "type"
+    readonly id: "type"
 }
 
 interface props_CardType {
