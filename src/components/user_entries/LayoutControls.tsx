@@ -196,8 +196,10 @@ export default function LayoutControls()
             <div className="column">
                 {elementIndex > -1 ?
                 <>
-                    <h2>{detailData[detailIndex].elements[elementIndex].id!.slice(0, 1).toUpperCase().concat(detailData[detailIndex].elements[elementIndex].id!.slice(1))}</h2>
+                    <h2>{detailData[detailIndex].elements[elementIndex].id!.slice(0, 1).toUpperCase().concat(detailData[detailIndex].elements[elementIndex].id!.slice(1))} Style</h2>
                     <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}/>
+                    
+                    <h2>{detailData[detailIndex].elements[elementIndex].id!.slice(0, 1).toUpperCase().concat(detailData[detailIndex].elements[elementIndex].id!.slice(1))} Content</h2>
                     {ContentControls()}
                 </>
                 : ""}
