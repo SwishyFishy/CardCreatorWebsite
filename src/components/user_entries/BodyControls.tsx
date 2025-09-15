@@ -29,7 +29,7 @@ export default function BodyControls()
             <div className="column">
                 <h2>Body Background</h2>
                 <ControlUniversalProperties data={{background: bodyData.background, border: bodyData.border}} SetData={(newBG: Gradient, newBorder: Border) => setBodyData({...bodyData, background: newBG, border: newBorder})}/>
-                <Control>
+                <Control autodisable={bodyData.background.colour == "Transparent" && bodyData.background.gradient.length == 0}>
                     <label>Opacity (%):</label>
                     <RangeInput min={0} max={100} step={1} value={bodyData.opacity * 100} SetRange={(e: any) => setBodyData({...bodyData, opacity: e.target.value / 100})}/>
                 </Control>

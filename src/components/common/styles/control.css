@@ -53,3 +53,7 @@
     background-color: aquamarine;
     color: black;
 }
+
+.component-control[inert] > *{
+    opacity: 0.5;
+}

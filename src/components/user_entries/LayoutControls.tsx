@@ -64,11 +64,11 @@ export default function LayoutControls()
                             position: "start",
                             groupStyle: {
                                 background: {
-                                    colour: "transparent",
+                                    colour: "Transparent",
                                     gradient: []
                                 },
                                 border: {
-                                    colour: "transparent",
+                                    colour: "Transparent",
                                     thickness: 0,
                                     radius: 0,
                                     inset: 0
@@ -156,11 +156,11 @@ export default function LayoutControls()
                         }
                         setDetailData({...detailData[detailIndex], elements: [...detailData[detailIndex].elements, newDetail!], elementStyles: [...detailData[detailIndex].elementStyles, {
                             background: {
-                                colour: "transparent",
+                                colour: "Transparent",
                                 gradient: []
                             },
                             border: {
-                                colour: "transparent",
+                                colour: "Transparent",
                                 thickness: 0,
                                 radius: 0,
                                 inset: 0
