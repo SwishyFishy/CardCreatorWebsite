@@ -3,6 +3,8 @@ import ControlBorder from './ControlBorder';
 
 import { type Gradient, type Border, type UniversalProperties,  } from "../card/card_types";
 
+import "./styles/control_universal_properties.css";
+
 interface props_ControlUniversalProperties {
     data: UniversalProperties,
     SetData: Function
