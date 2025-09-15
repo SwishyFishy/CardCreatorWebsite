@@ -10,9 +10,11 @@ interface props_ControlDetailTitle{
 export default function ControlDetailTitle({detail, ReturnDetail}: props_ControlDetailTitle) 
 {
     return(
-        <Control>
-            <label>Title:</label>
-            <input type="text" value={detail.title} onChange={(e) => ReturnDetail({title: e.target.value, id: "title"})}/>
-        </Control>
+        <div className="component-controldetailtitle">
+            <Control>
+                <label>Title:</label>
+                <input type="text" value={detail.title} onChange={(e) => ReturnDetail({...detail, title: e.target.value})}/>
+            </Control>
+        </div>
     );
 }
