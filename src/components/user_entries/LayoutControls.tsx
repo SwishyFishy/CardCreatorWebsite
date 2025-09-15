@@ -7,6 +7,7 @@ import Control from "../common/Control";
 import ControlDetails from "../common/ControlDetails";
 import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
 import ControlDetailTitle from "../common/ControlDetailTitle";
+import ControlDetailCost from "../common/ControlDetailCost";
 
 export default function LayoutControls()
 {
@@ -25,11 +26,17 @@ export default function LayoutControls()
     const [newElement, setNewElement] = useState<string>("title");
 
     const ContentControls = () => {
+        const detail: CardTitle | CardCost | CardType | CardStats = detailData[detailIndex].elements[elementIndex];
+        const replaceDetail: Function = (newDetail: CardTitle | CardCost | CardType | CardStats) => setDetailData({...detailData[detailIndex], elements: detailData[detailIndex].elements.toSpliced(elementIndex, 1, newDetail)})
+
         switch (detailData[detailIndex].elements[elementIndex].id)
         {
             case "title":
-                return <ControlDetailTitle detail={detailData[detailIndex].elements[elementIndex]} ReturnDetail={(rval: CardTitle) => setDetailData({...detailData[detailIndex], elements: detailData[detailIndex].elements.toSpliced(elementIndex, 1, rval)})}/>
+                return <ControlDetailTitle detail={detail as CardTitle} ReturnDetail={replaceDetail}/>
         
+            case "cost":
+                return <ControlDetailCost detail={detail as CardCost} ReturnDetail={replaceDetail}/>
+
             default:
                 return <></>;
         }
