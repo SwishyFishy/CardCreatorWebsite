@@ -5,5 +5,8 @@
 
     padding: .5em;
 
+    height: 100vh;
+    min-height: calc(2.5 * var(--card-height));
+
     background-color: var(--background-highlight);
 }

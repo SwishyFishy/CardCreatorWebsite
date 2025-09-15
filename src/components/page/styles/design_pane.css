@@ -1,3 +1,8 @@
+#component-designpane{ 
+    height: 100vh;
+    min-height: calc(2.5 * var(--card-height));
+}
+
 #component-designpane #selector{
     display: grid;
     grid-auto-flow: column;
@@ -28,4 +33,6 @@
 #component-designpane #editor-panes{
     width: 100%;
     height: calc(100% - 6rem);
+
+    overflow: scroll;
 }
