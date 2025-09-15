@@ -42,7 +42,7 @@ export default function TextSymbolInput({value, SetText}: props_TextSymbolInput)
         <div className="component-textsymbolinput">
             <textarea id={id} rows={5} value={value} onChange={(e) => SetText(e)}/>
             <div className="input-symbol">
-                <SymbolLibrary InsertSymbolToText={handleAddSymbol}/>
+                <SymbolLibrary InsertSymbol={handleAddSymbol}/>
             </div>
         </div>
     );

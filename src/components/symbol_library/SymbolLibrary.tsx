@@ -10,10 +10,10 @@ import { CONTEXT_symbols } from "../page/Layout";
 import './styles/symbol_library.css';
 
 interface props_SymbolLibrary {
-    InsertSymbolToText: Function
+    InsertSymbol: Function
 }
 
-export default function SymbolLibrary({InsertSymbolToText}: props_SymbolLibrary)
+export default function SymbolLibrary({InsertSymbol}: props_SymbolLibrary)
 {
     const GenerateDefaultSymbol = (): SymbolData => {
         return({
@@ -70,7 +70,7 @@ export default function SymbolLibrary({InsertSymbolToText}: props_SymbolLibrary)
     return (
         <div id="component-symbollibrary">
             {symbols.map((symbol, index) => (
-                <span key={`symbol${index}container`} onContextMenu={(e) => handleEditSymbol(e, symbol)} onClick={(e) => InsertSymbolToText(e, symbol)}>
+                <span key={`symbol${index}container`} onContextMenu={(e) => handleEditSymbol(e, symbol)} onClick={(e) => InsertSymbol(e, symbol)}>
                     <Symbol symbol={symbol} key={`symbol${index}`}/>
                 </span>
             ))}
