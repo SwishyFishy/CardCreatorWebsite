@@ -25,7 +25,7 @@ export default function ControlBorder({data, SetData}: props_ControlBorder)
                 <label>Border Rounding (%):</label>
                 <RangeInput min={0} max={50} step={1} value={data.radius} SetRange={(e: any) => SetData({...data, radius: e.target.value})}/>
             </Control>
-            <Control>
+            <Control autodisable={data.colour == "Transparent"}>
                 <label>Inset (mm):</label>
                 <input type="number" value={data.inset} step={.1} onChange={(e) => SetData({...data, inset: e.target.value})}/>
             </Control>
