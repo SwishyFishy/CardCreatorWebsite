@@ -12,7 +12,7 @@ export default function ControlDetailTitle({detail, ReturnDetail}: props_Control
     return(
         <Control>
             <label>Title:</label>
-            <input type="text" value={detail.title} onChange={(e) => ReturnDetail({title: e.target.value})}/>
+            <input type="text" value={detail.title} onChange={(e) => ReturnDetail({title: e.target.value, id: "title"})}/>
         </Control>
     );
 }

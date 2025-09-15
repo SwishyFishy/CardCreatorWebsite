@@ -6,6 +6,7 @@ import type { CardCore, CardCost, CardDetailGroup, CardStats, CardTitle, CardTyp
 import Control from "../common/Control";
 import ControlDetails from "../common/ControlDetails";
 import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
+import ControlDetailTitle from "../common/ControlDetailTitle";
 
 export default function LayoutControls()
 {
@@ -22,6 +23,17 @@ export default function LayoutControls()
         valid: detailData.findIndex((detail) => detail.name == "New Block") > -1 ? false : true
     });
     const [newElement, setNewElement] = useState<string>("title");
+
+    const ContentControls = () => {
+        switch (detailData[detailIndex].elements[elementIndex].id)
+        {
+            case "title":
+                return <ControlDetailTitle detail={detailData[detailIndex].elements[elementIndex]} ReturnDetail={(rval: CardTitle) => setDetailData({...detailData[detailIndex], elements: detailData[detailIndex].elements.toSpliced(elementIndex, 1, rval)})}/>
+        
+            default:
+                return <></>;
+        }
+    }
 
     return(
         <div id="component-layoutcontrols" className="component-controls">
@@ -186,7 +198,7 @@ export default function LayoutControls()
                 <>
                     <h2>{detailData[detailIndex].elements[elementIndex].id!.slice(0, 1).toUpperCase().concat(detailData[detailIndex].elements[elementIndex].id!.slice(1))}</h2>
                     <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}/>
-                    {/*Check detailData[detailIndex].elements[elementIndex].id to determine whoch content controls to put here*/}
+                    {ContentControls()}
                 </>
                 : ""}
             </div>
