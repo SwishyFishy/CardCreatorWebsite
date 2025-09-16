@@ -3,7 +3,7 @@ import MultiTextInput from "./MultiTextInput";
 
 import type { CardType } from "../card/card_types"
 
-interface props_ControlDetailType {
+interface props_ControlDetailType{
     detail: CardType,
     ReturnDetail: Function
 }
