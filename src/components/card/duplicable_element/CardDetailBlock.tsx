@@ -64,7 +64,7 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
         <div key={baseId} className={`component-carddetailblock ${details.align} ${details.justify} ${details.position}`} style={groupCSS}>
             {details.elements.map((element, index) => (
                 <span key={`${baseId}element${index}`}>
-                    <CardDetail vertical={!(details.align == "horizontal")} elementProps={element} elementStyle={elementCSS[index]}/>
+                    <CardDetail alignment={details.align} elementProps={element} elementStyle={elementCSS[index]}/>
                 </span>
             ))}
         </div>

@@ -8,19 +8,19 @@ export type TypeData = {
 }
 
 interface props_CardType {
-    vertical: boolean,
+    alignment: "horizontal" | "vertical-left" | "vertical-right",
     typeData: TypeData,
     style: DetailStyleCSS
 }
 
 import './styles/card_type.css';
 
-export default function CardType({vertical, typeData, style}: props_CardType)
+export default function CardType({alignment, typeData, style}: props_CardType)
 {
     const baseId: string = uuid();
 
     return(
-        <div key={baseId} className={`component-cardtype component-carddetail ${vertical ? 'vertical' : ""}`} style={style}>
+        <div key={baseId} className={`component-cardtype component-carddetail ${alignment}`} style={style}>
             {typeData.types.map((type, index) => (
                 <span key={`${baseId}${index}`}>{type}</span>
             ))}

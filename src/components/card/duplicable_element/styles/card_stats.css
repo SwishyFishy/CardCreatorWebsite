@@ -3,9 +3,15 @@
     flex-direction: row;
     justify-content: space-between;
 
-    &.vertical{
-        flex-direction: column;
+    &[class*="vertical-right"]{
+        flex-direction: row-reverse;
     }
+}
+.component-cardstats.vertical-left span{
+    transform: rotate(-90deg);
+}
+.component-cardstats.vertical-right span{
+    transform: rotate(90deg);
 }
 
 .component-cardstats .separator{

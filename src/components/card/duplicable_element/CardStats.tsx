@@ -11,21 +11,21 @@ export type StatsData = {
 }
 
 interface props_CardStats {
-    vertical: boolean,
+    alignment: "horizontal" | "vertical-left" | "vertical-right",
     statsData: StatsData,
     style: DetailStyleCSS
 }
 
-export default function CardStats({vertical, statsData, style}: props_CardStats)
+export default function CardStats({alignment, statsData, style}: props_CardStats)
 {
     const baseId: string = uuid();
 
     return(
-        <div className={`component-cardstats component-carddetail ${vertical ? 'vertical' : ""}`} style={style}>
+        <div className={`component-cardstats component-carddetail ${alignment}`} style={style}>
             {statsData.stats.map((stat, index) => (
                 <>
                     <span key={`${baseId}${index}`}>{stat}</span>
-                    {index < statsData.stats.length - 1 ? <span key={`${baseId}separator${index}`} className="separator">{statsData.separator ? (vertical ? "-" : "/") : ""}</span> : ""}
+                    {index < statsData.stats.length - 1 ? <span key={`${baseId}separator${index}`} className="separator">{statsData.separator ? (alignment ? "-" : "/") : ""}</span> : ""}
                 </>
             ))}
         </div>

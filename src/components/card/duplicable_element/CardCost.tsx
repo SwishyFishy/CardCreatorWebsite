@@ -14,16 +14,16 @@ export type CostData = {
 }
 
 interface props_CardCost {
-    vertical: boolean,
+    alignment: "horizontal" | "vertical-left" | "vertical-right",
     costData: CostData,
     style?: DetailStyleCSS
 }
 
-export default function CardCost({vertical, costData, style}: props_CardCost)
+export default function CardCost({alignment, costData, style}: props_CardCost)
 {
     const baseId: string = uuid();
     return(
-        <div key={baseId} className={`component-cardcost component-carddetail ${costData.direction} ${vertical ? 'vertical' : ""}`} style={style}>
+        <div key={baseId} className={`component-cardcost component-carddetail ${costData.direction} ${alignment}`} style={style}>
             {costData.cost.map((symbol, index) => (
                 <span key={`${baseId}symbol${index}`}><Symbol symbol={symbol}/></span>
             ))}

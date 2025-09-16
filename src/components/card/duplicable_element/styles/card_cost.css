@@ -12,3 +12,9 @@
         justify-content: flex-start;
     }
 }
+.component-cardcost.vertical-left span{
+    transform: rotate(90deg);
+}
+.component-cardcost.vertical-right span{
+    transform: rotate(-90deg);
+}
