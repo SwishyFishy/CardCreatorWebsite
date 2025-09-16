@@ -1,12 +1,14 @@
 #component-cardpane{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
     padding: .5em;
 
     height: 100vh;
-    min-height: calc(2.5 * var(--card-height));
+    min-height: calc(var(--card-height) * var(--card-view-scale) + 15em);
+    width: calc(var(--card-width) * var(--card-view-scale));
 
     background-color: var(--background-highlight);
 }

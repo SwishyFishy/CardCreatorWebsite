@@ -1,5 +1,5 @@
 #component-footercontrols{
-    margin-top: calc(var(--card-height));
+    margin-top: calc(1/2 * var(--card-height) * var(--card-view-scale));
 
     width: calc(var(--card-width) * var(--card-view-scale));
 }

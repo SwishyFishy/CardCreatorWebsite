@@ -18,6 +18,7 @@ export default function Card()
     // Set CSS properties from card data
     document.body.style.setProperty("--card-height", `${cardData.card.height}mm`);
     document.body.style.setProperty("--card-width", `${cardData.card.width}mm`);
+    document.body.style.setProperty("--card-view-scale", `${2 * 63 / cardData.card.width}`);
 
     return(
         <div id="component-card">

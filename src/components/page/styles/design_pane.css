@@ -1,6 +1,6 @@
 #component-designpane{ 
     height: 100vh;
-    min-height: calc(2.5 * var(--card-height));
+    min-height: calc(var(--card-view-scale) * var(--card-height) + 15em);
 }
 
 #component-designpane #selector{
