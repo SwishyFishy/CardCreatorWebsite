@@ -1,6 +1,6 @@
 import {v4 as uuid} from 'uuid';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import SymbolLibrary from "../symbol_library/SymbolLibrary";
 import type { SymbolData } from "../symbol_library/Symbol";
@@ -15,11 +15,14 @@ interface props_TextSymbolInput {
 export default function TextSymbolInput({value, SetText}: props_TextSymbolInput)
 {
     const [id] = useState<string>(uuid())[0];
-    const self: HTMLInputElement = document.getElementById(id)! as HTMLInputElement;
+    const ref: React.RefObject<HTMLTextAreaElement | null> = useRef(null);
 
     const handleAddSymbol = (e: any, symbol: SymbolData): void => {
         e.preventDefault();
-        const position = self.selectionStart;
+        
+        const self = ref.current!;
+        const position = ref.current!.selectionStart;
+
         if (position)
         {
             // Insert the symbol id
@@ -38,7 +41,7 @@ export default function TextSymbolInput({value, SetText}: props_TextSymbolInput)
 
     return(
         <div className="component-textsymbolinput">
-            <textarea id={id} rows={5} value={value} onChange={(e) => SetText(e)}/>
+            <textarea ref={ref} id={id} rows={5} value={value} onChange={(e) => SetText(e)}/>
             <div className="input-symbol">
                 <SymbolLibrary InsertSymbol={handleAddSymbol}/>
             </div>
