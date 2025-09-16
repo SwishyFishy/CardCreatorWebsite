@@ -17,8 +17,6 @@ export default function TextSymbolInput({value, SetText}: props_TextSymbolInput)
     const [id] = useState<string>(uuid())[0];
     const self: HTMLInputElement = document.getElementById(id)! as HTMLInputElement;
 
-    console.log(self);
-
     const handleAddSymbol = (e: any, symbol: SymbolData): void => {
         e.preventDefault();
         const position = self.selectionStart;
