@@ -4,6 +4,8 @@ body{
     --background: #0A0C10;
     --background-highlight: #002929;
     --accent: #00A6A6;
+    --delete: red;
+    --add: aquamarine;
 
     /* Card Variables */
     --card-width: 63mm;
