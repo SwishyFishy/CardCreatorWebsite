@@ -1,3 +1,7 @@
+#component-cardbody{
+    height: var(--card-body-dominance);
+}
+
 #component-cardbody #card-body-content{
     height: 100%;
     overflow: hidden;

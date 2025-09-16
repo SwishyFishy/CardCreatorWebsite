@@ -44,8 +44,8 @@
     }
 
     &.middle{
-        /* On top of the body, - 1/2 its own height, + 1/2 the border thickness, to vertically center it on the art border */
-        bottom: calc(var(--card-body-dominance) - 0.8em + (1/2 * var(--card-art-gap-thickness))); 
+        /* On top of the body, - 1/2 its own height, + 1/2 the art gap thickness, to vertically center it on the art border */
+        bottom: calc(var(--card-body-dominance) - (1/2 * var(--card-detail-thickness)) + (1/2 * var(--card-art-gap-thickness))); 
 
         &[class*="vertical-"]{
             top: 0;

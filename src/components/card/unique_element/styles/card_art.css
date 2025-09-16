@@ -1,6 +1,6 @@
 #component-cardart{
     width: 100%;
-    height: calc(100% - var(--card-art-gap-thickness));
+    height: calc(var(--card-art-dominance) - var(--card-art-gap-thickness));
 
     overflow: hidden;
 
