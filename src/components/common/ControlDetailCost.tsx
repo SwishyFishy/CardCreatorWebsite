@@ -1,12 +1,10 @@
 import Control from "./Control";
-import CardCost from "../card/duplicable_element/CardCost";
-import SymbolLibrary from "../symbol_library/SymbolLibrary";
+import CostInput from "./CostInput";
 
-import type { CardCost as Cost} from "../card/card_types";
-import type { SymbolData } from "../symbol_library/Symbol";
+import type { CardCost } from "../card/card_types";
 
 interface props_ControlDetailCost{
-    detail: Cost
+    detail: CardCost
     ReturnDetail: Function
 }
 
@@ -16,13 +14,7 @@ export default function ControlDetailCost({detail, ReturnDetail}: props_ControlD
         <div className="component-controldetailcost">
             <Control>
                 <label>Cost:</label>
-                <div>
-                    <CardCost vertical={detail.direction == "column"} costData={detail}/>
-                    <SymbolLibrary InsertSymbol={(e: any, symbol: SymbolData) => {
-                        e.preventDefault();
-                        ReturnDetail({...detail, cost: [...detail.cost, symbol]});
-                    }}/>
-                </div>
+                <CostInput cost={detail} SetCost={(detail: CardCost) => ReturnDetail(detail)}/>
             </Control>
             <Control>
                 <label>Direction:</label>

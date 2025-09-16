@@ -7,6 +7,9 @@
 
     background-color: white;
     padding: .05em .15em;
+
+    box-sizing: border-box;
+    width: 100%;
 }
 
 #component-symbollibrary > span{
