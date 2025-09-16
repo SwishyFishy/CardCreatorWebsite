@@ -1,6 +1,7 @@
 import Control from "../common/Control";
 import ControlUniversalProperties from "../common/ControlUniversalProperties";
 import ColourInput from "../common/ColourInput";
+import CharacterLimitedInput from "../common/CharacterLimitedInput";
 
 import { type SymbolData } from "./Symbol";
 import type { Gradient, Border } from "../card/card_types";
@@ -20,7 +21,7 @@ export default function SymbolEditorBase({symbol, SetSymbol}: props_SymbolEditor
                 <ControlUniversalProperties data={{background: symbol.background, border: symbol.border}} SetData={(newBG: Gradient, newBorder: Border ) => SetSymbol({...symbol, background: newBG, border: newBorder})}/>
                 <Control>
                     <label>Text:</label>
-                    <input type="text" value={symbol.text} onChange={(e) => SetSymbol({...symbol, text: e.target.value.slice(-2).toUpperCase()})}/>
+                    <CharacterLimitedInput limit={2} limitStyle="replace" text={symbol.text || ""} SetText={(newText: string) => SetSymbol({...symbol, text: newText.toUpperCase()})}/>
                 </Control>
                 <Control>
                     <label>Text Colour:</label>
