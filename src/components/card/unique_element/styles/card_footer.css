@@ -9,6 +9,8 @@
 
     background-color: var(--card-border-colour);
     color: var(--card-footer-text-colour);
+
+    min-height: var(--card-footer-dominance);
 }
 
 #component-cardfooter span{
