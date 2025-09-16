@@ -1,0 +1,16 @@
+.component-multitextinput ul{
+    list-style-type: none;
+}
+
+.component-multitextinput ul li{
+    display: grid;
+    grid-template-columns: 90fr 10fr;
+}
+
+.component-multitextinput ul li .add-button{
+    background-color: var(--add);
+}
+
+.component-multitextinput ul li .remove-button{
+    background-color: var(--delete);
+}

@@ -8,6 +8,7 @@ import ControlDetails from "../common/ControlDetails";
 import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock";
 import ControlDetailTitle from "../common/ControlDetailTitle";
 import ControlDetailCost from "../common/ControlDetailCost";
+import ControlDetailType from "../common/ControlDetailType";
 
 export default function LayoutControls()
 {
@@ -36,6 +37,9 @@ export default function LayoutControls()
         
             case "cost":
                 return <ControlDetailCost detail={detail as CardCost} ReturnDetail={replaceDetail}/>
+
+            case "type":
+                return <ControlDetailType detail={detail as CardType} ReturnDetail={replaceDetail}/>
 
             default:
                 return <></>;
