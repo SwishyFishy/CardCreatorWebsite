@@ -2,6 +2,7 @@ import Control from "./Control";
 import CostInput from "./CostInput";
 
 import type { CardCost } from "../card/card_types";
+import type { SymbolData } from "../symbol_library/Symbol";
 
 interface props_ControlDetailCost{
     detail: CardCost
@@ -14,7 +15,7 @@ export default function ControlDetailCost({detail, ReturnDetail}: props_ControlD
         <div className="component-controldetailcost">
             <Control>
                 <label>Cost:</label>
-                <CostInput cost={detail} SetCost={(detail: CardCost) => ReturnDetail(detail)}/>
+                <CostInput cost={detail.cost} SetCost={(newCost: SymbolData[]) => ReturnDetail({...detail, cost: newCost})}/>
             </Control>
             <Control>
                 <label>Direction:</label>

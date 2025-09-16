@@ -4,12 +4,11 @@ import SymbolLibrary from "../symbol_library/SymbolLibrary";
 import Symbol from "../symbol_library/Symbol";
 
 import type { SymbolData } from "../symbol_library/Symbol";
-import type { CardCost } from "../card/card_types";
 
 import './styles/cost_input.css';
 
 interface props_CostInput {
-    cost: CardCost,
+    cost: SymbolData[],
     SetCost: Function
 }
 
@@ -20,10 +19,10 @@ export default function CostInput({cost, SetCost}: props_CostInput)
     return(
         <div className="component-costinput">
             <div className="cost-display">
-                {cost.cost.map((symbol, index) => (
+                {cost.map((symbol, index) => (
                     <span key={`${baseId}${index}`} onClick={(e) => {
                         e.preventDefault();
-                        SetCost({...cost, cost: cost.cost.toSpliced(index, 1)});
+                        SetCost(cost.toSpliced(index, 1));
                     }}>
                         <Symbol symbol={symbol} key={`${baseId}symbol${index}`}/>
                     </span>
@@ -31,7 +30,7 @@ export default function CostInput({cost, SetCost}: props_CostInput)
             </div>
             <SymbolLibrary InsertSymbol={(e: any, symbol: SymbolData) => {
                 e.preventDefault();
-                SetCost({...cost, cost: [...cost.cost, symbol]});
+                SetCost([...cost, symbol]);
             }}/>
         </div>
     );
