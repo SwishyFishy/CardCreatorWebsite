@@ -46,7 +46,7 @@ export default function LayoutControls()
                 return <ControlDetailStats detail={detail as CardStats} ReturnDetail={replaceDetail}/>
 
             default:
-                return <></>;
+                return <p>Something went wrong</p>;
         }
     }
 
