@@ -47,6 +47,13 @@ export default function ArtControls()
                 </Control>
             </div>
             <div className="column">
+                <h2>Artwork</h2>
+                <Control>
+                    <label>Upload Image:</label>
+                    <input type="file" accept=".png, .jpg, .jpeg" onChange={(e) => {
+                        setArtData({...artData, src: URL.createObjectURL(e.target.files![0])});
+                    }}/>
+                </Control>
             </div>
         </div>
     );
