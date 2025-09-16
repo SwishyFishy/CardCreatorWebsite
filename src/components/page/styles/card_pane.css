@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: .5em;
+    padding: 1em;
 
     height: 100vh;
     min-height: calc(var(--card-height) * var(--card-view-scale) + 15em);
