@@ -46,11 +46,11 @@ export default function ControlBackground({data, SetData}: props_ControlBackgrou
             </Control>
             <Control autodisable={data.gradient.length == 0 || data.linear}>
                 <label>Horizontal Gradient Offset (%):</label>
-                <RangeInput min={0} max={100} step={1} value={data.offset?.x || 50} SetRange={(e: any) => SetData({...data, offset: {...data.offset, x: e.target.value}})}/>
+                <RangeInput min={0} max={100} step={.5} value={data.offset?.x || 50} SetRange={(e: any) => SetData({...data, offset: {...data.offset, x: e.target.value}})}/>
             </Control>
             <Control autodisable={data.gradient.length == 0 || data.linear}>
                 <label>Vertical Gradient Offset (%):</label>
-                <RangeInput min={0} max={100} step={1} value={data.offset?.y || 50} SetRange={(e: any) => SetData({...data, offset: {...data.offset, y: e.target.value}})}/>
+                <RangeInput min={0} max={100} step={.5} value={data.offset?.y || 50} SetRange={(e: any) => SetData({...data, offset: {...data.offset, y: e.target.value}})}/>
             </Control>
         </div>
     );
