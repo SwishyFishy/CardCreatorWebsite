@@ -12,13 +12,22 @@ import './styles/card_body.css';
 
 export type BodyData = {
     content: string[],
-    opacity: number
+    opacity: number,
+    spacing?: number,
+    padTop?: number,
+    padBottom?: number,
+    padLeft?: number,
+    padRight?: number
 } & UniversalProperties
 
 export default function CardBody()
 {
     const bodyData: BodyData = useContext(CONTEXT_cardData).cardData.body;
     const symbols: SymbolData[] = useContext(CONTEXT_symbols).symbols;
+
+    // Set CSS variables from card data
+    document.body.style.setProperty("--card-body-spacing", `${bodyData.spacing || 0}px`);
+    document.body.style.setProperty("--card-body-padding", `${bodyData.padTop || 0}px ${bodyData.padRight || 0}px ${bodyData.padBottom || 0}px ${bodyData.padLeft || 0}px`);
 
     const ParseAbility = (text: string, elementKey: string): React.JSX.Element => {
         const abilityText: string[] = text.split(new RegExp(/{\w+}/));

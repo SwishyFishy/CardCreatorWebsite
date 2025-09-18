@@ -6,11 +6,13 @@
     height: 100%;
     overflow: hidden;
     
-    padding: 0em .5em;
+    padding: var(--card-body-padding);
 }
 
 #component-cardbody #card-body-content .ability-text{
     width: 100%;
+
+    margin: var(--card-body-spacing) 0px;
 
     display: flex;
     flex-direction: row;
