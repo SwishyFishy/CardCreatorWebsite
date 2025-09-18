@@ -27,6 +27,6 @@ export default function CardDetail({alignment, elementProps, elementStyle}: prop
         case "stats":
             return(<CardStats alignment={alignment} statsData={elementProps} style={elementStyle}/>);
         case undefined:
-            console.error(`Undefined elementProp id - dump: ${elementProps}`);
+            console.error("Undefined elementProp id - dump:", elementProps);
     }
 }
