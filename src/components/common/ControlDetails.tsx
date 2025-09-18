@@ -29,6 +29,13 @@ export default function ControlDetails({detail, SetDetail}: props_ControlDetails
                 <label>Text Colour:</label>
                 <ColourInput value={detail.textColour} SetColour={(e: any) => SetDetail({...detail, textColour: e.target.value})}/>
             </Control>
+            <Control>
+                <label>Vertical Text Direction:</label>
+                <select value={detail.verticalText} onChange={(e) => SetDetail({...detail, verticalText: e.target.value})}>
+                    <option value="up">Up</option>
+                    <option value="down">Down</option>
+                </select>
+            </Control>
         </div>
     );
 }

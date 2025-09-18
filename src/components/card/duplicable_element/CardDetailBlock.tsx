@@ -13,6 +13,7 @@ import type { UniversalProperties } from '../card_types';
 import './styles/card_detail_block.css';
 
 export type DetailStyleData = {
+    verticalText: "up" | "down",
     textColour: string,
     offsetX?: number,
     offsetY?: number
@@ -54,10 +55,20 @@ export default function CardDetailBlock({details}: props_CardDetailBlock)
     };
 
     const elementStyle: DetailStyleData[] = details.elementStyles;
-    const elementCSS: DetailStyleCSS[] = elementStyle.map((style) => ({
+    const elementCSS: DetailStyleCSS[] = elementStyle.map((style, index) => ({
         ...UniversalPropertiesCSS({background: style.background, border: style.border}),
         color: style.textColour,
-        transform: style.offsetX || style.offsetY ? `translate(${style.offsetX || 0}px, ${(style.offsetY || 0) * -1}px)` : ""
+        
+        /*Unholy abomination*/
+        transform: (
+            style.offsetX || style.offsetY ? `translate(${style.offsetX || 0}px, ${(style.offsetY || 0) * -1}px)` : "").concat(
+            details.elements[index].id == "title" || details.elements[index].id == "type" ? (
+                details.align == "vertical-left" ? (
+                    style.verticalText == "up" ? " rotate(180deg)" : "") : 
+                    (details.align == "vertical-right" ? (
+                        style.verticalText == "up" ? "" : " rotate(180deg)" ) : ""
+                    )) : ""
+            )
     }));
 
     return(

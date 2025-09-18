@@ -92,7 +92,8 @@ const init: CardData = {
                     radius: 0,
                     inset: 0
                 },
-                textColour: ""
+                textColour: "",
+                verticalText: "up"
             },
             elementStyles: [
                 {
@@ -107,7 +108,8 @@ const init: CardData = {
                         radius: 0,
                         inset: 0
                     },
-                    textColour: "#2222ff"
+                    textColour: "#2222ff",
+                    verticalText: "up"
                 },
                 {
                     background: {
@@ -121,7 +123,8 @@ const init: CardData = {
                         radius: 0,
                         inset: 0
                     },
-                    textColour: "#2222ff"
+                    textColour: "#2222ff",
+                    verticalText: "up"
                 }
             ]
         },
@@ -140,7 +143,8 @@ const init: CardData = {
                     radius: 25,
                     inset: .1
                 },
-                textColour: "#000000"
+                textColour: "#000000",
+                verticalText: "up"
             },
             elementStyles: [{
                 background: {
@@ -154,11 +158,16 @@ const init: CardData = {
                         radius: 0,
                         inset: 0
                     },
-                textColour: ""
+                textColour: "",
+                verticalText: "up"
             }]
         },
         {
-            name: "Stats", elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], align: "horizontal", justify: "last", position: "end",
+            name: "Stats", 
+            elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], 
+            align: "horizontal", 
+            justify: "last", 
+            position: "end",
             groupStyle: {
                 background: {
                     colour: "transparent",
@@ -171,7 +180,8 @@ const init: CardData = {
                         radius: 0,
                         inset: 0
                     },
-                textColour: ""
+                textColour: "",
+                verticalText: "up"
             },
             elementStyles: [
                 {
@@ -186,7 +196,8 @@ const init: CardData = {
                         radius: 0,
                         inset: 0.05
                     },
-                    textColour: "#000000"
+                    textColour: "#000000",
+                    verticalText: "up"
                 }
             ]
         }
