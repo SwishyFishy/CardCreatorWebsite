@@ -35,7 +35,27 @@ export default function BodyControls()
                 </Control>
             </div>
             <div className="column">
-
+                <h2>Spacing and Justification</h2>
+                <Control>
+                    <label>Ability Spacing (px):</label>
+                    <input type="number" min={0} step={1} value={bodyData.spacing || 0} onChange={(e) => setBodyData({...bodyData, spacing: e.target.value})}/>
+                </Control>
+                <Control>
+                    <label>Left Indent (px):</label>
+                    <input type="number" min={0} step={1} value={bodyData.padLeft || 0} onChange={(e) => setBodyData({...bodyData, padLeft: e.target.value})}/>
+                </Control>
+                <Control>
+                    <label>Right Indent (px):</label>
+                    <input type="number" min={0} step={1} value={bodyData.padRight || 0} onChange={(e) => setBodyData({...bodyData, padRight: e.target.value})}/>
+                </Control>
+                <Control>
+                    <label>Top Indent (px):</label>
+                    <input type="number" min={0} step={1} value={bodyData.padTop || 0} onChange={(e) => setBodyData({...bodyData, padTop: e.target.value})}/>
+                </Control>
+                <Control>
+                    <label>Bottom Indent (px):</label>
+                    <input type="number" min={0} step={1} value={bodyData.padBottom || 0} onChange={(e) => setBodyData({...bodyData, padBottom: e.target.value})}/>
+                </Control>
             </div>
         </div>
     );
