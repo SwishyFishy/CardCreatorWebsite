@@ -7,6 +7,10 @@
     overflow: hidden;
     
     padding: var(--card-body-padding);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--card-body-justify);
 }
 
 #component-cardbody #card-body-content .ability-text{
@@ -14,10 +18,9 @@
 
     margin: var(--card-body-spacing) 0px;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: block;
+    text-align: var(--card-body-align);
+    overflow-wrap: break-word;
 
     color: black;
 

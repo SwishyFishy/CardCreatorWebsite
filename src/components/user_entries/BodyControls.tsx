@@ -56,6 +56,21 @@ export default function BodyControls()
                     <label>Bottom Indent (px):</label>
                     <input type="number" min={0} step={1} value={bodyData.padBottom || 0} onChange={(e) => setBodyData({...bodyData, padBottom: e.target.value})}/>
                 </Control>
+                <Control>
+                    <label>Justify Abilities:</label>
+                    <select value={bodyData.align} onChange={(e) => setBodyData({...bodyData, align: e.target.value})}>
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                        <option value="right">Right</option>
+                    </select>
+                </Control>
+                <Control>
+                    <label>Align Abilities:</label>
+                    <select value={bodyData.justify} onChange={(e) => setBodyData({...bodyData, justify: e.target.value})}>
+                        <option value="flex-start">Top</option>
+                        <option value="flex-end">Bottom</option>
+                    </select>
+                </Control>
             </div>
         </div>
     );

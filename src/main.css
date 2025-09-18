@@ -20,6 +20,8 @@ body{
     --card-art-zoom: 1;
 
     --card-body-dominance: calc(var(--card-content-height) - var(--card-art-dominance));
+    --card-body-justify: "flex-start";
+    --card-body-align: "left";
     --card-body-spacing: 10px;
     --card-body-padding: 0px 5px 0px 5px;
     

@@ -64,6 +64,8 @@ const init: CardData = {
             inset: 0,
             radius: 0
         },
+        justify: "flex-start",
+        align: "left",
         opacity: .75
     },
     footer: {

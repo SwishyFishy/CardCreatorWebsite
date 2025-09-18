@@ -12,12 +12,14 @@ import './styles/card_body.css';
 
 export type BodyData = {
     content: string[],
-    opacity: number,
+    justify: "flex-start" | "flex-end",
+    align: "left" | "center" | "end",
     spacing?: number,
     padTop?: number,
     padBottom?: number,
     padLeft?: number,
     padRight?: number
+    opacity: number,
 } & UniversalProperties
 
 export default function CardBody()
@@ -28,6 +30,8 @@ export default function CardBody()
     // Set CSS variables from card data
     document.body.style.setProperty("--card-body-spacing", `${bodyData.spacing || 0}px`);
     document.body.style.setProperty("--card-body-padding", `${bodyData.padTop || 0}px ${bodyData.padRight || 0}px ${bodyData.padBottom || 0}px ${bodyData.padLeft || 0}px`);
+    document.body.style.setProperty("--card-body-justify", bodyData.justify);
+    document.body.style.setProperty("--card-body-align", bodyData.align);
 
     const ParseAbility = (text: string, elementKey: string): React.JSX.Element => {
         const abilityText: string[] = text.split(new RegExp(/{\w+}/));
