@@ -2,15 +2,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    &.vertical{
-        flex-direction: column;
-    }
 }
 
 .component-cardtype span{
     padding: 0em .1em;
-}
-.component-cardtype.vertical span{
-    padding: .4em 0em;
 }
