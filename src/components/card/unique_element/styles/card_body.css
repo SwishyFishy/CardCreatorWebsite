@@ -18,9 +18,10 @@
 
     margin: var(--card-body-spacing) 0px;
 
-    display: block;
-    text-align: var(--card-body-align);
-    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+    justify-content: var(--card-body-align);
+    flex-wrap: wrap;
 
     color: black;
 
