@@ -7,7 +7,6 @@ import './styles/symbol.css';
 
 export type SymbolData = {
     id: string,
-    shape: "circle" | "square",
     text?: string,
     textColour: string,
     icon?: string,

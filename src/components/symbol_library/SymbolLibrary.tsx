@@ -25,11 +25,10 @@ export default function SymbolLibrary({InsertSymbol}: props_SymbolLibrary)
             border: {
                 colour: "transparent",
                 thickness: 0,
-                radius: 0,
+                radius: 50,
                 inset: 0
             },
-            shape: "circle",
-            text: "",
+            text: "+",
             textColour: "#000000",
             icon: ""
         });
