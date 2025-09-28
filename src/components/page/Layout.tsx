@@ -1,7 +1,7 @@
 import { createContext, useState, useMemo } from "react";
 
 import BasicSymbols from "../symbol_library/BasicSymbols";
-import type { CardCore, CardData, CardBorder, CardArt, CardBody, CardDetailGroup, CardFooter } from "../card/card_types";
+import { type CardCore, type CardData, type CardBorder, type CardArt, type CardBody, type CardDetailGroup, type CardFooter, Character } from "../card/card_types";
 import type { SymbolData } from "../symbol_library/Symbol";
 
 import Header from "./Header";
@@ -166,7 +166,7 @@ const init: CardData = {
         },
         {
             name: "Stats", 
-            elements: [{stats: ["Card", "Stats"], separator: true, id: "stats"}], 
+            elements: [{stats: ["Card", "Stats"], separator: new Character('/'), id: "stats"}], 
             align: "horizontal", 
             justify: "last", 
             position: "end",

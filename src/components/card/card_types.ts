@@ -8,6 +8,18 @@ import type { TypeData } from "./duplicable_element/CardType";
 import type { StatsData } from "./duplicable_element/CardStats";
 import type { DetailGroupData } from "./duplicable_element/CardDetailBlock";
 
+export class Character
+{
+    #value: string = "";
+    get value(): string { return this.#value; }
+    set value(v) { this.#value = v.charAt(0); }
+
+    constructor(value: string)
+    {
+        this.#value = value;
+    }
+}
+
 export type CardCore = {
     height: number,
     width: number

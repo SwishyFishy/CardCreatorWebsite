@@ -1,7 +1,7 @@
 import Control from "./Control";
 import MultiTextInput from "./MultiTextInput";
 
-import type { CardStats } from "../card/card_types"
+import { Character, type CardStats } from "../card/card_types"
 
 interface props_ControlDetailStats{
     detail: CardStats,
@@ -14,7 +14,7 @@ export default function ControlDetailStats({detail, ReturnDetail}: props_Control
         <div className="component-controldetailstats">
             <Control>
                 <label>Separator:</label>
-                <input type="checkbox" checked={detail.separator} onChange={() => ReturnDetail({...detail, separator: !detail.separator})}/>
+                <input type="text" value={detail.separator.value} onChange={(e) => ReturnDetail({...detail, separator: new Character(e.target.value.charAt(e.target.value.length - 1))})}/>
             </Control>
             <Control>
                 <label>Types:</label>

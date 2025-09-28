@@ -1,12 +1,13 @@
 import {v4 as uuid} from 'uuid';
 
+import { Character } from '../card_types';
 import type { DetailStyleCSS } from './CardDetailBlock';
 
 import './styles/card_stats.css';
 
 export type StatsData = {
     stats: string[],
-    separator: boolean,
+    separator: Character
     readonly id: "stats"
 }
 
@@ -25,7 +26,7 @@ export default function CardStats({alignment, statsData, style}: props_CardStats
             {statsData.stats.map((stat, index) => (
                 <>
                     <span key={`${baseId}${index}`}>{stat}</span>
-                    {index < statsData.stats.length - 1 ? <span key={`${baseId}separator${index}`} className="separator">{statsData.separator ? (alignment ? "-" : "/") : ""}</span> : ""}
+                    {index < statsData.stats.length - 1 ? <span key={`${baseId}separator${index}`} className="separator">{statsData.separator.value}</span> : ""}
                 </>
             ))}
         </div>
