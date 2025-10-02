@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CONTEXT_cardData } from "../page/Layout";
 
 import type { ArtData } from "../card/unique_element/CardArt";
@@ -13,6 +13,8 @@ export default function ArtControls()
 {
     const artData: ArtData = useContext(CONTEXT_cardData).cardData.art;
     const setArtData: Function = useContext(CONTEXT_cardData).functions.setArt;
+
+    const [uploadedImages, setUploadedImages] = useState<{src: string, name: string}[]>([]);
 
     return(
         <div id="component-artcontrols" className="component-controls">
@@ -48,10 +50,22 @@ export default function ArtControls()
             </div>
             <div className="column">
                 <h2>Artwork</h2>
+                {uploadedImages.map((image) => (
+                    <Control key={`uploadedImages${image.src}`}>
+                        <label>Set Artwork:</label>
+                        <input type="button" value={image.name} onClick={() => {setArtData({...artData, src: image.src})}}/>
+                    </Control>
+                ))}
                 <Control>
                     <label>Upload Image:</label>
-                    <input type="file" accept=".png, .jpg, .jpeg" onChange={(e) => {
-                        setArtData({...artData, src: URL.createObjectURL(e.target.files![0])});
+                    <input type="file" accept=".png, .jpg, .jpeg" multiple={true} onChange={(e) => {
+                        const newImages: {src: string, name: string}[] = [];
+                        Array.from(e.target.files!).forEach((file) => {
+                            const src: string = URL.createObjectURL(file);
+                            newImages.push({src: src, name: file.name});
+                            setArtData({...artData, src: src});
+                        })
+                        setUploadedImages([...uploadedImages, ...newImages]);
                     }}/>
                 </Control>
             </div>
