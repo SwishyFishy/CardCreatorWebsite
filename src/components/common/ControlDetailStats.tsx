@@ -17,7 +17,7 @@ export default function ControlDetailStats({detail, ReturnDetail}: props_Control
                 <input type="text" value={detail.separator.value} onChange={(e) => ReturnDetail({...detail, separator: new Character(e.target.value.charAt(e.target.value.length - 1))})}/>
             </Control>
             <Control>
-                <label>Types:</label>
+                <label>Stats:</label>
                 <MultiTextInput texts={detail.stats} SetTexts={(newStats: string[]) => ReturnDetail({...detail, stats: newStats})}/>
             </Control>
         </div>
