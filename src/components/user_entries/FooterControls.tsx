@@ -11,28 +11,33 @@ export default function FooterControls()
 {
     const footerData: FooterData = useContext(CONTEXT_cardData).cardData.footer;
     const setFooterData: Function = useContext(CONTEXT_cardData).functions.setFooter;
+    const resetCard: Function = useContext(CONTEXT_cardData).functions.resetCard;
 
     return(
         <div id="component-footercontrols">
             <Control>
-                <label htmlFor="footer-year">Year:</label>
-                <input type="number" id="footer-year" value={footerData.year} onChange={(e) => setFooterData({...footerData, year: e.target.value})}/>
+                <label>Year:</label>
+                <input type="number" value={footerData.year} onChange={(e) => setFooterData({...footerData, year: e.target.value})}/>
             </Control>
             <Control>
-                <label htmlFor="footer-set">Set:</label>
-                <input type="text" id="footer-set" value={footerData.set} onChange={(e) => setFooterData({...footerData, set: e.target.value.substring(0, 4)})}/>
+                <label>Set:</label>
+                <input type="text" value={footerData.set} onChange={(e) => setFooterData({...footerData, set: e.target.value.substring(0, 4)})}/>
             </Control>
             <Control>
-                <label htmlFor="footer-collector-num">Collector #:</label>
-                <input type="number" id="footer-collector-num" value={footerData.collectorNum} onChange={(e) => setFooterData({...footerData, collectorNum: e.target.value})}/>
+                <label>Collector #:</label>
+                <input type="number" value={footerData.collectorNum} onChange={(e) => setFooterData({...footerData, collectorNum: e.target.value})}/>
             </Control>
             <Control>
-                <label htmlFor="footer-collector-max">Collection Size:</label>
-                <input type="number" id="footer-collector-max" value={footerData.collectorMax} onChange={(e) => setFooterData({...footerData, collectorMax: e.target.value})}/>
+                <label>Collection Size:</label>
+                <input type="number" value={footerData.collectorMax} onChange={(e) => setFooterData({...footerData, collectorMax: e.target.value})}/>
             </Control>
             <Control>
-                <label htmlFor="footer-artist">Artist:</label>
-                <input type="text" id="footer-artist" value={footerData.artist} onChange={(e) => setFooterData({...footerData, artist: e.target.value})}/>
+                <label>Artist:</label>
+                <input type="text" value={footerData.artist} onChange={(e) => setFooterData({...footerData, artist: e.target.value})}/>
+            </Control>
+            <Control>
+                <label>Clear:</label>
+                <input type="button" value="Reset to Default" onClick={() => resetCard()}/>
             </Control>
         </div>
     );

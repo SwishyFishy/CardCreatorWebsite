@@ -8,6 +8,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import CardPane from "./CardPane";
 import DesignPane from "./DesignPane";
+import ResetWarning from "./ResetWarning";
 
 import './styles/layout.css';
 
@@ -90,6 +91,7 @@ export default function Layout()
 {
     const [cardData, setCardData] = useState<CardData>(init);
     const [symbols, setSymbols] = useState<SymbolData[]>(BasicSymbols);
+    const [showResetWarning, setShowResetWarning] = useState<boolean>(false);
 
     const setCore = (newCore: CardCore) => setCardData({...cardData, card: newCore});
     const setBorder = (newBorder: CardBorder) => setCardData({...cardData, border: newBorder});
@@ -113,6 +115,9 @@ export default function Layout()
         {
             setCardData({...cardData, details: cardData.details.toSpliced(index, 1)});
         }
+    };
+    const resetCard = () => {
+        setShowResetWarning(true);
     }
 
     return(
@@ -120,9 +125,10 @@ export default function Layout()
             <Header/>
             <div className="main">
                 <CONTEXT_symbols.Provider value={useMemo(() => ({symbols: symbols, setSymbols: (symbols: SymbolData[]) => setSymbols([...symbols])}), [symbols])}>
-                    <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setCore, setBorder, setArt, setBody, setFooter, setDetail, deleteDetail}}), [cardData])}>
+                    <CONTEXT_cardData.Provider value={useMemo(() => ({cardData: cardData, setCardData: setCardData, functions: {setCore, setBorder, setArt, setBody, setFooter, setDetail, deleteDetail, resetCard}}), [cardData])}>
                         <CardPane/>
                         <DesignPane/>
+                        <ResetWarning show={showResetWarning} SetShow={(show: boolean) => setShowResetWarning(show)} reset={() => setCardData(init)}/>
                     </CONTEXT_cardData.Provider>
                 </CONTEXT_symbols.Provider>
             </div>

@@ -1,0 +1,40 @@
+#component-resetwarning #resetwarning{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 25vw;
+    height: 10em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--background-highlight);
+
+    padding: 1em 0em;
+    border: .75em solid var(--accent);
+    margin: auto auto;
+}
+
+#component-resetwarning #resetwarning #reset-buttonlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    width: 100%;
+}
+
+#component-resetwarning #resetwarning #reset-buttonlist input{
+    box-sizing: border-box;
+    
+    width: 30%;
+    height: 2em;
+    
+    padding: 0em .25em;
+    border: none;
+    margin: .25em 0em;
+}
