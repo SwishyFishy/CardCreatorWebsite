@@ -1,7 +1,7 @@
 import { createContext, useState, useMemo } from "react";
 
 import BasicSymbols from "../symbol_library/BasicSymbols";
-import { type CardCore, type CardData, type CardBorder, type CardArt, type CardBody, type CardDetailGroup, type CardFooter } from "../card/card_types";
+import { type CardCore, type CardData, type CardBorder, type CardArt, type CardBody, type CardDetailGroup, type CardFooter, Character } from "../card/card_types";
 import type { SymbolData } from "../symbol_library/Symbol";
 
 import Header from "./Header";
@@ -71,7 +71,93 @@ const init: CardData = {
         collectorMax: 0,
         artist: "credit your artist!"   
     },
-    details: []
+    details: [
+        {
+            name: "Titlebar",
+            elements: [
+                {
+                    title: "Card Title",
+                    id: "title"
+                }
+            ],
+            align: "horizontal",
+            justify: "first",
+            position: "spread",
+            groupStyle: {
+                background: {
+                    colour: "#999999",
+                    gradient: []
+                },
+                border: {
+                    colour: "#000000",
+                    thickness: 0.2,
+                    inset: 0,
+                    radius: 0
+                },      
+                verticalText: "up",
+                textColour: "#000000",
+            },
+            elementStyles: [
+                {   
+                    background: {
+                        colour: "Transparent",
+                        gradient: []
+                    },
+                    border: {
+                        colour: "Transparent",
+                        thickness: 0,
+                        inset: 0,
+                        radius: 0
+                    },      
+                    verticalText: "up",
+                    textColour: "#000000",
+                }
+            ]
+        },
+        {
+            name: "Statsbar",
+            elements: [
+                {
+                    stats: ['0', '1', 'X'],
+                    separator: new Character('-'),
+                    id: "stats"
+                }
+            ],
+            align: "vertical-right",
+            justify: "last",
+            position: "end",
+            groupStyle: {
+                background: {
+                    colour: "Transparent",
+                    gradient: []
+                },
+                border: {
+                    colour: "Transparent",
+                    thickness: 0,
+                    inset: 0,
+                    radius: 0
+                },      
+                verticalText: "up",
+                textColour: "#000000",
+            },
+            elementStyles: [
+                {   
+                    background: {
+                        colour: "#333333",
+                        gradient: []
+                    },
+                    border: {
+                        colour: "#000000",
+                        thickness: 0.2,
+                        inset: 0,
+                        radius: 0
+                    },      
+                    verticalText: "down",
+                    textColour: "#000000",
+                }
+            ]
+        },
+    ]
 }
 
 export const CONTEXT_cardData: React.Context<{
