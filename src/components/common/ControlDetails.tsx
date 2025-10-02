@@ -7,10 +7,11 @@ import type { DetailStyleData } from "../card/duplicable_element/CardDetailBlock
 
 interface props_ControlDetails {
     detail: DetailStyleData,
-    SetDetail: Function
+    SetDetail: Function,
+    verticalTextMatters: boolean
 }
 
-export default function ControlDetails({detail, SetDetail}: props_ControlDetails)
+export default function ControlDetails({detail, SetDetail, verticalTextMatters}: props_ControlDetails)
 {
     return(
         <div className="component-controldetails">
@@ -29,7 +30,7 @@ export default function ControlDetails({detail, SetDetail}: props_ControlDetails
                 <label>Text Colour:</label>
                 <ColourInput value={detail.textColour} SetColour={(e: any) => SetDetail({...detail, textColour: e.target.value})}/>
             </Control>
-            <Control>
+            <Control autodisable={!verticalTextMatters}>
                 <label>Vertical Text Direction:</label>
                 <select value={detail.verticalText} onChange={(e) => SetDetail({...detail, verticalText: e.target.value})}>
                     <option value="up">Up</option>

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CONTEXT_cardData } from "../page/Layout";
 
-import type { CardCore, CardCost, CardDetailGroup, CardStats, CardTitle, CardType } from "../card/card_types";
+import { Character, type CardCore, type CardCost, type CardDetailGroup, type CardStats, type CardTitle, type CardType } from "../card/card_types";
 
 import Control from "../common/Control";
 import ControlDetails from "../common/ControlDetails";
@@ -146,7 +146,7 @@ export default function LayoutControls()
                             <option value="end">End</option>
                         </select>
                     </Control>
-                    <ControlDetails detail={detailData[detailIndex].groupStyle} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], groupStyle: newStyle})}/>
+                    <ControlDetails detail={detailData[detailIndex].groupStyle} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], groupStyle: newStyle})} verticalTextMatters={detailData[detailIndex].align != "horizontal"}/>
                     
                     <h2>{detailData[detailIndex].name} Elements</h2>
                     {detailData[detailIndex].elements.map((element, index) => (
@@ -178,7 +178,7 @@ export default function LayoutControls()
                                 newDetail = {id: "type", types: []} as CardType;
                                 break;
                             case "stats":
-                                newDetail = {id: "stats", stats: [], separator: false} as CardStats;
+                                newDetail = {id: "stats", stats: [], separator: new Character('/')} as CardStats;
                                 break;
                         }
                         setDetailData({...detailData[detailIndex], elements: [...detailData[detailIndex].elements, newDetail!], elementStyles: [...detailData[detailIndex].elementStyles, {
@@ -212,7 +212,7 @@ export default function LayoutControls()
                 {elementIndex > -1 ?
                 <>
                     <h2>{detailData[detailIndex].elements[elementIndex].id!.slice(0, 1).toUpperCase().concat(detailData[detailIndex].elements[elementIndex].id!.slice(1))} Style</h2>
-                    <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}/>
+                    <ControlDetails detail={detailData[detailIndex].elementStyles[elementIndex]} SetDetail={(newStyle: DetailStyleData) => setDetailData({...detailData[detailIndex], elementStyles: detailData[detailIndex].elementStyles.toSpliced(elementIndex, 1, newStyle)})}  verticalTextMatters={detailData[detailIndex].align != "horizontal"}/>
                     
                     <h2>{detailData[detailIndex].elements[elementIndex].id!.slice(0, 1).toUpperCase().concat(detailData[detailIndex].elements[elementIndex].id!.slice(1))} Content</h2>
                     {ContentControls()}
