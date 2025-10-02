@@ -64,7 +64,6 @@
             top: calc(var(--card-art-dominance) - 1/2 * var(--card-art-gap-thickness));
             bottom: unset;
 
-            /*width: calc(var(--card-height) - ((var(--card-art-dominance) - 1/2 * var(--card-art-gap-thickness))) - var(--card-footer-dominance) - 2 * var(--card-border-thickness));*/
             width: calc(var(--card-body-dominance) + 1/2 * var(--card-art-gap-thickness) + 0.2mm);
             max-width: var(--card-content-height);
         }

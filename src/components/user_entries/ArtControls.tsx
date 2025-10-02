@@ -57,7 +57,7 @@ export default function ArtControls()
                     </Control>
                 ))}
                 <Control>
-                    <label>Upload Image:</label>
+                    <label>Upload Images:</label>
                     <input type="file" accept=".png, .jpg, .jpeg" multiple={true} onChange={(e) => {
                         const newImages: {src: string, name: string}[] = [];
                         Array.from(e.target.files!).forEach((file) => {
